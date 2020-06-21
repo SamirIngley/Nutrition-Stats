@@ -1,15 +1,22 @@
 
 
 
-console.log('start api')
-fetch('https://api.spoonacular.com/recipes/search?apiKey=db254b5cd61744d39a2deebd9c361444&number=1&query='+foodName)
-.then(res => res.json())
-.then(data => console.log(data))
-.catch(error => console.log('ERROR'))
-console.log('end api')
 
+$(function(){
+    $('#searchButton').click(function(){
+        
+        var searchBox = document.getElementById('searchBox')
+        console.log(searchBox)
 
+        console.log('start api');
+        fetch('https://api.spoonacular.com/recipes/search?apiKey=db254b5cd61744d39a2deebd9c361444&number=1&query='+queryString)
+        .then(res => res.json())
+        .then(data => console.log(data))
+        .catch(error => console.log('ERROR'));
+        console.log('end api');
 
+    })
+})
 
 
 
