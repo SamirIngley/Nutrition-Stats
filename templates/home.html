@@ -2,31 +2,30 @@
 <html>
     <head>
         <title>Nutrition Stats</title>
-        <link rel="stylesheet" href="css/home.css">
+        <link rel="stylesheet" href="styles.css">
+        <script defer src="script.js"></script>
     </head>
     <body>
         <div class="dashboard">
             <div class="cartinput">
                 <input id="nutrition1" placeholder="Enter name of item..">
-                <br>
-                <button onclick="fn1()" id="btn1">search</button>
+                <!-- <button onclick="fn1()" id="btn1">search</button> -->
             </div>
-            <button>search food item</button>
+            <!--Search for item pop up-->
+            <button data-modal-target="#modal">search food item</button>
             <div class="modal" id="modal">
                 <div class="modal-header">
                     <div class="title">Food item</div>
-                <button class="close-button">&times;</button>
-            </div>
+                    <button data-close-button class="close-button">&times;</button>
+                </div>
                 <div class="modal-body">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente a corrupti, vero doloremque ea reprehenderit et perferendis voluptate expedita at officiis incidunt, laborum iusto adipisci. Voluptates ipsam possimus quibusdam sed?
                 </div>
             </div>
-            <!-- <canvas id="chart" width="100px" height="100px"></canvas> -->
         </div>
-        <div class="active" id="overlay"></div>
+        <div id="overlay"></div>
     </body>
-    <script src="js/script.js" type="text/javascript"></script>
-    <!--Search button-->
+
     <!-- <script type="text/javascript">
         function fn1() {
             var str = document.getElementById("nutrition1").value;

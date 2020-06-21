@@ -3,7 +3,6 @@
     "name": "Nutrition Stats",
     "version": "1.0",
     "description": "This extension tracks your cart's nutrition facts.",
-
     "icons": {
         "128": "icon128.png",
         "48": "icon48.png",
@@ -12,7 +11,7 @@
 
     "browser_action": {
         "default_icon": "icon16.png",
-        "default_popup": "popup.html"
+        "default_popup": "templates/home.html"
     },
     
     "content_security_policy":"script-src 'self' https://api.spoonacular.com; object-src 'self'",
@@ -21,5 +20,13 @@
         "storage",
         "notifications",
         "contextMenus"
+    ],
+
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["templates/script.js"],
+            "css": ["templates/styles.css"]
+        }
     ]
 }
