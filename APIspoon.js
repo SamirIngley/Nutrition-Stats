@@ -11,6 +11,7 @@ $(function(){
         .then(res => res.json())
         .then(data => {
             console.log(data);
+            $('#name').html(queryStr)
             $('#protein').html(data.protein.value)
             $('#fat').html(data.fat.value)
             $('#carbs').html(data.carbs.value)
