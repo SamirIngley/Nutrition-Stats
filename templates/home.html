@@ -24,6 +24,27 @@
             </div>
         </div>
         <div id="overlay"></div>
+
+        <!-- API data-->
+        <p>
+            item: <span id="fooditem"></span><br>
+            nutrients: <span id="nutrient"></span>
+        </p>
+
+        <!--fetch data-->
+        <script>
+            const api_url="#"
+            async function getISS() {
+                const response = await fetch(api_url);
+                const data = await response.json();
+                const { item, nutrients} = data;
+
+                document.getElementById('fooditem').textContent = item;
+                document.getElementById('nutrient').textContent = nutrients;
+            }
+
+            getISS();
+        </script>
     </body>
 
     <!-- <script type="text/javascript">
