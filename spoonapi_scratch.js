@@ -5,11 +5,11 @@
 $(function(){
     $('#searchButton').click(function(){
         
-        var searchBox = document.getElementById('searchBox')
-        console.log(searchBox)
-
+        var queryStr = $('#searchBox').val()
+        console.log(queryStr)
+        
         console.log('start api');
-        fetch('https://api.spoonacular.com/recipes/search?apiKey=db254b5cd61744d39a2deebd9c361444&number=1&query='+queryString)
+        fetch('https://api.spoonacular.com/recipes/search?apiKey=db254b5cd61744d39a2deebd9c361444&number=1&query='+queryStr)
         .then(res => res.json())
         .then(data => console.log(data))
         .catch(error => console.log('ERROR'));
