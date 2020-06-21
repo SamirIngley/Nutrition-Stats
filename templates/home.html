@@ -4,34 +4,78 @@
         <title>Nutrition Stats</title>
         <link rel="stylesheet" href="styles.css">
         <script defer src="script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
     </head>
     <body>
+        <div class="dashboardname">
+            <p class= "dtitle">NutritionStats</p>
+        </div>
         <div class="dashboard">
             <div class="cartinput">
                 <input id="nutrition1" placeholder="Enter name of item..">
                 <!-- <button onclick="fn1()" id="btn1">search</button> -->
             </div>
             <!--Search for item pop up-->
-            <button data-modal-target="#modal">search food item</button>
+            <button class ="search-button" data-modal-target="#modal">search food item</button>
             <div class="modal" id="modal">
                 <div class="modal-header">
                     <div class="title">Food item</div>
                     <button data-close-button class="close-button">&times;</button>
                 </div>
                 <div class="modal-body">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente a corrupti, vero doloremque ea reprehenderit et perferendis voluptate expedita at officiis incidunt, laborum iusto adipisci. Voluptates ipsam possimus quibusdam sed?
+                    <!-- API data-->
+                    <p>
+                        item: <span id="fooditem"></span><br>
+                        nutrients: <span id="nutrient"></span>
+                    </p>
                 </div>
             </div>
         </div>
         <div id="overlay"></div>
 
-        <!-- API data-->
-        <p>
-            item: <span id="fooditem"></span><br>
-            nutrients: <span id="nutrient"></span>
-        </p>
+        <!--Graphing data-->
+        <canvas id="chart" width="400" height="400"></canvas>
+        <!-- <script>
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                    datasets: [{
+                        label: '# of Votes',
+                        data: [12, 19, 3, 5, 2, 3],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        </script> -->
 
-        <!--fetch data-->
+        <!--Fetch food data from API-->
         <script>
             const api_url="#"
             async function getISS() {

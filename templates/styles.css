@@ -70,3 +70,28 @@
     opacity: 1;
     pointer-events: all;
 }
+
+.search-button {
+    position: relative;
+    left: 20px;
+}
+
+#nutrition1 {
+    padding: 20px;
+    width: 200px;
+}
+
+.dashboardname {
+    height: 50px;
+    border: solid;
+    color: black;
+    border-width: 1px;
+}
+
+.dtitle {
+    padding: 10px;
+    position: relative;
+    left: 15px;
+    bottom: 10px;
+    font-size: 20px;
+}
