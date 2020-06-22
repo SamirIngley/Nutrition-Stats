@@ -17,7 +17,10 @@ $(function(){
             $('#carbs').html(data.carbs.value)
             $('#calories').html(data.calories.value)
         })
-        .catch(error => console.log('ERROR'));
+        .catch(error => {
+            console.log('ERROR');
+            $('#name').html('This item does not exist.')
+        })
         console.log('end api');
 
     })
