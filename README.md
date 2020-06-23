@@ -13,4 +13,4 @@ Note: Not yet in production
 6. Now, click on the extension icon for Nutrition Stats, enter your items, and voila!
 
 
-<img width=750px height=800px src="NutriStatsMVP.png" alt="NutriStatsMVP">
+<img width=720px height=800px src="NutriStatsMVP.png" alt="NutriStatsMVP">
