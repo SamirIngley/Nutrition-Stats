@@ -1,6 +1,8 @@
 # Nutrition Stats
 Chrome Extension that tracks the total Nutrition Value of your shopping cart. 
 
+Technologies used: Spoonacular API
+
 Note: Not yet in production
 ***************************
 
