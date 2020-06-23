@@ -71,7 +71,7 @@
     pointer-events: all;
 }
 
-.search-button {
+#searchButton {
     position: relative;
     left: 20px;
 }

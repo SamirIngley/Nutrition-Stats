@@ -2,9 +2,16 @@
 <html>
     <head>
         <title>Nutrition Stats</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="styles.css">
-        <script defer src="script.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+        <!--popup -->
+        <script defer src="script.js" type="text/javascript"></script>
+        <!-- api -->
+        <script src="../jquery.min.js"></script>
+        <script src="../APIspoon.js"></script>
+        <!-- graph charts -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script> -->
     </head>
     <body>
         <div class="dashboardname">
@@ -12,88 +19,30 @@
         </div>
         <div class="dashboard">
             <div class="cartinput">
-                <input id="nutrition1" placeholder="Enter name of item..">
-                <!-- <button onclick="fn1()" id="btn1">search</button> -->
+                <input type="text" id="searchBox" placeholder="Enter name of item..">
             </div>
-            <!--Search for item pop up-->
-            <button class ="search-button" data-modal-target="#modal">search food item</button>
+            <!-- pop up-->
+            <button type="submit" id="searchButton" data-modal-target="#modal">search food item</button>
             <div class="modal" id="modal">
                 <div class="modal-header">
-                    <div class="title">Food item</div>
+                    <div id="name">Food item</div>
                     <button data-close-button class="close-button">&times;</button>
                 </div>
                 <div class="modal-body">
                     <!-- API data-->
                     <p>
-                        item: <span id="fooditem"></span><br>
-                        nutrients: <span id="nutrient"></span>
+                        <h3>Protein: </h3><p id="protein"></p>
+                        <h3>Fat: </h3><p id="fat"></p>
+                        <h3>Carbs: </h3><p id="carbs"></p>
+                        <h3>Calories:  </h3><p id="calories"></p>
+                        <a href="" id="sourceLink"></a> 
                     </p>
                 </div>
             </div>
         </div>
         <div id="overlay"></div>
 
-        <!--Graphing data-->
-        <canvas id="chart" width="400" height="400"></canvas>
-        <!-- <script>
-            var ctx = document.getElementById('myChart').getContext('2d');
-            var chart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                    datasets: [{
-                        label: '# of Votes',
-                        data: [12, 19, 3, 5, 2, 3],
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                beginAtZero: true
-                            }
-                        }]
-                    }
-                }
-            });
-        </script> -->
-
-        <!--Fetch food data from API-->
-        <script>
-            const api_url="#"
-            async function getISS() {
-                const response = await fetch(api_url);
-                const data = await response.json();
-                const { item, nutrients} = data;
-
-                document.getElementById('fooditem').textContent = item;
-                document.getElementById('nutrient').textContent = nutrients;
-            }
-
-            getISS();
-        </script>
+        <!-- graph data  -->
+        <!-- <canvas id="chart" width="200" height="200"></canvas> -->
     </body>
-
-    <!-- <script type="text/javascript">
-        function fn1() {
-            var str = document.getElementById("nutrition1").value;
-        }
-    </script> -->
 </html>
