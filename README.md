@@ -2,4 +2,4 @@
 
 Coming soon... 
 
-<img width=500px height=800px src="NutriStatsMVP.png" alt="NutriStatsMVP">
+<img width=700px height=800px src="NutriStatsMVP.png" alt="NutriStatsMVP">
