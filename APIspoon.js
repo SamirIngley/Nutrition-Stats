@@ -16,6 +16,7 @@ $(function(){
             $('#fat').html(data.fat.value)
             $('#carbs').html(data.carbs.value)
             $('#calories').html(data.calories.value)
+            $('.modal').addClass("open")
         })
         .catch(error => {
             console.log('ERROR');

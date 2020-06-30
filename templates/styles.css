@@ -3,14 +3,85 @@
     height: 500px;
     border: solid;
     border-width: 1px;
-    color: black;
+    color: rgb(120, 120, 120);
 }
 
-.cartinput {
-   padding: 20px;
+/* input food name  */
+
+.cartinput, #searchBox {
+  font-size: 10px;
+  font-weight: 100;
+  width: 208px;
+  color: rgb(26, 2, 2);
+  padding: 10px;
+  margin: 10px;
+  position: relative;
+  left: -5px;
 }
+
+.cartinput:focus, #searchBox:focus {
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(34, 34, 34, 0.858);
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 1%;
+    border-color: rgb(65, 157, 255);
+    padding: 10px;
+    margin: 10px;
+    outline: none !important;
+}
+
+/* slide down */
 
 .modal {
+    position: relative;
+    top: -3px;
+    border: solid;
+    border-color: black;
+    color: gray;
+    height: 0px;
+    overflow: hidden;
+    transition: 500ms;
+}
+
+.modal.open {
+    height: auto;
+}
+
+.modal-header {
+    border:solid;
+    padding: 5px;
+    height: 30px;
+    font-size: 17px;
+}
+
+#name {
+    position: relative;
+    top: 6px;
+    left: 30px;
+}
+
+.add-button {
+    position: relative;
+    top: 270px;
+    left: 340px;
+    cursor: pointer;
+    font-size: 14px;
+    color: rgb(252, 252, 252);
+    border: none;
+    background-color: rgb(114, 114, 114);
+    padding: 10px;
+    width: 100px;
+    height: 30px;
+}
+
+.modal-body {
+    padding: 17px 16px;
+    font-size: 14px;
+}
+
+/* .modal {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -19,7 +90,7 @@
     border: 1px solid black;
     border-radius: 10px;
     z-index: 10;
-    background-color: white;
+    background-color: rgb(38, 204, 255);
     width: 500px;
     max-width: 80%;
 }
@@ -69,11 +140,21 @@
 #overlay-active {
     opacity: 1;
     pointer-events: all;
-}
+} */
+
+/* search for item */
 
 #searchButton {
     position: relative;
     left: 20px;
+    top: -20px;
+    width: 231px;
+    height: 30px;
+    font-size: 15px;
+    color: rgb(252, 252, 252);
+    border: none;
+    background-color: rgb(99, 99, 99);
+    cursor: pointer;
 }
 
 #nutrition1 {
@@ -81,17 +162,33 @@
     width: 200px;
 }
 
+/* navbar */
 .dashboardname {
     height: 50px;
     border: solid;
-    color: black;
+    color: rgb(94, 91, 91);
     border-width: 1px;
 }
 
-.dtitle {
-    padding: 10px;
+.dashboardname > .dtitle {
+    margin: -1px -1px;
     position: relative;
-    left: 15px;
-    bottom: 10px;
-    font-size: 20px;
+    left: 20px;
+    font-size: 29px;
+    color: rgb(60, 145, 255);
+    font-family: 'Martel', serif;
+}
+
+/* back to home button */
+
+#homebutton {
+    position: relative;
+    left: 445px;
+    top: -40px;
+    color: rgb(252, 252, 252);
+    border: none;
+    background-color: rgb(99, 99, 99);
+    cursor: pointer;
+    width: 45px;
+    height: 30px;
 }
