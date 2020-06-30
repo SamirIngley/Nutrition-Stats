@@ -26,7 +26,10 @@
     "content_scripts": [
         {
             "matches": ["<all_urls>"],
-            "js": ["templates/script.js"],
+            "js": [
+                "templates/script.js",
+                "content.js"
+            ],
             "css": ["templates/styles.css"]
         }
     ]
