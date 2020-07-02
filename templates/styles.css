@@ -192,3 +192,9 @@
     width: 45px;
     height: 30px;
 }
+
+/* sum of all  */
+
+.total {
+    border: solid;
+}
