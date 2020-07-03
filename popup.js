@@ -29,7 +29,7 @@ $(function(){
             }
 
             // if user entered some amount, update new total
-            // Get the id protein which the api gave us
+            // Get the html from protein id, which the api gave us
             var proteinAmount = $('#protein').html();
             console.log('protein of ingredient found: ', proteinAmount);
 
