@@ -5,8 +5,9 @@
 $(function(){
 
     // When the user opens the popup, display the current Total
-    chrome.storage.sync.get('proteinTotal', function(protein){
-        $('#proteinTotal').text(protein.proteinTotal)
+    chrome.storage.sync.get(['proteinLimit', 'proteinTotal'], function(nutrient){
+        $('#proteinTotal').text(nutrient.proteinTotal)
+        $('#proteinLimit').text(nutrient.proteinLimit)
         console.log('running total');
 
     })

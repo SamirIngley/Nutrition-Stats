@@ -5,7 +5,7 @@ $(function(){
     $('#save-limits').click(function(){
 
         // grab value of limit boxes
-        var proteinLimit = $('#protein-limit').val();
+        var proteinLimit = $('#proteinLimit').val();
 
         // if amount is entered 
         if (proteinLimit){
