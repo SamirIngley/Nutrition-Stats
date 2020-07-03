@@ -7,31 +7,43 @@ $(function(){
     // When the user opens the popup, display the current Total
     chrome.storage.sync.get('proteinTotal', function(protein){
         $('#proteinTotal').text(protein.proteinTotal)
+        console.log('running total');
+
     })
 
     //submit button id
     $('#add-button').click(function(){
+        console.log('clicked');
 
         // Get the current total from chrome storage
-        chrome.storage.sync.get('proteinTotal', function(protein){
+        // first param is variable value which we are retreiving, chrome storage expects callback function as second - all chrome APIs are asynchronous
+        chrome.storage.sync.get('proteinTotal', function(nutrient){
             var newProteinTotal = 0;
+            console.log('new total init');
 
-            // if a total exists, we add it to new total
-            if (protein.proteinTotal){
-                newProteinTotal += parseInt(protein.proteinTotal);
+            // if a total exists, we add item to new total
+            if (nutrient.proteinTotal){
+                newProteinTotal += parseInt(nutrient.proteinTotal);
+                console.log('current total: ', newProteinTotal);
+
             }
 
-            // if something was entered, update new total
-            var proteinAmount = $('#item-protein-amount').val;
+            // if user entered some amount, update new total
+            // Get the id protein which the api gave us
+            var proteinAmount = $('#protein').html();
+            console.log('protein of ingredient found: ', proteinAmount);
+
             if (proteinAmount){
                 newProteinTotal += parseInt(proteinAmount);
+                console.log('new Protein Total: ', newProteinTotal);
             }
 
             // Set the new total in the chrome storage
             chrome.storage.sync.set({'proteinTotal':newProteinTotal})
-            
+
             // Update UI - presents new total
             $('#proteinTotal').text(newProteinTotal)
+            console.log('update UI');
 
 
             // if input box, clear it using below
