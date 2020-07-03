@@ -50,5 +50,7 @@ $(function(){
             // if input box, clear it using below
             // $('#item-protein-amount').val('');
         })
+
+        
     })
 });
