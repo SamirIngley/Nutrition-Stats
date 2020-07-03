@@ -9,16 +9,17 @@
 $(function(){
     $('#searchButton').click(function(){
         
-        var queryStr = $('#searchBox').val()
+        var nameQueryStr = $('#searchBox').val()
         console.log(queryStr)
         // queryStr.replace(" ",/%20/g);
-        var queryStr = encodeURI(queryStr)
+        var queryStr = encodeURI(nameQueryStr)
         console.log(queryStr)
 
-        
+        urlquery = "https://api.edamam.com/api/nutrition-data?app_id=adec199b&app_key=20ffecd0c1e546e27733a30af29950f5&ingr="+queryStr
+
         console.log('start api');
 
-        fetch("https://api.edamam.com/api/nutrition-data?app_id=adec199b&app_key=20ffecd0c1e546e27733a30af29950f5&ingr=1%20large%20apple")
+        fetch(urlquery)
         .then(res => res.json())
         .then(data => {
             console.log(data);
@@ -28,7 +29,7 @@ $(function(){
             console.log('Sugar: ', data.totalNutrients.SUGAR.quantity)
             console.log('Fat: ', data.totalNutrients.FAT.quantity)
 
-            // $('#name').html(queryStr)
+            $('#name').html(nameQueryStr)
             $('#protein').html(data.totalNutrients.PROCNT.quantity)
             $('#fat').html(data.totalNutrients.FAT.quantity.toFixed(2))
             $('#sugar').html(data.totalNutrients.SUGAR.quantity.toFixed(2))
