@@ -18,6 +18,20 @@ $(function(){
         .then(res => res.json())
         .then(data => {
             console.log(data);
+            console.log('Calories: ', data.calories)
+            console.log('Protein: ', data.totalNutrients.PROCNT.quantity)
+            console.log('Carbs: ', data.totalNutrients.CHOCDF.quantity)
+            console.log('Sugar: ', data.totalNutrients.SUGAR.quantity)
+            console.log('Fat: ', data.totalNutrients.FAT.quantity)
+
+            // $('#name').html(queryStr)
+            $('#protein').html(data.totalNutrients.PROCNT.quantity)
+            $('#fat').html(data.totalNutrients.FAT.quantity.toFixed(2))
+            $('#sugar').html(data.totalNutrients.SUGAR.quantity.toFixed(2))
+            $('#carbs').html(data.totalNutrients.CHOCDF.quantity.toFixed(2))
+            $('#calories').html(data.calories.toFixed(2))
+            // $('.modal').addClass("open")
+
         })
 
         .catch(error => {
