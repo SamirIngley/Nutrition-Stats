@@ -1,5 +1,7 @@
 
-// This updates the totals when we add an item
+
+// This UPDATES the TOTALS when we add an item
+
 
 // Listening for click event on Submit id: add-button
 $(function(){
@@ -12,12 +14,14 @@ $(function(){
 
     })
 
-    //submit button id
+    // submit button id
     $('#add-button').click(function(){
         console.log('add item clicked');
 
         // Get the current total from chrome storage
         // first param is variable value which we are retreiving, chrome storage expects callback function as second - all chrome APIs are asynchronous
+        
+        
         chrome.storage.sync.get('proteinTotal', function(nutrient){
             var newProteinTotal = 0;
             console.log('new total init');

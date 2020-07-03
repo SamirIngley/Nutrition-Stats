@@ -1,9 +1,6 @@
+// EDAMAM NUTRITION API 
 // DOCS: https://developer.edamam.com/edamam-docs-nutrition-api
 // FOOD TEXT ANALYSIS
-
-// "https://api.edamam.com/api/nutrition-data?app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&ingr=1%20large%20apple"
-
-
 
 
 $(function(){
@@ -30,7 +27,7 @@ $(function(){
             console.log('Fat: ', data.totalNutrients.FAT.quantity)
 
             $('#name').html(nameQueryStr)
-            $('#protein').html(data.totalNutrients.PROCNT.quantity)
+            $('#protein').html(data.totalNutrients.PROCNT.quantity.toFixed(2))
             $('#fat').html(data.totalNutrients.FAT.quantity.toFixed(2))
             $('#sugar').html(data.totalNutrients.SUGAR.quantity.toFixed(2))
             $('#carbs').html(data.totalNutrients.CHOCDF.quantity.toFixed(2))
