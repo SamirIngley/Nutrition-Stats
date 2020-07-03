@@ -14,7 +14,7 @@ $(function(){
 
     //submit button id
     $('#add-button').click(function(){
-        console.log('clicked');
+        console.log('add item clicked');
 
         // Get the current total from chrome storage
         // first param is variable value which we are retreiving, chrome storage expects callback function as second - all chrome APIs are asynchronous
@@ -31,7 +31,8 @@ $(function(){
 
             // if user entered some amount, update new total
             // Get the html from protein id, which the api gave us
-            var proteinAmount = $('#protein').html();
+            // var proteinAmount = $('#protein').html();
+            var proteinAmount = 0.52
             console.log('protein of ingredient found: ', proteinAmount);
 
             if (proteinAmount){

@@ -9,8 +9,12 @@
 $(function(){
     $('#searchButton').click(function(){
         
-        // var queryStr = $('#searchBox').val()
-        // console.log(queryStr)
+        var queryStr = $('#searchBox').val()
+        console.log(queryStr)
+        // queryStr.replace(" ",/%20/g);
+        var queryStr = encodeURI(queryStr)
+        console.log(queryStr)
+
         
         console.log('start api');
 
