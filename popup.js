@@ -1,5 +1,5 @@
 
-// This updates our totals
+// This updates the totals when we add an item
 
 // Listening for click event on Submit id: add-button
 $(function(){
@@ -8,7 +8,6 @@ $(function(){
     chrome.storage.sync.get('proteinTotal', function(protein){
         $('#proteinTotal').text(protein.proteinTotal)
     })
-
 
     //submit button id
     $('#add-button').click(function(){
