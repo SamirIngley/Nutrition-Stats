@@ -50,17 +50,5 @@ $(function(){
     });
 
 
-    // Reset totals, set the totals to 0
-    $('#delete-basket').click(function(){
-
-        chrome.storage.sync.set({'caloriesTotal':0})
-        chrome.storage.sync.set({'carbsTotal':0})
-        chrome.storage.sync.set({'proteinTotal':0})
-        chrome.storage.sync.set({'fatTotal':0})
-        chrome.storage.sync.set({'sugarTotal':0})
-
-        chrome.storage.sync.set({basket: []})
-
-    });
 
 });
