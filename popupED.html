@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Nutrition Stats</title>
+    </head>
+
+    <body>
+      <script src="jquery.min.js"></script>
+      <script src="APIedamam.js"></script>
+      <script src="popup.js"></script>
+
+      <h1>NutriBasket</h1>
+      <p>Right click the icon to access options!</p>
+
+      <p>" quantity size item " </p>
+      <p>" 1 head broccoli "</p>
+      
+      <input type="text" id="searchBox">
+      <br>
+
+      <button type="submit" id="searchButton">Search</button>
+      <button add-item-button id="add-button">Add Item</button>
+
+      <p id="loading"></p>
+
+      <p>Note: if nutrient quantity is less than 1g, it will not be added to total</p>
+
+      <div id="output">
+
+        <h2 id="name"></h2>
+
+        <h3>Calories:  </h3><p id="calories"></p>
+
+        <h3>Carbs: </h3><p id="carbs"></p>
+        
+        <h3>Protein: </h3><p id="protein"></p>
+
+        <h3>Fat: </h3><p id="fat"></p>
+
+        <h3>Sugar:</h3><p id="sugar"></p>
+
+
+        <br>
+        
+        <h3>Total Calories:</h3> <p id="caloriesTotal">0</p>
+        <p>Limit: </p><p id="caloriesLimit"></p>
+
+        <h3>Total Carbs:</h3> <p id="carbsTotal">0</p>
+        <p>Limit: </p><p id="carbsLimit"></p>
+
+        <h3>Total Protein:</h3> <p id="proteinTotal">0</p>
+        <p>Limit: </p><p id="proteinLimit"></p>
+
+        <h3>Total Fat:</h3> <p id="fatTotal">0</p>
+        <p>Limit: </p><p id="fatLimit"></p>
+
+        <h3>Total Sugar:</h3> <p id="sugarTotal">0</p>
+        <p>Limit: </p><p id="sugarLimit"></p>
+
+
+      </div id="graph"> 
+        
+      <div>
+
+      </div>
+
+      <a href="" id="sourceLink"></a>
+
+    </body>
+</html>
+
+
+
+
