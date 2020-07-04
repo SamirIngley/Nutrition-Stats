@@ -59,6 +59,8 @@ $(function(){
         chrome.storage.sync.set({'fatTotal':0})
         chrome.storage.sync.set({'sugarTotal':0})
 
+        chrome.storage.sync.set({basket: []})
+
     });
 
 });

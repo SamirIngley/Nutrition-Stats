@@ -7,7 +7,7 @@
 $(function(){
 
     // When the user opens the popup, display the current Totals and the limits
-    chrome.storage.sync.get(['caloriesLimit', 'caloriesTotal', 'carbsLimit', 'carbsTotal', 'proteinLimit', 'proteinTotal', 'fatLimit', 'fatTotal', 'sugarLimit', 'sugarTotal'], function(nutrient){
+    chrome.storage.sync.get(['caloriesLimit', 'caloriesTotal', 'carbsLimit', 'carbsTotal', 'proteinLimit', 'proteinTotal', 'fatLimit', 'fatTotal', 'sugarLimit', 'sugarTotal', 'basket'], function(nutrient){
         $('#caloriesTotal').text(nutrient.caloriesTotal)
         $('#caloriesLimit').text(nutrient.caloriesLimit)
         console.log('running totals');
@@ -19,6 +19,8 @@ $(function(){
         $('#fatLimit').text(nutrient.fatLimit)
         $('#sugarTotal').text(nutrient.sugarTotal)
         $('#sugarLimit').text(nutrient.sugarLimit)
+            
+        // $('#basket').text(nutrient.basket)
 
         //graph
         var ctx = document.getElementById('graph').getContext('2d');
@@ -65,12 +67,26 @@ $(function(){
                 }
             }
         });
+
+        var arrayLength = nutrient.basket.length;
+        console.log(parseInt(arrayLength)+' items in basket') 
+        $('item-amount').html(parseInt(arrayLength)+' items in basket')
+       
+        if (nutrient.basket){
+            console.log(nutrient.basket);
+            for (var index=0; index<arrayLength; index++){
+                $('#basket').append("<li>" + String(nutrient.basket[index].name) + "</li>")
+                console.log('log ', String(nutrient.basket[index].name))
+            }
+        }
     })
+
+    
+
 
     // submit button id
     $('#add-button').click(function(){
         console.log('add item clicked');
-
         // Get the current total from chrome storage
         // first param is variable value which we are retreiving, chrome storage expects callback function as second - all chrome APIs are asynchronous
         
@@ -80,19 +96,59 @@ $(function(){
         var newFatTotal = 0;
         var newSugarTotal = 0;
 
-        // Updating Basket to display items
-        var name = $('#name').html()
-        var basket = $('#basket').html()
-        if (name){
-            if (name == 'This item does not exist'){
-                console.log('This item cant be added to basket, it dne')
-            } else {
-                // var name_str = name+' '
-                // console.log('ITEM NAME:', name_str)
 
-                $('#basket').append("<li>" + name + "</li>")
+        // ADDING A NEW ITEM -> GET PUSHED TO BASKET ARRAY 
+        // Updating Basket to display items
+
+        // chrome.storage.sync.set({key: value}, function() {
+        //     console.log('Value is set to ' + value);
+        //   });
+        
+
+        chrome.storage.sync.get({basket:[]}, function(item){
+            var name = $('#name').html()
+            // var basket = $('#basket').html()
+            var basket = item.basket;
+            console.log("BASKET ITEMS: ", basket)
+
+            var arrayLength2 = basket.length;
+            console.log(parseInt(arrayLength2)+' items in basket') 
+            $('item-amount').html(parseInt(arrayLength2)+' items in basket')
+       
+
+            // if it's a real name
+            if (name){
+                if (name == 'This item does not exist'){
+                    console.log('This item cant be added to basket, it dne')
+                } else {
+                    // var name_str = name+' '
+                    // console.log('ITEM NAME:', name_str)
+
+                    // chrome.storage.sync.set({'basket':newCaloriesTotal})
+                    basket.push({name: name})
+                    console.log(basket)
+                    chrome.storage.sync.set({basket:basket}, function() {
+                        $('#basket').append("<li>" + name + "</li>")
+                        console.log('Synced to BASKET',item.basket)
+                    })
+                }
             }
-        }
+
+        })
+
+        // Listen to Storage Changes
+        chrome.storage.onChanged.addListener(function(changes, namespace) {
+            for (var key in changes) {
+              var storageChange = changes[key];
+              console.log('Storage key "%s" in namespace "%s" changed. ' +
+                          'Old value was "%s", new value is "%s".',
+                          key,
+                          namespace,
+                          storageChange.oldValue,
+                          storageChange.newValue);
+            }
+          });
+            
 
         // CALORIES
         chrome.storage.sync.get('caloriesTotal', function(nutrient){
