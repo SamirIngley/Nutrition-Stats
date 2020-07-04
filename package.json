@@ -5,6 +5,7 @@
   "main": "jquery.min.js",
   "dependencies": {
     "axios": "^0.19.2",
+    "chart.js": "^2.9.3",
     "dotenv": "^8.2.0",
     "env-var": "^6.2.0"
   },

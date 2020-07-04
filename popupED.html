@@ -1,71 +1,85 @@
 <html>
-    <head>
-        <title>Nutrition Stats</title>
-    </head>
+  <head>
+      <title>Nutrition Stats</title>
+  </head>
 
-    <body>
-      <script src="jquery.min.js"></script>
-      <script src="APIedamam.js"></script>
-      <script src="popup.js"></script>
+  <body>
+    <script src="jquery.min.js"></script>
+    <script src="APIedamam.js"></script>
+    <script src="popup.js"></script>
+    <script src="Chart.bundle.min.js"></script>
 
-      <h1>NutriBasket</h1>
-      <p>Right click the icon to access options!</p>
+    <h1>NutriBasket</h1>
+    <p>* Right click icon to set limits</p>
+    <p>" quantity size item " </p>
+    
+    <input type="text" id="searchBox">
+    <br>
 
-      <p>" quantity size item " </p>
-      <p>" 1 head broccoli "</p>
+    <button type="submit" id="searchButton">Search</button>
+    <button add-item-button id="add-button">Add Item</button>
+
+    <p id="loading"></p>
+
+    <div id="output">
+
+      <h3 id="name"></h3>
+
+
+      <ul>
+        <p>Calories: </p><p id="calories"></p>
+
+        <p>Carbs: </p><p id="carbs"></p>
       
-      <input type="text" id="searchBox">
-      <br>
+        <p>Protein: </p><p id="protein"></p>
+  
+        <p>Fat: </p><p id="fat"></p>
+  
+        <p>Sugar: </p><p id="sugar"></p>
 
-      <button type="submit" id="searchButton">Search</button>
-      <button add-item-button id="add-button">Add Item</button>
-
-      <p id="loading"></p>
-
-      <p>Note: if nutrient quantity is less than 1g, it will not be added to total</p>
-
-      <div id="output">
-
-        <h2 id="name"></h2>
-
-        <h3>Calories:  </h3><p id="calories"></p>
-
-        <h3>Carbs: </h3><p id="carbs"></p>
-        
-        <h3>Protein: </h3><p id="protein"></p>
-
-        <h3>Fat: </h3><p id="fat"></p>
-
-        <h3>Sugar:</h3><p id="sugar"></p>
+      </ul>
+      
 
 
-        <br>
-        
-        <h3>Total Calories:</h3> <p id="caloriesTotal">0</p>
-        <p>Limit: </p><p id="caloriesLimit"></p>
+    <canvas id="graph" width="400" height="400"></canvas>
 
-        <h3>Total Carbs:</h3> <p id="carbsTotal">0</p>
-        <p>Limit: </p><p id="carbsLimit"></p>
-
-        <h3>Total Protein:</h3> <p id="proteinTotal">0</p>
-        <p>Limit: </p><p id="proteinLimit"></p>
-
-        <h3>Total Fat:</h3> <p id="fatTotal">0</p>
-        <p>Limit: </p><p id="fatLimit"></p>
-
-        <h3>Total Sugar:</h3> <p id="sugarTotal">0</p>
-        <p>Limit: </p><p id="sugarLimit"></p>
+    <br>
+    <br>
 
 
-      </div id="graph"> 
-        
-      <div>
+    <h2>Your Basket</h2>
+    <p id="item-amount"></p>
+    <ol id="basket">
 
-      </div>
+    </ol>
 
-      <a href="" id="sourceLink"></a>
+    <br>
+    <input type="submit" id="delete-basket" value="Delete Basket">
 
-    </body>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <h3>Total Calories:</h3> <p id="caloriesTotal">0</p>
+    <p>Limit: </p><p id="caloriesLimit"></p>
+
+    <h3>Total Carbs:</h3> <p id="carbsTotal">0</p>
+    <p>Limit: </p><p id="carbsLimit"></p>
+
+    <h3>Total Protein:</h3> <p id="proteinTotal">0</p>
+    <p>Limit: </p><p id="proteinLimit"></p>
+
+    <h3>Total Fat:</h3> <p id="fatTotal">0</p>
+    <p>Limit: </p><p id="fatLimit"></p>
+
+    <h3>Total Sugar:</h3> <p id="sugarTotal">0</p>
+    <p>Limit: </p><p id="sugarLimit"></p>
+
+
+  </body>
 </html>
 
 

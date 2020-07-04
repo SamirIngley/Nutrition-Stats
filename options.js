@@ -50,16 +50,5 @@ $(function(){
     });
 
 
-    // Reset totals, set the totals to 0
-    $('#reset-totals').click(function(){
-
-        chrome.storage.sync.set({'caloriesTotal':0})
-        chrome.storage.sync.set({'carbsTotal':0})
-        chrome.storage.sync.set({'proteinTotal':0})
-        chrome.storage.sync.set({'fatTotal':0})
-        chrome.storage.sync.set({'sugarTotal':0})
-        console.log('Totals reset: ', caloriesTotal, carbsTotal, proteinTotal, fatTotal, sugarTotal)
-
-    });
 
 });
