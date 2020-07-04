@@ -19,6 +19,54 @@ $(function(){
         $('#fatLimit').text(nutrient.fatLimit)
         $('#sugarTotal').text(nutrient.sugarTotal)
         $('#sugarLimit').text(nutrient.sugarLimit)
+
+        //graph
+        var ctx = document.getElementById('graph').getContext('2d');
+        var caloriesValue = parseInt(nutrient.caloriesTotal)
+        var carbsValue = parseInt(nutrient.carbsTotal)
+        var proteinValue = parseInt(nutrient.proteinTotal)
+        var fatValue = parseInt(nutrient.fatTotal)
+        var sugarValue = parseInt(nutrient.sugarTotal)
+        
+        console.log('Graph values: ', caloriesValue, carbsValue, proteinValue, fatValue, sugarValue)
+
+
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Calories', 'Carbs', 'Protein', 'Fat', 'Sugar', 'Orange'],
+                datasets: [{
+                    label: 'Nutrient Totals',
+                    data: [caloriesValue, carbsValue, proteinValue, fatValue, sugarValue, 1],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
     })
 
     // submit button id
@@ -28,20 +76,24 @@ $(function(){
         // Get the current total from chrome storage
         // first param is variable value which we are retreiving, chrome storage expects callback function as second - all chrome APIs are asynchronous
         
+        var newCaloriesTotal = 0;
+        var newCarbsTotal = 0;
+        var newProteinTotal = 0;
+        var newFatTotal = 0;
+        var newSugarTotal = 0;
 
         // CALORIES
         chrome.storage.sync.get('caloriesTotal', function(nutrient){
-            var newCaloriesTotal = 0;
+            // var newCaloriesTotal = 0;
             console.log('new total init');
 
-            // if a total exists, we add item to new total
+            // if a total exists, we add item to new total which is 0 so far
             if (nutrient.caloriesTotal){
                 newCaloriesTotal += parseInt(nutrient.caloriesTotal);
                 console.log('current total: ', newCaloriesTotal);
 
             }
 
-            // if user entered some amount, update new total
             // Get the html from protein id, which the api gave us
             var caloriesAmount = $('#calories').html(); 
             console.log('calories of ingredient found: ', caloriesAmount);
@@ -53,6 +105,7 @@ $(function(){
 
             // Set the new total in the chrome storage
             chrome.storage.sync.set({'caloriesTotal':newCaloriesTotal})
+            console.log('UPDATED Calories: ', nutrient.caloriesTotal)
 
             // Update UI - presents new total
             $('#caloriesTotal').text(newCaloriesTotal)
@@ -66,7 +119,7 @@ $(function(){
 
         // CARBOHYDRATES
         chrome.storage.sync.get('carbsTotal', function(nutrient){
-            var newCarbsTotal = 0;
+            // var newCarbsTotal = 0;
             console.log('new total init');
 
             // if a total exists, we add item to new total
@@ -101,7 +154,7 @@ $(function(){
 
         // PROTEIN
         chrome.storage.sync.get('proteinTotal', function(nutrient){
-            var newProteinTotal = 0;
+            // var newProteinTotal = 0;
             console.log('new total init');
 
             // if a total exists, we add item to new total
@@ -135,7 +188,7 @@ $(function(){
 
         // FAT
         chrome.storage.sync.get('fatTotal', function(nutrient){
-            var newFatTotal = 0;
+            // var newFatTotal = 0;
             console.log('new total init');
 
             // if a total exists, we add item to new total
@@ -169,7 +222,7 @@ $(function(){
 
         // SUGAR
         chrome.storage.sync.get('sugarTotal', function(nutrient){
-            var newSugarTotal = 0;
+            // var newSugarTotal = 0;
             console.log('new total init');
 
             // if a total exists, we add item to new total
@@ -199,8 +252,65 @@ $(function(){
 
             // if input box, clear it using below
             // $('#item-protein-amount').val('');
+
+
+
+
         })
 
+        // graph
+
+
+        chrome.storage.sync.get(['caloriesTotal','carbsTotal', 'proteinTotal', 'fatTotal', 'sugarTotal'], function(nutrient){
+
+        var ctx = document.getElementById('graph').getContext('2d');
+        var caloriesValue = parseInt(nutrient.caloriesTotal)
+        var carbsValue = parseInt(nutrient.carbsTotal)
+        var proteinValue = parseInt(nutrient.proteinTotal)
+        var fatValue = parseInt(nutrient.fatTotal)
+        var sugarValue = parseInt(nutrient.sugarTotal)
         
-    })
+        console.log('2nd Graph values: ', newCaloriesTotal, newCarbsTotal, newProteinTotal, newFatTotal, newSugarTotal )
+
+
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Calories', 'Carbs', 'Protein', 'Fat', 'Sugar', 'Orange'],
+                datasets: [{
+                    label: 'Nutrient Totals',
+                    data: [newCaloriesTotal, newCarbsTotal, newProteinTotal, newFatTotal, newSugarTotal, 1],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+        
+        })
+    });
 });

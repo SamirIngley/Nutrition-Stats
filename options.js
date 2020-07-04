@@ -58,7 +58,6 @@ $(function(){
         chrome.storage.sync.set({'proteinTotal':0})
         chrome.storage.sync.set({'fatTotal':0})
         chrome.storage.sync.set({'sugarTotal':0})
-        console.log('Totals reset: ', caloriesTotal, carbsTotal, proteinTotal, fatTotal, sugarTotal)
 
     });
 
