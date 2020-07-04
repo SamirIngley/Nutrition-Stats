@@ -51,7 +51,7 @@ $(function(){
 
 
     // Reset totals, set the totals to 0
-    $('#reset-totals').click(function(){
+    $('#delete-basket').click(function(){
 
         chrome.storage.sync.set({'caloriesTotal':0})
         chrome.storage.sync.set({'carbsTotal':0})
