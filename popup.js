@@ -80,6 +80,20 @@ $(function(){
         var newFatTotal = 0;
         var newSugarTotal = 0;
 
+        // Updating Basket to display items
+        var name = $('#name').html()
+        var basket = $('#basket').html()
+        if (name){
+            if (name == 'This item does not exist'){
+                console.log('This item cant be added to basket, it dne')
+            } else {
+                // var name_str = name+' '
+                // console.log('ITEM NAME:', name_str)
+
+                $('#basket').append("<li>" + name + "</li>")
+            }
+        }
+
         // CALORIES
         chrome.storage.sync.get('caloriesTotal', function(nutrient){
             // var newCaloriesTotal = 0;
