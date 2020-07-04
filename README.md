@@ -16,5 +16,5 @@ Note: Not yet in production
 
 *****************************
 
-<img width=720px height=800px src="NutriBasketMVP.png" alt="NutriBasketMVP">
-<img width=720px height=800px src="NutriBasket_graph.png" alt="NutriBasket_graph">
+<img src="NutriBasketMVP.png" alt="NutriBasketMVP">
+<img src="NutriBasket_graph.png" alt="NutriBasket_graph">
