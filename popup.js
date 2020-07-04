@@ -103,7 +103,6 @@ $(function(){
 
             // Set the new total in the chrome storage
             chrome.storage.sync.set({'caloriesTotal':newCaloriesTotal})
-            console.log('UPDATED Calories: ', nutrient.caloriesTotal)
 
             // Update UI - presents new total
             $('#caloriesTotal').text(newCaloriesTotal)
