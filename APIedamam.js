@@ -27,11 +27,11 @@ $(function(){
             console.log('Fat: ', data.totalNutrients.FAT.quantity)
 
             $('#name').html(nameQueryStr)
-            $('#protein').html(data.totalNutrients.PROCNT.quantity.toFixed(2))
-            $('#fat').html(data.totalNutrients.FAT.quantity.toFixed(2))
-            $('#sugar').html(data.totalNutrients.SUGAR.quantity.toFixed(2))
-            $('#carbs').html(data.totalNutrients.CHOCDF.quantity.toFixed(2))
-            $('#calories').html(data.calories.toFixed(2))
+            $('#calories').html(data.calories.toFixed(0))
+            $('#carbs').html(data.totalNutrients.CHOCDF.quantity.toFixed(0))
+            $('#protein').html(data.totalNutrients.PROCNT.quantity.toFixed(0))
+            $('#fat').html(data.totalNutrients.FAT.quantity.toFixed(0))
+            $('#sugar').html(data.totalNutrients.SUGAR.quantity.toFixed(0))
             // $('.modal').addClass("open")
 
         })
