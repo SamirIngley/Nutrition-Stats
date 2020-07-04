@@ -5,12 +5,23 @@
 
 $(function(){
     $('#searchButton').click(function(){
+
+         // loading...
+         var loadingStart="loading."
+         var loadingMiddle="loading.."
+         var loadingEnd="loading..."
+         var empty=""
+ 
+         $('#loading').html(loadingStart)
         
         var nameQueryStr = $('#searchBox').val()
         console.log(queryStr)
         // queryStr.replace(" ",/%20/g);
         var queryStr = encodeURI(nameQueryStr)
         console.log(queryStr)
+
+        $('#loading').html(loadingMiddle)
+
 
         urlquery = "https://api.edamam.com/api/nutrition-data?app_id=adec199b&app_key=20ffecd0c1e546e27733a30af29950f5&ingr="+queryStr
 
@@ -36,10 +47,16 @@ $(function(){
 
         })
 
-        .catch(error => {
-            console.log('ERROR');
-            $('#name').html('This item does not exist.')
-        })
+        $('#loading').html(loadingEnd)
+
+        $('#loading').html(empty)
+
+
+        // .catch(error => {
+        //     console.log('ERROR');
+        //     $('#name').html('This item does not exist.')
+        // })
+
 
         console.log('end api');
 

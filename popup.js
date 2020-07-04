@@ -3,7 +3,7 @@
 // This UPDATES the TOTALS when we add an item
 
 
-// Listening for click event on Submit id: add-button
+// Listening for click event on Submit for adding items id: add-button
 $(function(){
 
     // When the user opens the popup, display the current Totals and the limits
