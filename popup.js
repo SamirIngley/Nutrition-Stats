@@ -331,11 +331,11 @@ $(function(){
         chrome.storage.sync.get(['caloriesTotal','carbsTotal', 'proteinTotal', 'fatTotal', 'sugarTotal'], function(nutrient){
 
         var ctx = document.getElementById('graph').getContext('2d');
-        // var caloriesValue = parseInt(nutrient.caloriesTotal)
-        // var carbsValue = parseInt(nutrient.carbsTotal)
-        // var proteinValue = parseInt(nutrient.proteinTotal)
-        // var fatValue = parseInt(nutrient.fatTotal)
-        // var sugarValue = parseInt(nutrient.sugarTotal)
+        var caloriesValue = parseInt(nutrient.caloriesTotal)
+        var carbsValue = parseInt(nutrient.carbsTotal)
+        var proteinValue = parseInt(nutrient.proteinTotal)
+        var fatValue = parseInt(nutrient.fatTotal)
+        var sugarValue = parseInt(nutrient.sugarTotal)
         
         console.log('2nd Graph values: ', newCaloriesTotal, newCarbsTotal, newProteinTotal, newFatTotal, newSugarTotal )
 
@@ -380,6 +380,8 @@ $(function(){
         
     });
 
+
+
     // Delete Basket button: resets totals, set the totals to 0
     $('#delete-basket').click(function(){
 
@@ -390,6 +392,8 @@ $(function(){
         chrome.storage.sync.set({'sugarTotal':0})
 
         chrome.storage.sync.set({basket: []})
+
+        close();
 
     });
 

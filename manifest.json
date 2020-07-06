@@ -32,5 +32,9 @@
             ],
             "css": ["templates/styles.css"]
         }
-    ]
+    ],
+
+    "options_page" : "options.html"
+
+
 }

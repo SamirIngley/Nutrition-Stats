@@ -43,7 +43,7 @@ $(function(){
             $('#protein').html(data.totalNutrients.PROCNT.quantity.toFixed(0))
             $('#fat').html(data.totalNutrients.FAT.quantity.toFixed(0))
             $('#sugar').html(data.totalNutrients.SUGAR.quantity.toFixed(0))
-            // $('.modal').addClass("open")
+            $('.modal').addClass("open")
 
         })
 

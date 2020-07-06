@@ -1,6 +1,12 @@
 <html>
   <head>
       <title>Nutrition Stats</title>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link rel="stylesheet" href="templates/styles.css">
+      <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Katibeh&family=Martel:wght@900&family=Ultra&display=swap" rel="stylesheet"> 
+      <!-- graph charts -->
+      <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   </head>
 
   <body>
@@ -9,11 +15,57 @@
     <script src="popup.js"></script>
     <script src="Chart.bundle.min.js"></script>
 
-    <h1>NutriBasket</h1>
-    <p>* Right click icon to set limits</p>
-    <p>" quantity size item " </p>
+
+    <div class="dashboardname">
+      <p class= "dtitle">NUTRITION BASKET * Right click icon to set limits  " quantity size item "</p>
+      <button type="submit" id="homebutton">home</button>
+    </div>
+
+    <div class="dashboard">
+        <div class="cartinput">
+            <input type="text" id="searchBox" placeholder="Enter name of item..">
+        </div>
+        <!--individual item info-->
+        <button type="submit" id="searchButton" data-modal-target="#modal">search</button>
+        <div class="modal" id="modal">
+            <div class="modal-body">
+                <div class="modal-header">
+                    <div id="name">Food item</div>
+                    <!--add item and slide back up-->
+                    <button add-item-button class="add-button">add item</button>
+                </div>
+                <!-- API data-->
+                <p>
+                    <canvas id="IndividualChart" width="20" height="20"></canvas>
+                    <h3>Sugar:</h3><p id="sugar"></p>
+                    <h3>Protein: </h3><p id="protein"></p>
+                    <h3>Fat: </h3><p id="fat"></p>
+                    <h3>Carbs: </h3><p id="carbs"></p>
+                    <h3>Calories:  </h3><p id="calories"></p>
+                    <a href="" id="sourceLink"></a> 
+                </p>
+            </div>
+        </div>
+        <!--total for cart-->
+        <div class="total">
+            <div class="modal-header">
+                <div id="name">Total For Your Whole Cart:</div>
+            </div>
+            <p>
+                <canvas id="TotalChart" width="20" height="20"></canvas>
+                <h3>Sugar:</h3><p id="sugar"></p>
+                <h3> Protein: </h3><p id="protein"></p>
+                <h3>Fat: </h3><p id="fat"></p>
+                <h3>Carbs: </h3><p id="carbs"></p>
+                <h3>Calories:  </h3><p id="calories"></p>
+                <a href="" id="sourceLink"></a> 
+            </p>
+        </div>
+    </div>
+
+   
     
-    <input type="text" id="searchBox">
+    <!-- <input type="text" id="searchBox">
     <br>
 
     <button type="submit" id="searchButton">Search</button>
@@ -84,4 +136,4 @@
 
 
 
-
+ -->
