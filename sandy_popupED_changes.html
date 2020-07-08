@@ -1,0 +1,65 @@
+
+    <nav class="navbar">
+        <a class="navbar-brand">NutriBasket</a>
+        <img id= "questions" src="https://img.icons8.com/ios-filled/50/000000/help.png"> 
+        <!-- <p>* Right click icon to set limits</p>
+        <p>" quantity size item " </p> -->
+      </nav>
+      
+      <div class="dashboard">
+        <div class="cartinput">
+            <input type="text" id="searchBox" placeholder="enter quantity size and name..">
+            <button type="submit" id="searchButton" data-modal-target="#modal">search</button>
+        </div>
+        
+        <div class="modal" id="modal">
+            <div id="output">
+                <div class="modal-header">
+                    <div id="name">Food item</div>
+                    <button add-item-button id="add-button">Add Item</button>
+                </div>
+                <div class="facts">
+                    <h3>Sugar:</h3><p id="sugar"></p>
+                    <h3>Protein: </h3><p id="protein"></p>
+                    <h3>Fat: </h3><p id="fat"></p>
+                    <h3>Carbs: </h3><p id="carbs"></p>
+                    <h3>Calories:  </h3><p id="calories"></p>
+                    <a href="" id="sourceLink"></a> 
+                </div>
+            </div>
+        </div>
+  
+      <div class="total">
+          <div class="modal-header-total">
+              <div id="totalname">Total For Your Whole Cart:</div>
+              <div class="graph">
+                <canvas id="graph" width="400" height="400"></canvas>
+              </div>
+          </div>
+          <div class="totalnutris">
+            <div class="totalcalories">
+                <p id="totalname">Total Calories:</p> <p id="caloriesTotal">0</p>
+                <p id="limit">Limit: </p><p id="caloriesLimit"></p>
+            </div>
+            <div class="totalcarbs">
+                <p id="totalname">Total Carbs:</p> <p id="carbsTotal">0</p>
+                <p id="limit">Limit: </p><p id="carbsLimit"></p>
+            </div>
+            <div class="totalprotein">
+                <p id="totalname">Total Protein:"</p> <p id="proteinTotal">0</p>
+                <p id="limit">Limit: </p><p id="proteinLimit"></p>
+            </div>
+            <div class="totalfat">
+                <p id="totalname">Total Fat:</p> <p id="fatTotal">0</p>
+                <p id="limit">Limit: </p><p id="fatLimit"></p>
+            </div>
+            <div class="totalsugar">
+                <p id="totalname">Total Sugar:</p> <p id="sugarTotal">0</p>
+                <p id="limit">Limit: </p><p id="sugarLimit"></p>
+            </div>
+            <div class="deletebasket">
+              <input type="submit" id="delete-basket" value="Delete Basket">
+            </div>
+          </div>
+      </div>
+      </div>
