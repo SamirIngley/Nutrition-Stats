@@ -1,13 +1,28 @@
 .dashboard {
     width: 500px;
-    height: 500px;
-    border: solid;
-    border-width: 1px;
+    height: 160px;
+    /* border: solid; */
+    /* border-width: 1px; */
     color: rgb(120, 120, 120);
 }
 
-/* input food name  */
+/* title */
+.navbar-brand {
+    font-size: 40px;
+    position: relative;
+    left: 20px;
+}
 
+/* instructions hover */
+#questions {
+    height: 32px;
+    width: 32px;
+    position: relative;
+    left: 260px;
+    top: -2px;
+}
+
+/* enter item */
 .cartinput, #searchBox {
   font-size: 10px;
   font-weight: 100;
@@ -16,6 +31,7 @@
   padding: 10px;
   margin: 10px;
   position: relative;
+  top: -3px;
   left: -5px;
 }
 
@@ -32,123 +48,12 @@
     outline: none !important;
 }
 
-/* slide down */
-
-.modal {
-    position: relative;
-    top: -3px;
-    border: solid;
-    border-color: black;
-    color: gray;
-    height: 0px;
-    overflow: hidden;
-    transition: 500ms;
-}
-
-.modal.open {
-    height: auto;
-}
-
-.modal-header {
-    border:solid;
-    padding: 5px;
-    height: 30px;
-    font-size: 17px;
-}
-
-#name {
-    position: relative;
-    top: 6px;
-    left: 30px;
-}
-
-.add-button {
-    position: relative;
-    top: 270px;
-    left: 340px;
-    cursor: pointer;
-    font-size: 14px;
-    color: rgb(252, 252, 252);
-    border: none;
-    background-color: rgb(114, 114, 114);
-    padding: 10px;
-    width: 100px;
-    height: 30px;
-}
-
-.modal-body {
-    padding: 17px 16px;
-    font-size: 14px;
-}
-
-/* .modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    transition: 200ms ease-in-out;
-    border: 1px solid black;
-    border-radius: 10px;
-    z-index: 10;
-    background-color: rgb(38, 204, 255);
-    width: 500px;
-    max-width: 80%;
-}
-
-.modal.active {
-    transform: translate(-50%, -50%) scale(1);
-}
-
-.modal-header {
-    padding: 10px 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid black;
-}
-
-.modal-header .title {
-    font-size: 1.25rem;
-    font-weight: bold;
-}
-
-.modal-header .close-button {
-    cursor: pointer;
-    border: none;
-    outline: none;
-    background: none;
-    font-size: 1.25rem;
-    font-weight: bold;
-}
-
-.modal-body {
-    padding: 10px 15px;
-}
-
-#overlay {
-  position: fixed;
-  opacity: 0;
-  transition: 200ms ease-in-out;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, .5);
-  pointer-events: none;
-}
-
-#overlay-active {
-    opacity: 1;
-    pointer-events: all;
-} */
-
 /* search for item */
-
 #searchButton {
     position: relative;
-    left: 20px;
-    top: -20px;
-    width: 231px;
+    left: 5px;
+    top: 2px;
+    width: 210px;
     height: 30px;
     font-size: 15px;
     color: rgb(252, 252, 252);
@@ -157,44 +62,153 @@
     cursor: pointer;
 }
 
-#nutrition1 {
-    padding: 20px;
-    width: 200px;
+/* item is searched + slide down*/
+.modal {
+    position: relative;
+    top: -11px;
+    /* border: solid; */
+    border-color: gray;
+    color: gray;
+    height: 0px;
+    overflow: hidden;
+    transition: 500ms;
 }
 
-/* navbar */
-.dashboardname {
-    height: 50px;
+.modal.open {
+    height: auto;
     border: solid;
-    color: rgb(94, 91, 91);
-    border-width: 1px;
+    border-color: gray;
 }
 
-.dashboardname > .dtitle {
-    margin: -1px -1px;
+.modal-header {
+    border:solid;
+    padding: 5px;
+    height: 25px;
+    font-size: 17px;
+}
+
+#name {
+    position: relative;
+    top: 1px;
+    left: 20px;
+}
+
+#add-button {
+    position: relative;
+    top: -22px;
+    left: 387px;
+    cursor: pointer;
+    font-size: 10px;
+    color: rgb(252, 252, 252);
+    border: none;
+    background-color: rgb(114, 114, 114);
+    padding: 10px;
+    width: 90px;
+    height: 26px;
+}
+
+.modal-body {
+    font-size: 15px;
+}
+
+.facts {
+    display: flex;
+    flex-direction: row;
     position: relative;
     left: 20px;
-    font-size: 29px;
-    color: rgb(60, 145, 255);
-    font-family: 'Martel', serif;
 }
 
-/* back to home button */
+h3 {
+    padding: 10px;
+}
 
-#homebutton {
+p {
     position: relative;
-    left: 445px;
-    top: -40px;
+    top: 13px;
+}
+
+/* total for basket */
+
+.modal-header-total {
+    position: relative;
+    top: 22px;
+}
+
+#totalname {
+    font-size: 19px;
+}
+
+.deletebasket {
+    position: relative;
+    left: 360px;
+    top: -15px;
+}
+
+#delete-basket {
+    width: 110px;
+    height: 30px;
+    font-size: 12px;
     color: rgb(252, 252, 252);
     border: none;
     background-color: rgb(99, 99, 99);
     cursor: pointer;
-    width: 45px;
-    height: 30px;
 }
 
-/* sum of all  */
+.graph {
+    position: relative;
+    left: 1px;
+    top: 30px;
+}
 
-.total {
-    border: solid;
+.totalnutris {
+    position: relative;
+    top: 50px;
+    left: 20px;
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+    height: 200px;
+}
+
+.totalcalories {
+    /* border: solid; */
+    border-color: gray;
+    padding: 20px;
+}
+
+.totalcarbs {
+    /* border: solid; */
+    border-color: gray;
+    padding: 20px;
+}
+
+.totalprotein {
+    /* border: solid; */
+    border-color: gray;
+    padding: 20px;
+}
+
+.totalfat {
+    /* border: solid; */
+    border-color: gray;
+    padding: 20px;
+}
+
+.totalsugar {
+    /* border: solid; */
+    border-color: gray;
+    padding: 20px;
+}
+
+#totalname {
+    font-size: 15px;
+    position: relative;
+    left: 3px;
+
+}
+
+#limit {
+    font-size: 11px;
+    position: relative;
+    left: 3px;
 }
