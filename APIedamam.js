@@ -42,7 +42,20 @@ $(function(){
             $('#carbs').html(data.totalNutrients.CHOCDF.quantity.toFixed(0))
             $('#protein').html(data.totalNutrients.PROCNT.quantity.toFixed(0))
             $('#fat').html(data.totalNutrients.FAT.quantity.toFixed(0))
+            $('#saturated').html(data.totalNutrients.FASAT.quantity.toFixed(0))
+
             $('#sugar').html(data.totalNutrients.SUGAR.quantity.toFixed(0))
+            $('#calcium').html(data.totalNutrients.CA.quantity.toFixed(0))
+
+            $('#iron').html(data.totalNutrients.FE.quantity.toFixed(0))
+            $('#fiber').html(data.totalNutrients.FIBTG.quantity.toFixed(0))
+            $('#potassium').html(data.totalNutrients.K.quantity.toFixed(0))
+
+            $('#magnesium').html(data.totalNutrients.MG.quantity.toFixed(0))
+            $('#sodium').html(data.totalNutrients.NA.quantity.toFixed(0))
+            $('#vitD').html(data.totalNutrients.VITD.quantity.toFixed(0))
+
+
             // $('.modal').addClass("open")
 
         })

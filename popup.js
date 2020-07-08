@@ -7,7 +7,7 @@
 $(function(){
 
     // When the user opens the popup, display the current Totals and the limits
-    chrome.storage.sync.get(['caloriesLimit', 'caloriesTotal', 'carbsLimit', 'carbsTotal', 'proteinLimit', 'proteinTotal', 'fatLimit', 'fatTotal', 'sugarLimit', 'sugarTotal', 'basket'], function(nutrient){
+    chrome.storage.sync.get(['caloriesLimit', 'caloriesTotal', 'carbsLimit', 'carbsTotal', 'proteinLimit', 'proteinTotal', 'fatLimit', 'fatTotal', 'sugarLimit', 'sugarTotal', 'saturatedTotal', 'saturatedLimit', 'calciumTotal', 'calciumLimit', 'ironTotal', 'ironLimit', 'fiberTotal', 'fiberLimit', 'potassiumTotal', 'potassiumLimit', 'magnesiumTotal', 'magnesiumLimit','magnesium', 'sodiumTotal', 'sodiumLimit', 'vitdTotal', 'vitdLimit', 'basket'], function(nutrient){
         $('#caloriesTotal').text(nutrient.caloriesTotal)
         $('#caloriesLimit').text(nutrient.caloriesLimit)
         console.log('running totals');
@@ -19,6 +19,25 @@ $(function(){
         $('#fatLimit').text(nutrient.fatLimit)
         $('#sugarTotal').text(nutrient.sugarTotal)
         $('#sugarLimit').text(nutrient.sugarLimit)
+
+        $('#saturatedTotal').text(nutrient.saturatedTotal)
+        $('#saturatedLimit').text(nutrient.saturatedLimit)
+        $('#calciumTotal').text(nutrient.calciumTotal)
+        $('#calciumLimit').text(nutrient.calciumLimit)
+        $('#potassiumTotal').text(nutrient.potassiumTotal)
+        $('#potassiumLimit').text(nutrient.potassiumLimit)
+        $('#magnesiumTotal').text(nutrient.magnesiumTotal)
+        $('#magnesiumLimit').text(nutrient.magnesiumLimit)
+        $('#ironTotal').text(nutrient.ironTotal)
+        $('#ironLimit').text(nutrient.ironLimit)
+        $('#fiberTotal').text(nutrient.fiberTotal)
+        $('#fiberLimit').text(nutrient.fiberLimit)
+        $('#sodiumTotal').text(nutrient.sodiumTotal)
+        $('#sodiumLimit').text(nutrient.sodiumLimit)
+        $('#vitdTotal').text(nutrient.vitdTotal)
+        $('#vitdLimit').text(nutrient.vitdLimit)
+
+
             
         // $('#basket').text(nutrient.basket)
 
@@ -29,6 +48,17 @@ $(function(){
         var proteinValue = parseInt(nutrient.proteinTotal)
         var fatValue = parseInt(nutrient.fatTotal)
         var sugarValue = parseInt(nutrient.sugarTotal)
+
+        var saturatedValue = parseInt(nutrient.saturatedTotal)
+        var calciumValue = parseInt(nutrient.calciumTotal)
+        var potassiumValue = parseInt(nutrient.potassiumTotal)
+        var magnesiumValue = parseInt(nutrient.magnesiumTotal)
+        var ironValue = parseInt(nutrient.ironTotal)
+        var fiberValue = parseInt(nutrient.fiberTotal)
+        var sodiumValue = parseInt(nutrient.sodiumTotal)
+        var vitdValue = parseInt(nutrient.vitdTotal)
+       
+
         
         console.log('Graph values: ', caloriesValue, carbsValue, proteinValue, fatValue, sugarValue)
 
@@ -36,23 +66,46 @@ $(function(){
         var myChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['Calories', 'Carbs', 'Protein', 'Fat', 'Sugar'],
+                labels: ['Calories', 'Carbs', 'Protein', 'Fat', 'Saturated', 'Sugar', 'Calcium', 'Potassium', 'Magnesium', 'Iron', 'Fiber', 'Sodium', 'Vit D'],
                 datasets: [{
                     label: 'Nutrient Totals',
-                    data: [caloriesValue, carbsValue, proteinValue, fatValue, sugarValue],
+                    data: [caloriesValue, carbsValue, proteinValue, fatValue, saturatedValue, sugarValue, calciumValue, potassiumValue, magnesiumValue, ironValue, fiberValue, sodiumValue, vitdValue],
                     backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)'
+                        'rgba(255, 99, 132, 0.2)', // calories red
+                        'rgba(54, 162, 235, 0.2)', // carbs blue
+                        'rgba(255, 206, 86, 0.2)', // protein yellow
+                        'rgba(75, 192, 192, 0.2)', // fat green
+                        'rgba(153, 102, 255, 0.2)', // saturated purp
+
+                        'rgba(255, 102, 102, 0.2)', // sugar light red
+                        'rgba(51, 51, 255, 0.2)', // calcium darker blue
+                        'rgba(255, 153, 51, 0.2)', // potassium orange
+                        'rgba(51, 255, 153, 0.2)', // magnesium light green
+                        'rgba(160, 160, 160, 0.2)', // iron gray
+                        'rgba(0, 255, 255, 0.2)', // fiber light blue
+                        'rgba(255, 102, 178, 0.2)', // sodium pink
+                        'rgba(255, 255, 102, 0.2)' // vitd light yellow
+
+
                     ],
                     borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)'
+                        'rgba(255, 99, 132, 1)', // calories red
+                        'rgba(54, 162, 235, 1)', // carbs blue
+                        'rgba(255, 206, 86, 1)', // protein yellow
+                        'rgba(75, 192, 192, 1)', // fat green
+                        'rgba(153, 102, 255, 1)', // saturated purp
+
+                        'rgba(255, 102, 102, 1)', // sugar light red
+                        'rgba(51, 51, 255, 1)', // calcium darker blue
+                        'rgba(255, 153, 51, 1)', // potassium orange
+                        'rgba(51, 255, 153, 1)', // magnesium light green
+                        'rgba(160, 160, 160, 1)', // iron gray
+                        'rgba(0, 255, 255, 1)', // fiber light blue
+                        'rgba(255, 102, 178, 1)', // sodium pink
+                        'rgba(255, 255, 102, 1)' // vitd light yellow
+
+
+
                     ],
                     borderWidth: 1
                 }]
@@ -95,6 +148,17 @@ $(function(){
         var newProteinTotal = 0;
         var newFatTotal = 0;
         var newSugarTotal = 0;
+
+        var newSaturatedTotal = 0;
+        var newCalciumTotal = 0;
+        var newPotassiumTotal = 0;
+        var newMagnesiumTotal = 0;
+        var newIronTotal = 0;
+        var newFiberTotal = 0;
+        var newSodiumTotal = 0;
+        var newVitdTotal = 0;
+
+
 
 
         // ADDING A NEW ITEM -> GET PUSHED TO BASKET ARRAY 
@@ -319,23 +383,295 @@ $(function(){
 
             // if input box, clear it using below
             // $('#item-protein-amount').val('');
-
-
-
-
         })
+
+        // SATURATED
+        chrome.storage.sync.get('saturatedTotal', function(nutrient){
+            // var newsaturatedTotal = 0;
+            console.log('new total init');
+
+            // if a total exists, we add item to new total which is 0 so far
+            if (nutrient.saturatedTotal){
+                newSaturatedTotal += parseInt(nutrient.saturatedTotal);
+                console.log('current total: ', newSaturatedTotal);
+
+            }
+
+            // Get the html from protein id, which the api gave us
+            var saturatedAmount = $('#saturated').html(); 
+            console.log('saturated of ingredient found: ', saturatedAmount);
+
+            if (saturatedAmount){
+                newSaturatedTotal += parseInt(saturatedAmount);
+                console.log('new saturated Total: ', newSaturatedTotal);
+            }
+
+            // Set the new total in the chrome storage
+            chrome.storage.sync.set({'saturatedTotal':newSaturatedTotal})
+
+            // Update UI - presents new total
+            $('#saturatedTotal').text(newSaturatedTotal)
+            console.log('update UI');
+
+
+            // if input box, clear it using below
+            // $('#item-protein-amount').val('');
+        })
+
+        // CALCIUM
+        chrome.storage.sync.get('calciumTotal', function(nutrient){
+            // var newcalciumTotal = 0;
+            console.log('new total init');
+
+            // if a total exists, we add item to new total which is 0 so far
+            if (nutrient.calciumTotal){
+                newCalciumTotal += parseInt(nutrient.calciumTotal);
+                console.log('current total: ', newCalciumTotal);
+
+            }
+
+            // Get the html from protein id, which the api gave us
+            var calciumAmount = $('#calcium').html(); 
+            console.log('calcium of ingredient found: ', calciumAmount);
+
+            if (calciumAmount){
+                newCalciumTotal += parseInt(calciumAmount);
+                console.log('new calcium Total: ', newCalciumTotal);
+            }
+
+            // Set the new total in the chrome storage
+            chrome.storage.sync.set({'calciumTotal':newCalciumTotal})
+
+            // Update UI - presents new total
+            $('#calciumTotal').text(newCalciumTotal)
+            console.log('update UI');
+
+
+            // if input box, clear it using below
+            // $('#item-protein-amount').val('');
+        })
+
+        // POTASSIUM
+        chrome.storage.sync.get('potassiumTotal', function(nutrient){
+            // var newpotassiumTotal = 0;
+            console.log('new total init');
+
+            // if a total exists, we add item to new total which is 0 so far
+            if (nutrient.potassiumTotal){
+                newPotassiumTotal += parseInt(nutrient.potassiumTotal);
+                console.log('current total: ', newPotassiumTotal);
+
+            }
+
+            // Get the html from protein id, which the api gave us
+            var potassiumAmount = $('#potassium').html(); 
+            console.log('potassium of ingredient found: ', potassiumAmount);
+
+            if (potassiumAmount){
+                newPotassiumTotal += parseInt(potassiumAmount);
+                console.log('new potassium Total: ', newPotassiumTotal);
+            }
+
+            // Set the new total in the chrome storage
+            chrome.storage.sync.set({'potassiumTotal':newPotassiumTotal})
+
+            // Update UI - presents new total
+            $('#potassiumTotal').text(newPotassiumTotal)
+            console.log('update UI');
+
+
+            // if input box, clear it using below
+            // $('#item-protein-amount').val('');
+        })
+
+
+        // MAGNESIUM
+        chrome.storage.sync.get('MagnesiumTotal', function(nutrient){
+            // var newmagnesiumTotal = 0;
+            console.log('new total init');
+
+            // if a total exists, we add item to new total which is 0 so far
+            if (nutrient.magnesiumTotal){
+                newMagnesiumTotal += parseInt(nutrient.magnesiumTotal);
+                console.log('current total: ', newMagnesiumTotal);
+
+            }
+
+            // Get the html from protein id, which the api gave us
+            var magnesiumAmount = $('#magnesium').html(); 
+            console.log('magnesium of ingredient found: ', magnesiumAmount);
+
+            if (magnesiumAmount){
+                newMagnesiumTotal += parseInt(magnesiumAmount);
+                console.log('new magnesium Total: ', newMagnesiumTotal);
+            }
+
+            // Set the new total in the chrome storage
+            chrome.storage.sync.set({'magnesiumTotal':newMagnesiumTotal})
+
+            // Update UI - presents new total
+            $('#magnesiumTotal').text(newMagnesiumTotal)
+            console.log('update UI');
+
+
+            // if input box, clear it using below
+            // $('#item-protein-amount').val('');
+        })
+
+                
+        // IRON
+        chrome.storage.sync.get('ironTotal', function(nutrient){
+            // var newironTotal = 0;
+            console.log('new total init');
+
+            // if a total exists, we add item to new total which is 0 so far
+            if (nutrient.ironTotal){
+                newIronTotal += parseInt(nutrient.ironTotal);
+                console.log('current total: ', newIronTotal);
+
+            }
+
+            // Get the html from protein id, which the api gave us
+            var ironAmount = $('#iron').html(); 
+            console.log('iron of ingredient found: ', ironAmount);
+
+            if (ironAmount){
+                newIronTotal += parseInt(ironAmount);
+                console.log('new iron Total: ', newIronTotal);
+            }
+
+            // Set the new total in the chrome storage
+            chrome.storage.sync.set({'ironTotal':newIronTotal})
+
+            // Update UI - presents new total
+            $('#ironTotal').text(newIronTotal)
+            console.log('update UI');
+
+
+            // if input box, clear it using below
+            // $('#item-protein-amount').val('');
+        })
+
+
+        // FIBER
+        chrome.storage.sync.get('fiberTotal', function(nutrient){
+            // var newfiberTotal = 0;
+            console.log('new total init');
+
+            // if a total exists, we add item to new total which is 0 so far
+            if (nutrient.fiberTotal){
+                newFiberTotal += parseInt(nutrient.fiberTotal);
+                console.log('current total: ', newFiberTotal);
+
+            }
+
+            // Get the html from protein id, which the api gave us
+            var fiberAmount = $('#fiber').html(); 
+            console.log('fiber of ingredient found: ', fiberAmount);
+
+            if (fiberAmount){
+                newFiberTotal += parseInt(fiberAmount);
+                console.log('new fiber Total: ', newFiberTotal);
+            }
+
+            // Set the new total in the chrome storage
+            chrome.storage.sync.set({'fiberTotal':newFiberTotal})
+
+            // Update UI - presents new total
+            $('#fiberTotal').text(newFiberTotal)
+            console.log('update UI');
+
+
+            // if input box, clear it using below
+            // $('#item-protein-amount').val('');
+        })
+
+        // SODIUM
+        chrome.storage.sync.get('sodiumTotal', function(nutrient){
+            // var newsodiumTotal = 0;
+            console.log('new total init');
+
+            // if a total exists, we add item to new total which is 0 so far
+            if (nutrient.sodiumTotal){
+                newSodiumTotal += parseInt(nutrient.sodiumTotal);
+                console.log('current total: ', newSodiumTotal);
+
+            }
+
+            // Get the html from protein id, which the api gave us
+            var sodiumAmount = $('#sodium').html(); 
+            console.log('sodium of ingredient found: ', sodiumAmount);
+
+            if (sodiumAmount){
+                newSodiumTotal += parseInt(sodiumAmount);
+                console.log('new sodium Total: ', newSodiumTotal);
+            }
+
+            // Set the new total in the chrome storage
+            chrome.storage.sync.set({'sodiumTotal':newSodiumTotal})
+
+            // Update UI - presents new total
+            $('#sodiumTotal').text(newSodiumTotal)
+            console.log('update UI');
+
+
+            // if input box, clear it using below
+            // $('#item-protein-amount').val('');
+        })
+
+
+        // VITAMIN D
+        chrome.storage.sync.get('vitdTotal', function(nutrient){
+            // var newvitdTotal = 0;
+            console.log('new total init');
+
+            // if a total exists, we add item to new total which is 0 so far
+            if (nutrient.vitdTotal){
+                newVitdTotal += parseInt(nutrient.vitdTotal);
+                console.log('current total: ', newVitdTotal);
+
+            }
+
+            // Get the html from protein id, which the api gave us
+            var vitdAmount = $('#vitd').html(); 
+            console.log('vitd of ingredient found: ', vitdAmount);
+
+            if (vitdAmount){
+                newVitdTotal += parseInt(vitdAmount);
+                console.log('new vitd Total: ', newVitdTotal);
+            }
+
+            // Set the new total in the chrome storage
+            chrome.storage.sync.set({'vitdTotal':newVitdTotal})
+
+            // Update UI - presents new total
+            $('#vitdTotal').text(newVitdTotal)
+            console.log('update UI');
+
+
+            // if input box, clear it using below
+            // $('#item-protein-amount').val('');
+        })
+
+
+
+
+
+
+
+
 
         // graph
 
 
-        chrome.storage.sync.get(['caloriesTotal','carbsTotal', 'proteinTotal', 'fatTotal', 'sugarTotal'], function(nutrient){
+        chrome.storage.sync.get(['caloriesTotal', 'carbsTotal', 'proteinTotal', 'fatTotal', 'sugarTotal', 'saturatedTotal', 'calciumTotal', 'ironTotal', 'fiberTotal', 'potassiumTotal', 'magnesiumTotal', 'magnesium', 'sodiumTotal', 'vitdTotal', 'basket'], function(nutrient){
 
         var ctx = document.getElementById('graph').getContext('2d');
-        var caloriesValue = parseInt(nutrient.caloriesTotal)
-        var carbsValue = parseInt(nutrient.carbsTotal)
-        var proteinValue = parseInt(nutrient.proteinTotal)
-        var fatValue = parseInt(nutrient.fatTotal)
-        var sugarValue = parseInt(nutrient.sugarTotal)
+        // var caloriesValue = parseInt(nutrient.caloriesTotal)
+        // var carbsValue = parseInt(nutrient.carbsTotal)
+        // var proteinValue = parseInt(nutrient.proteinTotal)
+        // var fatValue = parseInt(nutrient.fatTotal)
+        // var sugarValue = parseInt(nutrient.sugarTotal)
         
         console.log('2nd Graph values: ', newCaloriesTotal, newCarbsTotal, newProteinTotal, newFatTotal, newSugarTotal )
 
@@ -343,23 +679,44 @@ $(function(){
         var myChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['Calories', 'Carbs', 'Protein', 'Fat', 'Sugar'],
+                labels: ['Calories', 'Carbs', 'Protein', 'Fat', 'Saturated', 'Sugar', 'test', 'test', 'test', 'test', 'test', 'test'],
                 datasets: [{
-                    label: 'Nutrient Totals',
-                    data: [newCaloriesTotal, newCarbsTotal, newProteinTotal, newFatTotal, newSugarTotal],
+                    labels: ['Calories', 'Carbs', 'Protein', 'Fat', 'Saturated', 'Sugar', 'Calcium', 'Potassium', 'Magnesium', 'Iron', 'Fiber', 'Sodium', 'Vit D'],
+                    data: [newCaloriesTotal, newCarbsTotal, newProteinTotal, newFatTotal, newSaturatedTotal, newSugarTotal, newCalciumTotal, newPotassiumTotal, newMagnesiumTotal, newIronTotal, newFiberTotal, newSodiumTotal, newVitdTotal],
                     backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)'
+                        'rgba(255, 99, 132, 0.2)', // calories red
+                        'rgba(54, 162, 235, 0.2)', // carbs blue
+                        'rgba(255, 206, 86, 0.2)', // protein yellow
+                        'rgba(75, 192, 192, 0.2)', // fat green
+                        'rgba(153, 102, 255, 0.2)', // saturated purp
+
+                        'rgba(255, 102, 102, 0.2)', // sugar light red
+                        'rgba(51, 51, 255, 0.2)', // calcium darker blue
+                        'rgba(255, 153, 51, 0.2)', // potassium orange
+                        'rgba(51, 255, 153, 0.2)', // magnesium light green
+                        'rgba(160, 160, 160, 0.2)', // iron gray
+                        'rgba(0, 255, 255, 0.2)', // fiber light blue
+                        'rgba(255, 102, 178, 0.2)', // sodium pink
+                        'rgba(255, 255, 102, 0.2)' // vitd light yellow
+
+
                     ],
                     borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)'
+                        'rgba(255, 99, 132, 1)', // calories red
+                        'rgba(54, 162, 235, 1)', // carbs blue
+                        'rgba(255, 206, 86, 1)', // protein yellow
+                        'rgba(75, 192, 192, 1)', // fat green
+                        'rgba(153, 102, 255, 1)', // saturated purp
+
+                        'rgba(255, 102, 102, 1)', // sugar light red
+                        'rgba(51, 51, 255, 1)', // calcium darker blue
+                        'rgba(255, 153, 51, 1)', // potassium orange
+                        'rgba(51, 255, 153, 1)', // magnesium light green
+                        'rgba(160, 160, 160, 1)', // iron gray
+                        'rgba(0, 255, 255, 1)', // fiber light blue
+                        'rgba(255, 102, 178, 1)', // sodium pink
+                        'rgba(255, 255, 102, 1)' // vitd light yellow
+
                     ],
                     borderWidth: 1
                 }]
@@ -390,6 +747,14 @@ $(function(){
         chrome.storage.sync.set({'proteinTotal':0})
         chrome.storage.sync.set({'fatTotal':0})
         chrome.storage.sync.set({'sugarTotal':0})
+        chrome.storage.sync.set({'saturatedTotal':0})
+        chrome.storage.sync.set({'calciumTotal':0})
+        chrome.storage.sync.set({'potassiumTotal':0})
+        chrome.storage.sync.set({'magnesiumTotal':0})
+        chrome.storage.sync.set({'ironTotal':0})
+        chrome.storage.sync.set({'fiberTotal':0})
+        chrome.storage.sync.set({'sodiumTotal':0})
+        chrome.storage.sync.set({'vitdTotal':0})
 
         chrome.storage.sync.set({basket: []})
 
