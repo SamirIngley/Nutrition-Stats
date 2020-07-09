@@ -123,13 +123,13 @@ $(function(){
 
         var arrayLength = nutrient.basket.length;
         console.log(parseInt(arrayLength)+' items in basket') 
-        $('item-amount').html(parseInt(arrayLength)+' items in basket')
+        $('#item-amount').html(parseInt(arrayLength)+' items in basket')
        
         if (nutrient.basket){
             console.log(nutrient.basket);
             for (var index=0; index<arrayLength; index++){
                 $('#basket').append("<li>" + String(nutrient.basket[index].name) + "</li>")
-                console.log('log ', String(nutrient.basket[index].name))
+                console.log('BASKET sync ', String(nutrient.basket[index].name))
             }
         }
     })
@@ -170,15 +170,18 @@ $(function(){
         
 
         chrome.storage.sync.get({basket:[]}, function(item){
+
+            // number of items in basket
+            // var arrayLength = nutrient.basket.length;
+            // console.log(parseInt(arrayLength)+' items in basket') 
+            // $('#item-amount').html(parseInt(arrayLength)+' items in basket')
+
+            // basket items
             var name = $('#name').html()
             // var basket = $('#basket').html()
             var basket = item.basket;
             console.log("BASKET ITEMS: ", basket)
-
-            var arrayLength2 = basket.length;
-            console.log(parseInt(arrayLength2)+' items in basket') 
-            $('item-amount').html(parseInt(arrayLength2)+' items in basket')
-       
+    
 
             // if it's a real name
             if (name){
@@ -195,6 +198,10 @@ $(function(){
                         $('#basket').append("<li>" + name + "</li>")
                         console.log('Synced to BASKET',item.basket)
                     })
+                    // update item-amount
+                    var arrayLength = item.basket.length;
+                    console.log(parseInt(arrayLength)+' items in basket') 
+                    $('#item-amount').html(parseInt(arrayLength)+' items in basket')
                 }
             }
 
