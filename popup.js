@@ -50,13 +50,13 @@ $(function(){
         var sugarValue = parseInt(nutrient.sugarTotal)
 
         var saturatedValue = parseInt(nutrient.saturatedTotal)
-        var calciumValue = parseInt(nutrient.calciumTotal)
-        var potassiumValue = parseInt(nutrient.potassiumTotal)
-        var magnesiumValue = parseInt(nutrient.magnesiumTotal)
-        var ironValue = parseInt(nutrient.ironTotal)
+        var calciumValue = parseInt(nutrient.calciumTotal)/1000
+        var potassiumValue = parseInt(nutrient.potassiumTotal)/1000
+        var magnesiumValue = parseInt(nutrient.magnesiumTotal)/1000
+        var ironValue = parseInt(nutrient.ironTotal)/1000
         var fiberValue = parseInt(nutrient.fiberTotal)
-        var sodiumValue = parseInt(nutrient.sodiumTotal)
-        var vitdValue = parseInt(nutrient.vitdTotal)
+        var sodiumValue = parseInt(nutrient.sodiumTotal)/1000
+        var vitdValue = parseInt(nutrient.vitdTotal)*0.025
        
 
         
@@ -66,12 +66,12 @@ $(function(){
         var myChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['Calories', 'Carbs', 'Protein', 'Fat', 'Saturated', 'Sugar', 'Calcium', 'Potassium', 'Magnesium', 'Iron', 'Fiber', 'Sodium', 'Vit D'],
+                labels: ['Carbs', 'Protein', 'Fat', 'Saturated', 'Sugar', 'Calcium', 'Potassium', 'Magnesium', 'Iron', 'Fiber', 'Sodium', 'Vit D'],
                 datasets: [{
                     label: 'Nutrient Totals',
-                    data: [caloriesValue, carbsValue, proteinValue, fatValue, saturatedValue, sugarValue, calciumValue, potassiumValue, magnesiumValue, ironValue, fiberValue, sodiumValue, vitdValue],
+                    data: [carbsValue, proteinValue, fatValue, saturatedValue, sugarValue, calciumValue, potassiumValue, magnesiumValue, ironValue, fiberValue, sodiumValue, vitdValue],
                     backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)', // calories red
+                        // 'rgba(255, 99, 132, 0.2)', // calories red
                         'rgba(54, 162, 235, 0.2)', // carbs blue
                         'rgba(255, 206, 86, 0.2)', // protein yellow
                         'rgba(75, 192, 192, 0.2)', // fat green
@@ -89,7 +89,7 @@ $(function(){
 
                     ],
                     borderColor: [
-                        'rgba(255, 99, 132, 1)', // calories red
+                        // 'rgba(255, 99, 132, 1)', // calories red
                         'rgba(54, 162, 235, 1)', // carbs blue
                         'rgba(255, 206, 86, 1)', // protein yellow
                         'rgba(75, 192, 192, 1)', // fat green
@@ -679,12 +679,11 @@ $(function(){
         var myChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['Calories', 'Carbs', 'Protein', 'Fat', 'Saturated', 'Sugar', 'test', 'test', 'test', 'test', 'test', 'test'],
+                labels: ['Carbs', 'Protein', 'Fat', 'Saturated', 'Sugar', 'Calcium', 'Potassium', 'Magnesium', 'Iron', 'Fiber', 'Sodium', 'Vit D'],
                 datasets: [{
-                    labels: ['Calories', 'Carbs', 'Protein', 'Fat', 'Saturated', 'Sugar', 'Calcium', 'Potassium', 'Magnesium', 'Iron', 'Fiber', 'Sodium', 'Vit D'],
-                    data: [newCaloriesTotal, newCarbsTotal, newProteinTotal, newFatTotal, newSaturatedTotal, newSugarTotal, newCalciumTotal, newPotassiumTotal, newMagnesiumTotal, newIronTotal, newFiberTotal, newSodiumTotal, newVitdTotal],
+                    data: [newCarbsTotal, newProteinTotal, newFatTotal, newSaturatedTotal, newSugarTotal, newCalciumTotal/1000, newPotassiumTotal/1000, newMagnesiumTotal/1000, newIronTotal/1000, newFiberTotal, newSodiumTotal/1000, newVitdTotal*0.025],
                     backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)', // calories red
+                        // 'rgba(255, 99, 132, 0.2)', // calories red
                         'rgba(54, 162, 235, 0.2)', // carbs blue
                         'rgba(255, 206, 86, 0.2)', // protein yellow
                         'rgba(75, 192, 192, 0.2)', // fat green
@@ -702,7 +701,7 @@ $(function(){
 
                     ],
                     borderColor: [
-                        'rgba(255, 99, 132, 1)', // calories red
+                        // 'rgba(255, 99, 132, 1)', // calories red
                         'rgba(54, 162, 235, 1)', // carbs blue
                         'rgba(255, 206, 86, 1)', // protein yellow
                         'rgba(75, 192, 192, 1)', // fat green
