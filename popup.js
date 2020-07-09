@@ -8,9 +8,10 @@ $(function(){
 
     // When the user opens the popup, display the current Totals and the limits
     chrome.storage.sync.get(['caloriesLimit', 'caloriesTotal', 'carbsLimit', 'carbsTotal', 'proteinLimit', 'proteinTotal', 'fatLimit', 'fatTotal', 'sugarLimit', 'sugarTotal', 'saturatedTotal', 'saturatedLimit', 'calciumTotal', 'calciumLimit', 'ironTotal', 'ironLimit', 'fiberTotal', 'fiberLimit', 'potassiumTotal', 'potassiumLimit', 'magnesiumTotal', 'magnesiumLimit','magnesium', 'sodiumTotal', 'sodiumLimit', 'vitdTotal', 'vitdLimit', 'basket'], function(nutrient){
+        
+        console.log('running totals');
         $('#caloriesTotal').text(nutrient.caloriesTotal)
         $('#caloriesLimit').text(nutrient.caloriesLimit)
-        console.log('running totals');
         $('#carbsTotal').text(nutrient.carbsTotal)
         $('#carbsLimit').text(nutrient.carbsLimit)
         $('#proteinTotal').text(nutrient.proteinTotal)
@@ -36,6 +37,10 @@ $(function(){
         $('#sodiumLimit').text(nutrient.sodiumLimit)
         $('#vitdTotal').text(nutrient.vitdTotal)
         $('#vitdLimit').text(nutrient.vitdLimit)
+
+        // $('#grams').text('g')
+        // $('#mgrams').text('mg')
+        // $('#iu').text('iu')
 
 
             
@@ -664,7 +669,9 @@ $(function(){
 
 
 
-
+        // $('#grams').HTML('g')
+        // $('#mgrams').HTML('mg')
+        // $('#iu').HTML('iu')
 
 
 
@@ -740,6 +747,8 @@ $(function(){
 
         
         })
+
+        
         
     });
 
@@ -767,5 +776,8 @@ $(function(){
         close();
 
     });
+
+
+
 
 });
