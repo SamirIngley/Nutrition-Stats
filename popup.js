@@ -139,17 +139,17 @@ $(function(){
         var myChart2 = new Chart(ctx2, {
             type: 'pie',
             data: {
-                labels: ['Carbs', 'Protein', 'Fat', 'Saturated', 'Sugar'],
+                labels: ['Carbs', 'Protein', 'Fat', 'Saturated', 'Sugar', 'Fiber'],
                 datasets: [{
                     label: 'Nutrient Totals',
-                    data: [carbsValue, proteinValue, fatValue, saturatedValue, sugarValue],
+                    data: [carbsValue, proteinValue, fatValue, saturatedValue, sugarValue, fiberValue],
                     backgroundColor: [
                         'rgba(54, 162, 235, 0.2)', // carbs blue
                         'rgba(255, 206, 86, 0.2)', // protein yellow
                         'rgba(75, 192, 192, 0.2)', // fat green
                         'rgba(153, 102, 255, 0.2)', // saturated purp
                         'rgba(255, 99, 132, 0.2)', // sugar red
-
+                        'rgba(0, 255, 255, 0.2)', // fiber light blue
 
                     ],
                     borderColor: [
@@ -158,7 +158,7 @@ $(function(){
                         'rgba(75, 192, 192, 1)', // fat green
                         'rgba(153, 102, 255, 1)', // saturated purp
                         'rgba(255, 99, 132, 1)', // sugar red
-
+                        'rgba(0, 255, 255, 1)' // fiber light blue
 
                     ],
                     borderWidth: 1
@@ -183,16 +183,15 @@ $(function(){
         var myChart3 = new Chart(ctx3, {
             type: 'pie',
             data: {
-                labels: ['Calcium', 'Potassium', 'Magnesium', 'Iron', 'Fiber', 'Sodium', 'Vit D'],
+                labels: ['Calcium', 'Potassium', 'Magnesium', 'Iron', 'Sodium', 'Vit D'],
                 datasets: [{
                     label: 'Nutrient Totals',
-                    data: [calciumValue, potassiumValue, magnesiumValue, ironValue, fiberValue, sodiumValue, vitdValue],
+                    data: [calciumValue, potassiumValue, magnesiumValue, ironValue, sodiumValue, vitdValue],
                     backgroundColor: [
                         'rgba(51, 51, 255, 0.2)', // calcium darker blue
                         'rgba(255, 153, 51, 0.2)', // potassium orange
                         'rgba(51, 255, 153, 0.2)', // magnesium light green
                         'rgba(160, 160, 160, 0.2)', // iron gray
-                        'rgba(0, 255, 255, 0.2)', // fiber light blue
                         'rgba(255, 102, 178, 0.2)', // sodium pink
                         'rgba(255, 255, 102, 0.2)' // vitd light yellow
 
@@ -203,7 +202,6 @@ $(function(){
                         'rgba(255, 153, 51, 1)', // potassium orange
                         'rgba(51, 255, 153, 1)', // magnesium light green
                         'rgba(160, 160, 160, 1)', // iron gray
-                        'rgba(0, 255, 255, 1)', // fiber light blue
                         'rgba(255, 102, 178, 1)', // sodium pink
                         'rgba(255, 255, 102, 1)' // vitd light yellow
 
@@ -866,24 +864,18 @@ $(function(){
         var myChart2 = new Chart(ctx2, {
             type: 'pie',
             data: {
-                labels: ['Carbs', 'Protein', 'Fat', 'Saturated', 'Sugar'],
+                labels: ['Carbs', 'Protein', 'Fat', 'Saturated', 'Sugar', 'Fiber'],
                 datasets: [{
-                    data: [newCarbsTotal, newProteinTotal, newFatTotal, newSaturatedTotal, newSugarTotal],
+                    data: [newCarbsTotal, newProteinTotal, newFatTotal, newSaturatedTotal, newSugarTotal, newFiberTotal],
                     backgroundColor: [
                         // 'rgba(255, 99, 132, 0.2)', // calories red
                         'rgba(54, 162, 235, 0.2)', // carbs blue
                         'rgba(255, 206, 86, 0.2)', // protein yellow
                         'rgba(75, 192, 192, 0.2)', // fat green
                         'rgba(153, 102, 255, 0.2)', // saturated purp
-
                         'rgba(255, 102, 102, 0.2)', // sugar light red
-                        'rgba(51, 51, 255, 0.2)', // calcium darker blue
-                        'rgba(255, 153, 51, 0.2)', // potassium orange
-                        'rgba(51, 255, 153, 0.2)', // magnesium light green
-                        'rgba(160, 160, 160, 0.2)', // iron gray
                         'rgba(0, 255, 255, 0.2)', // fiber light blue
-                        'rgba(255, 102, 178, 0.2)', // sodium pink
-                        'rgba(255, 255, 102, 0.2)' // vitd light yellow
+                        
 
 
                     ],
@@ -893,16 +885,8 @@ $(function(){
                         'rgba(255, 206, 86, 1)', // protein yellow
                         'rgba(75, 192, 192, 1)', // fat green
                         'rgba(153, 102, 255, 1)', // saturated purp
-
-                        'rgba(255, 102, 102, 1)', // sugar light red
-                        'rgba(51, 51, 255, 1)', // calcium darker blue
-                        'rgba(255, 153, 51, 1)', // potassium orange
-                        'rgba(51, 255, 153, 1)', // magnesium light green
-                        'rgba(160, 160, 160, 1)', // iron gray
+                        'rgba(255, 102, 102, 1)', // sugar light red          
                         'rgba(0, 255, 255, 1)', // fiber light blue
-                        'rgba(255, 102, 178, 1)', // sodium pink
-                        'rgba(255, 255, 102, 1)' // vitd light yellow
-
                     ],
                     borderWidth: 1
                 }]
@@ -930,18 +914,16 @@ $(function(){
         var myChart3 = new Chart(ctx3, {
             type: 'pie',
             data: {
-                labels: ['Calcium', 'Potassium', 'Magnesium', 'Iron', 'Fiber', 'Sodium', 'Vit D'],
+                labels: ['Calcium', 'Potassium', 'Magnesium', 'Iron', 'Sodium', 'Vit D'],
                 datasets: [{
-                    data: [newCalciumTotal/1000, newPotassiumTotal/1000, newMagnesiumTotal/1000, newIronTotal/1000, newFiberTotal, newSodiumTotal/1000, newVitdTotal*0.025],
+                    data: [newCalciumTotal/1000, newPotassiumTotal/1000, newMagnesiumTotal/1000, newIronTotal/1000, newSodiumTotal/1000, newVitdTotal*0.025],
                     backgroundColor: [
                         'rgba(51, 51, 255, 0.2)', // calcium darker blue
                         'rgba(255, 153, 51, 0.2)', // potassium orange
                         'rgba(51, 255, 153, 0.2)', // magnesium light green
                         'rgba(160, 160, 160, 0.2)', // iron gray
-                        'rgba(0, 255, 255, 0.2)', // fiber light blue
                         'rgba(255, 102, 178, 0.2)', // sodium pink
                         'rgba(255, 255, 102, 0.2)' // vitd light yellow
-
 
                     ],
                     borderColor: [
@@ -949,7 +931,6 @@ $(function(){
                         'rgba(255, 153, 51, 1)', // potassium orange
                         'rgba(51, 255, 153, 1)', // magnesium light green
                         'rgba(160, 160, 160, 1)', // iron gray
-                        'rgba(0, 255, 255, 1)', // fiber light blue
                         'rgba(255, 102, 178, 1)', // sodium pink
                         'rgba(255, 255, 102, 1)' // vitd light yellow
 
