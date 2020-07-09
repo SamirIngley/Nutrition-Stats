@@ -68,7 +68,7 @@ $(function(){
 
         var ctx = document.getElementById('graph').getContext('2d');
         var myChart = new Chart(ctx, {
-            type: 'bar',
+            type: 'horizontalBar',
             data: {
                 labels: ['Carbs', 'Protein', 'Fat', 'Saturated', 'Sugar', 'Calcium', 'Potassium', 'Magnesium', 'Iron', 'Fiber', 'Sodium', 'Vit D'],
                 datasets: [{
@@ -798,7 +798,7 @@ $(function(){
 
         var ctx = document.getElementById('graph').getContext('2d');
         var myChart = new Chart(ctx, {
-            type: 'bar',
+            type: 'horizontalBar',
             data: {
                 labels: ['Carbs', 'Protein', 'Fat', 'Saturated', 'Sugar', 'Calcium', 'Potassium', 'Magnesium', 'Iron', 'Fiber', 'Sodium', 'Vit D'],
                 datasets: [{

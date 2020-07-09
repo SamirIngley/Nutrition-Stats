@@ -16,10 +16,15 @@
     
     "content_security_policy":"script-src 'self' https://api.edemam.com; object-src 'self'",
 
+    "background": {
+        "scripts": ["eventPage.js"],
+        "persistent": false
+    },
+
     "permissions": [
         "storage",
         "notifications",
-        "contextMenus"
+        "contextMenu"
     ],
 
     "content_scripts": [
