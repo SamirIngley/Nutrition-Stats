@@ -70,6 +70,13 @@ $(function(){
                     $('#saturated').html('0')
                 }
 
+                if (data.totalNutrients.SUGAR){
+                    console.log('Sugar: ', data.totalNutrients.SUGAR.quantity)
+                    $('#sugar').html(data.totalNutrients.SUGAR.quantity.toFixed(0))
+                } else {
+                    $('#sugar').html('0')
+                }
+
                 if (data.totalNutrients.CA){
                     $('#calcium').html(data.totalNutrients.CA.quantity.toFixed(0))
                 } else {
