@@ -23,8 +23,7 @@
 
     "permissions": [
         "storage",
-        "notifications",
-        "contextMenu"
+        "notifications"
     ],
 
     "content_scripts": [
