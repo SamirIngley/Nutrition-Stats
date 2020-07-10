@@ -14,6 +14,8 @@ $(function(){
          var empty=""
  
          $('#loading').html(loadingStart)
+
+        var noData = []
         
         var nameQueryStr = $('#searchBox').val()
         console.log(queryStr)
@@ -37,91 +39,109 @@ $(function(){
                 console.log('Calories: ', data.calories)
                 $('#calories').html(data.calories.toFixed(0))
             } else {
-                $('#calories').html('dne')
+                $('#calories').html('0')
+                noData.push('calories') 
             }
 
             if (data.totalNutrients) {
-
-                $('#name').html(nameQueryStr)
 
                 if (data.totalNutrients.CHOCDF){
                     console.log('Carbs: ', data.totalNutrients.CHOCDF.quantity)
                     $('#carbs').html(data.totalNutrients.CHOCDF.quantity.toFixed(0))
                 } else {
-                    $('#carbs').html('dne')
+                    $('#carbs').html('0')
+                    noData.push('carbs') 
                 }
 
                 if (data.totalNutrients.PROCNT){
                     console.log('Protein: ', data.totalNutrients.PROCNT.quantity)
                     $('#protein').html(data.totalNutrients.PROCNT.quantity.toFixed(0))
                 } else {
-                    $('#protein').html('dne')
+                    $('#protein').html('0')
+                    noData.push('protein') 
                 }
 
                 if (data.totalNutrients.FAT){
                     console.log('Fat: ', data.totalNutrients.FAT.quantity)
                     $('#fat').html(data.totalNutrients.FAT.quantity.toFixed(0))
                 } else {
-                    $('#fat').html('dne')
+                    $('#fat').html('0')
+                    noData.push('fat') 
                 }
 
                 if (data.totalNutrients.FASAT){
                     $('#saturated').html(data.totalNutrients.FASAT.quantity.toFixed(0))
                 } else {
-                    $('#saturated').html('dne')
+                    $('#saturated').html('0')
+                    noData.push('saturated fat') 
                 }
 
                 if (data.totalNutrients.SUGAR){
                     console.log('Sugar: ', data.totalNutrients.SUGAR.quantity)
                     $('#sugar').html(data.totalNutrients.SUGAR.quantity.toFixed(0))
                 } else {
-                    $('#sugar').html('dne')
+                    $('#sugar').html('0')
+                    noData.push('sugar') 
                 }
 
                 if (data.totalNutrients.CA){
                     $('#calcium').html(data.totalNutrients.CA.quantity.toFixed(0))
                 } else {
-                    $('#calcium').html('dne')
+                    $('#calcium').html('0')
+                    noData.push('calcium') 
                 }
 
                 if (data.totalNutrients.FE){
                     $('#iron').html(data.totalNutrients.FE.quantity.toFixed(0))
                 } else {
-                    $('#iron').html('dne')
+                    $('#iron').html('0')
+                    noData.push('iron') 
                 }
 
                 if (data.totalNutrients.FIBTG){
                     $('#fiber').html(data.totalNutrients.FIBTG.quantity.toFixed(0))
                 } else {
-                    $('#fiber').html('dne')
+                    $('#fiber').html('0')
+                    noData.push('fiber') 
                 }
 
                 if (data.totalNutrients.K){
                     $('#potassium').html(data.totalNutrients.K.quantity.toFixed(0))
                 } else {
-                    $('#potassium').html('dne')
+                    $('#potassium').html('0')
+                    noData.push('potassium') 
                 }
 
                 if (data.totalNutrients.MG){
                     $('#magnesium').html(data.totalNutrients.MG.quantity.toFixed(0))
                 } else {
-                    $('#magnesium').html('dne')
+                    $('#magnesium').html('0')
+                    noData.push('magnesium') 
                 }
 
                 if (data.totalNutrients.NA){
                     $('#sodium').html(data.totalNutrients.NA.quantity.toFixed(0))
                 } else {
-                    $('#sodium').html('dne')
+                    $('#sodium').html('0')
+                    noData.push('sodium') 
                 }
 
                 if (data.totalNutrients.VITD){
                     console.log("VITD DATA: ", data.totalNutrients.VITD.quantity)
                     $('#vitd').html(data.totalNutrients.VITD.quantity.toFixed(0))
                 } else {
-                    $('#vitd').html('dne')
+                    $('#vitd').html('0')
+                    noData.push('vitd') 
                 }
             } else {
                 $('#name').html("We don't have data on this item")
+            }
+
+            if (noData.length > 0) {
+                $('#name').html('No data for '+nameQueryStr)
+            } else {
+                $('#name').html(nameQueryStr)
+
             }
 
             // $('.modal').addClass("open")

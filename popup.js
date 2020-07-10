@@ -56,13 +56,13 @@ $(function(){
         var proteinValue = parseInt(nutrient.proteinTotal)
         var fatValue = parseInt(nutrient.fatTotal)
         var sugarValue = parseInt(nutrient.sugarTotal)
-
+        var fiberValue = parseInt(nutrient.fiberTotal)
         var saturatedValue = parseInt(nutrient.saturatedTotal)
+
         var calciumValue = parseInt(nutrient.calciumTotal)/1000
         var potassiumValue = parseInt(nutrient.potassiumTotal)/1000
         var magnesiumValue = parseInt(nutrient.magnesiumTotal)/1000
         var ironValue = parseInt(nutrient.ironTotal)/1000
-        var fiberValue = parseInt(nutrient.fiberTotal)
         var sodiumValue = parseInt(nutrient.sodiumTotal)/1000
         var vitdValue = parseInt(nutrient.vitdTotal)*0.025
        
@@ -290,6 +290,7 @@ $(function(){
             // $('#item-amount').html(parseInt(arrayLength)+' items in basket')
 
             // basket items
+            var errMsg = "No data for "
             var name = $('#name').html()
             // var basket = $('#basket').html()
             var basket = item.basket;
@@ -298,13 +299,16 @@ $(function(){
 
             // if it's a real name
             if (name){
-                if (name == 'This item does not exist'){
+                if (name.slice(0,11).localeCompare(errMsg) != 0){
                     console.log('This item cant be added to basket, it dne')
+                    console.log(' LOOK AT ME !!!!! '+name.slice(0,11))
                 } else {
                     // var name_str = name+' '
                     // console.log('ITEM NAME:', name_str)
 
                     // chrome.storage.sync.set({'basket':newCaloriesTotal})
+                    console.log(' LOOK AT ME !!!!! '+name.slice(0,11))
+
                     basket.push({name: name})
                     console.log(basket)
                     chrome.storage.sync.set({basket:basket}, function() {
