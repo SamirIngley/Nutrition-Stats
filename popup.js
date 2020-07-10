@@ -168,9 +168,13 @@ $(function(){
                 }]
             },
             options: {
-                // scales: {
-                    
-                // },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
                 title:{
                     display:true,
                     text:'Macronutrients'
@@ -215,11 +219,11 @@ $(function(){
             },
             options: {
                 scales: {
-                    // yAxes: [{
-                    //     ticks: {
-                    //         beginAtZero: true
-                    //     }
-                    // }]
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
                 },
                 title:{
                     display:true,
@@ -901,13 +905,13 @@ $(function(){
                     }]
                 },
                 options: {
-                    // scales: {
-                    //     yAxes: [{
-                    //         ticks: {
-                    //             beginAtZero: true
-                    //         }
-                    //     }]
-                    // },
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    },
                     title:{
                         display:true,
                         text:'Macronutrients'
@@ -948,13 +952,13 @@ $(function(){
                     }]
                 },
                 options: {
-                    // scales: {
-                        // yAxes: [{
-                        //     ticks: {
-                        //         beginAtZero: true
-                        //     }
-                        // }]
-                    // },
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    },
                     title:{
                         display:true,
                         text:'Micronutrients'
