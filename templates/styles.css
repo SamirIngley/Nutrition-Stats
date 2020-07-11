@@ -319,7 +319,7 @@ p {
 
 .graphs {
     position: relative;
-    top: 500px;
+    top: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
