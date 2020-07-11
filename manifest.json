@@ -11,7 +11,11 @@
 
     "browser_action": {
         "default_icon": "icon16.png",
+<<<<<<< HEAD
         "default_popup": "sandy_popupED_changes.html"
+=======
+        "default_popup": "samir_popupED.html"
+>>>>>>> cf83ced33cf5c6649a078898da948e017ab8ed49
     },
     
     "content_security_policy":"script-src 'self' https://api.edemam.com; object-src 'self'",
@@ -23,8 +27,7 @@
 
     "permissions": [
         "storage",
-        "notifications",
-        "contextMenu"
+        "notifications"
     ],
 
     "content_scripts": [

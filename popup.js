@@ -1,6 +1,10 @@
 
 
 // This UPDATES the TOTALS when we add an item
+// Updates basket
+// and Updates the graphs
+
+// either "at load" or upon search or upon adding item
 
 
 // Listening for click event on Submit for adding items id: add-button
@@ -52,17 +56,18 @@ $(function(){
         var proteinValue = parseInt(nutrient.proteinTotal)
         var fatValue = parseInt(nutrient.fatTotal)
         var sugarValue = parseInt(nutrient.sugarTotal)
-
+        var fiberValue = parseInt(nutrient.fiberTotal)
         var saturatedValue = parseInt(nutrient.saturatedTotal)
+
         var calciumValue = parseInt(nutrient.calciumTotal)/1000
         var potassiumValue = parseInt(nutrient.potassiumTotal)/1000
         var magnesiumValue = parseInt(nutrient.magnesiumTotal)/1000
         var ironValue = parseInt(nutrient.ironTotal)/1000
-        var fiberValue = parseInt(nutrient.fiberTotal)
         var sodiumValue = parseInt(nutrient.sodiumTotal)/1000
         var vitdValue = parseInt(nutrient.vitdTotal)*0.025
        
 
+<<<<<<< HEAD
         
         console.log('Graph values: ', caloriesValue, carbsValue, proteinValue, fatValue, sugarValue)
 
@@ -133,24 +138,94 @@ $(function(){
                 }
             }
         });
+=======
+        // FIRST "TOTAL" GRAPH on page load
+        // console.log('Graph values: ', caloriesValue, carbsValue, proteinValue, fatValue, sugarValue)
+
+        // var ctx = document.getElementById('graph').getContext('2d');
+        // var myChart = new Chart(ctx, {
+        //     type: 'horizontalBar',
+        //     data: {
+        //         labels: ['Carbs', 'Protein', 'Fat', 'Saturated', 'Sugar', 'Calcium', 'Potassium', 'Magnesium', 'Iron', 'Fiber', 'Sodium', 'Vit D'],
+        //         datasets: [{
+        //             label: 'Nutrient Totals',
+        //             data: [carbsValue, proteinValue, fatValue, saturatedValue, sugarValue, calciumValue, potassiumValue, magnesiumValue, ironValue, fiberValue, sodiumValue, vitdValue],
+        //             backgroundColor: [
+        //                 // 'rgba(255, 99, 132, 0.2)', // calories red
+        //                 'rgba(54, 162, 235, 0.2)', // carbs blue
+        //                 'rgba(255, 206, 86, 0.2)', // protein yellow
+        //                 'rgba(75, 192, 192, 0.2)', // fat green
+        //                 'rgba(153, 102, 255, 0.2)', // saturated purp
+
+        //                 'rgba(255, 102, 102, 0.2)', // sugar light red
+        //                 'rgba(51, 51, 255, 0.2)', // calcium darker blue
+        //                 'rgba(255, 153, 51, 0.2)', // potassium orange
+        //                 'rgba(51, 255, 153, 0.2)', // magnesium light green
+        //                 'rgba(160, 160, 160, 0.2)', // iron gray
+        //                 'rgba(0, 255, 255, 0.2)', // fiber light blue
+        //                 'rgba(255, 102, 178, 0.2)', // sodium pink
+        //                 'rgba(255, 255, 102, 0.2)' // vitd light yellow
+
+
+        //             ],
+        //             borderColor: [
+        //                 // 'rgba(255, 99, 132, 1)', // calories red
+        //                 'rgba(54, 162, 235, 1)', // carbs blue
+        //                 'rgba(255, 206, 86, 1)', // protein yellow
+        //                 'rgba(75, 192, 192, 1)', // fat green
+        //                 'rgba(153, 102, 255, 1)', // saturated purp
+
+        //                 'rgba(255, 102, 102, 1)', // sugar light red
+        //                 'rgba(51, 51, 255, 1)', // calcium darker blue
+        //                 'rgba(255, 153, 51, 1)', // potassium orange
+        //                 'rgba(51, 255, 153, 1)', // magnesium light green
+        //                 'rgba(160, 160, 160, 1)', // iron gray
+        //                 'rgba(0, 255, 255, 1)', // fiber light blue
+        //                 'rgba(255, 102, 178, 1)', // sodium pink
+        //                 'rgba(255, 255, 102, 1)' // vitd light yellow
+
+
+
+        //             ],
+        //             borderWidth: 1
+        //         }]
+        //     },
+        //     options: {
+        //         scales: {
+        //             // yAxes: [{
+        //             //     ticks: {
+        //             //         beginAtZero: true
+        //             //     }
+        //             // }]
+        //         },
+        //         title:{
+        //             display:true,
+        //             text:'Nutrient Totals'
+        //         },
+        //         legend:{
+        //             display:false,
+        //             position:'right',
+        //         }
+        //     }
+        // });
+>>>>>>> cf83ced33cf5c6649a078898da948e017ab8ed49
 
         // GRAPHS 2 n 3 !!
 
         var ctx2 = document.getElementById('graph2').getContext('2d');
         var myChart2 = new Chart(ctx2, {
-            type: 'pie',
+            type: 'horizontalBar',
             data: {
-                labels: ['Carbs', 'Protein', 'Fat', 'Saturated', 'Sugar'],
+                labels: ['Carbs', 'Protein', 'Fat', 'Saturated', 'Sugar', 'Fiber'],
                 datasets: [{
-                    label: 'Nutrient Totals',
-                    data: [carbsValue, proteinValue, fatValue, saturatedValue, sugarValue],
+                    data: [carbsValue, proteinValue, fatValue, saturatedValue, sugarValue, fiberValue],
                     backgroundColor: [
                         'rgba(54, 162, 235, 0.2)', // carbs blue
                         'rgba(255, 206, 86, 0.2)', // protein yellow
                         'rgba(75, 192, 192, 0.2)', // fat green
                         'rgba(153, 102, 255, 0.2)', // saturated purp
                         'rgba(255, 99, 132, 0.2)', // sugar red
-
+                        'rgba(0, 255, 255, 0.2)', // fiber light blue
 
                     ],
                     borderColor: [
@@ -159,22 +234,26 @@ $(function(){
                         'rgba(75, 192, 192, 1)', // fat green
                         'rgba(153, 102, 255, 1)', // saturated purp
                         'rgba(255, 99, 132, 1)', // sugar red
-
+                        'rgba(0, 255, 255, 1)' // fiber light blue
 
                     ],
                     borderWidth: 1
                 }]
             },
             options: {
-                // scales: {
-                    
-                // },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
                 title:{
                     display:true,
                     text:'Macronutrients'
                 },
                 legend:{
-                    display:true,
+                    display:false,
                     position:'right',
                 }
             }
@@ -182,18 +261,16 @@ $(function(){
 
         var ctx3 = document.getElementById('graph3').getContext('2d');
         var myChart3 = new Chart(ctx3, {
-            type: 'pie',
+            type: 'horizontalBar',
             data: {
-                labels: ['Calcium', 'Potassium', 'Magnesium', 'Iron', 'Fiber', 'Sodium', 'Vit D'],
+                labels: ['Calcium', 'Potassium', 'Magnesium', 'Iron', 'Sodium', 'Vit D'],
                 datasets: [{
-                    label: 'Nutrient Totals',
-                    data: [calciumValue, potassiumValue, magnesiumValue, ironValue, fiberValue, sodiumValue, vitdValue],
+                    data: [calciumValue, potassiumValue, magnesiumValue, ironValue, sodiumValue, vitdValue],
                     backgroundColor: [
                         'rgba(51, 51, 255, 0.2)', // calcium darker blue
                         'rgba(255, 153, 51, 0.2)', // potassium orange
                         'rgba(51, 255, 153, 0.2)', // magnesium light green
                         'rgba(160, 160, 160, 0.2)', // iron gray
-                        'rgba(0, 255, 255, 0.2)', // fiber light blue
                         'rgba(255, 102, 178, 0.2)', // sodium pink
                         'rgba(255, 255, 102, 0.2)' // vitd light yellow
 
@@ -204,7 +281,6 @@ $(function(){
                         'rgba(255, 153, 51, 1)', // potassium orange
                         'rgba(51, 255, 153, 1)', // magnesium light green
                         'rgba(160, 160, 160, 1)', // iron gray
-                        'rgba(0, 255, 255, 1)', // fiber light blue
                         'rgba(255, 102, 178, 1)', // sodium pink
                         'rgba(255, 255, 102, 1)' // vitd light yellow
 
@@ -216,18 +292,18 @@ $(function(){
             },
             options: {
                 scales: {
-                    // yAxes: [{
-                    //     ticks: {
-                    //         beginAtZero: true
-                    //     }
-                    // }]
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
                 },
                 title:{
                     display:true,
                     text:'Micronutrients'
                 },
                 legend:{
-                    display:true,
+                    display:false,
                     position:'right',
                 }
             }
@@ -291,6 +367,7 @@ $(function(){
             // $('#item-amount').html(parseInt(arrayLength)+' items in basket')
 
             // basket items
+            var errMsg = "No data for "
             var name = $('#name').html()
             // var basket = $('#basket').html()
             var basket = item.basket;
@@ -299,13 +376,16 @@ $(function(){
 
             // if it's a real name
             if (name){
-                if (name == 'This item does not exist'){
+                if (name.slice(0,11).localeCompare(errMsg) != 0){
                     console.log('This item cant be added to basket, it dne')
+                    console.log(' LOOK AT ME !!!!! '+name.slice(0,11))
                 } else {
                     // var name_str = name+' '
                     // console.log('ITEM NAME:', name_str)
 
                     // chrome.storage.sync.set({'basket':newCaloriesTotal})
+                    console.log(' LOOK AT ME !!!!! '+name.slice(0,11))
+
                     basket.push({name: name})
                     console.log(basket)
                     chrome.storage.sync.set({basket:basket}, function() {
@@ -334,6 +414,9 @@ $(function(){
             }
           });
             
+
+        // UPDATING ALL THE TOTALS FOR EACH NUTRIENT
+ 
 
         // CALORIES
         chrome.storage.sync.get('caloriesTotal', function(nutrient){
@@ -784,198 +867,181 @@ $(function(){
 
 
 
-        // graph
+        // Total GRAPH on click
 
 
         chrome.storage.sync.get(['caloriesTotal', 'carbsTotal', 'proteinTotal', 'fatTotal', 'sugarTotal', 'saturatedTotal', 'calciumTotal', 'ironTotal', 'fiberTotal', 'potassiumTotal', 'magnesiumTotal', 'magnesium', 'sodiumTotal', 'vitdTotal', 'basket'], function(nutrient){
 
-        // var caloriesValue = parseInt(nutrient.caloriesTotal)
-        // var carbsValue = parseInt(nutrient.carbsTotal)
-        // var proteinValue = parseInt(nutrient.proteinTotal)
-        // var fatValue = parseInt(nutrient.fatTotal)
-        // var sugarValue = parseInt(nutrient.sugarTotal)
-        
-        console.log('2nd Graph values: ', newCaloriesTotal, newCarbsTotal, newProteinTotal, newFatTotal, newSugarTotal )
+            // var caloriesValue = parseInt(nutrient.caloriesTotal)
+            // var carbsValue = parseInt(nutrient.carbsTotal)
+            // var proteinValue = parseInt(nutrient.proteinTotal)
+            // var fatValue = parseInt(nutrient.fatTotal)
+            // var sugarValue = parseInt(nutrient.sugarTotal)
+            
+            console.log('2nd Graph values: ', newCaloriesTotal, newCarbsTotal, newProteinTotal, newFatTotal, newSugarTotal )
 
-        var ctx = document.getElementById('graph').getContext('2d');
-        var myChart = new Chart(ctx, {
-            type: 'horizontalBar',
-            data: {
-                labels: ['Carbs', 'Protein', 'Fat', 'Saturated', 'Sugar', 'Calcium', 'Potassium', 'Magnesium', 'Iron', 'Fiber', 'Sodium', 'Vit D'],
-                datasets: [{
-                    data: [newCarbsTotal, newProteinTotal, newFatTotal, newSaturatedTotal, newSugarTotal, newCalciumTotal/1000, newPotassiumTotal/1000, newMagnesiumTotal/1000, newIronTotal/1000, newFiberTotal, newSodiumTotal/1000, newVitdTotal*0.025],
-                    backgroundColor: [
-                        // 'rgba(255, 99, 132, 0.2)', // calories red
-                        'rgba(54, 162, 235, 0.2)', // carbs blue
-                        'rgba(255, 206, 86, 0.2)', // protein yellow
-                        'rgba(75, 192, 192, 0.2)', // fat green
-                        'rgba(153, 102, 255, 0.2)', // saturated purp
+            // var ctx = document.getElementById('graph').getContext('2d');
+            // var myChart = new Chart(ctx, {
+            //     type: 'horizontalBar',
+            //     data: {
+            //         labels: ['Carbs', 'Protein', 'Fat', 'Saturated', 'Sugar', 'Calcium', 'Potassium', 'Magnesium', 'Iron', 'Fiber', 'Sodium', 'Vit D'],
+            //         datasets: [{
+            //             data: [newCarbsTotal, newProteinTotal, newFatTotal, newSaturatedTotal, newSugarTotal, newCalciumTotal/1000, newPotassiumTotal/1000, newMagnesiumTotal/1000, newIronTotal/1000, newFiberTotal, newSodiumTotal/1000, newVitdTotal*0.025],
+            //             backgroundColor: [
+            //                 // 'rgba(255, 99, 132, 0.2)', // calories red
+            //                 'rgba(54, 162, 235, 0.2)', // carbs blue
+            //                 'rgba(255, 206, 86, 0.2)', // protein yellow
+            //                 'rgba(75, 192, 192, 0.2)', // fat green
+            //                 'rgba(153, 102, 255, 0.2)', // saturated purp
 
-                        'rgba(255, 102, 102, 0.2)', // sugar light red
-                        'rgba(51, 51, 255, 0.2)', // calcium darker blue
-                        'rgba(255, 153, 51, 0.2)', // potassium orange
-                        'rgba(51, 255, 153, 0.2)', // magnesium light green
-                        'rgba(160, 160, 160, 0.2)', // iron gray
-                        'rgba(0, 255, 255, 0.2)', // fiber light blue
-                        'rgba(255, 102, 178, 0.2)', // sodium pink
-                        'rgba(255, 255, 102, 0.2)' // vitd light yellow
+            //                 'rgba(255, 102, 102, 0.2)', // sugar light red
+            //                 'rgba(51, 51, 255, 0.2)', // calcium darker blue
+            //                 'rgba(255, 153, 51, 0.2)', // potassium orange
+            //                 'rgba(51, 255, 153, 0.2)', // magnesium light green
+            //                 'rgba(160, 160, 160, 0.2)', // iron gray
+            //                 'rgba(0, 255, 255, 0.2)', // fiber light blue
+            //                 'rgba(255, 102, 178, 0.2)', // sodium pink
+            //                 'rgba(255, 255, 102, 0.2)' // vitd light yellow
 
 
-                    ],
-                    borderColor: [
-                        // 'rgba(255, 99, 132, 1)', // calories red
-                        'rgba(54, 162, 235, 1)', // carbs blue
-                        'rgba(255, 206, 86, 1)', // protein yellow
-                        'rgba(75, 192, 192, 1)', // fat green
-                        'rgba(153, 102, 255, 1)', // saturated purp
+            //             ],
+            //             borderColor: [
+            //                 // 'rgba(255, 99, 132, 1)', // calories red
+            //                 'rgba(54, 162, 235, 1)', // carbs blue
+            //                 'rgba(255, 206, 86, 1)', // protein yellow
+            //                 'rgba(75, 192, 192, 1)', // fat green
+            //                 'rgba(153, 102, 255, 1)', // saturated purp
 
-                        'rgba(255, 102, 102, 1)', // sugar light red
-                        'rgba(51, 51, 255, 1)', // calcium darker blue
-                        'rgba(255, 153, 51, 1)', // potassium orange
-                        'rgba(51, 255, 153, 1)', // magnesium light green
-                        'rgba(160, 160, 160, 1)', // iron gray
-                        'rgba(0, 255, 255, 1)', // fiber light blue
-                        'rgba(255, 102, 178, 1)', // sodium pink
-                        'rgba(255, 255, 102, 1)' // vitd light yellow
+            //                 'rgba(255, 102, 102, 1)', // sugar light red
+            //                 'rgba(51, 51, 255, 1)', // calcium darker blue
+            //                 'rgba(255, 153, 51, 1)', // potassium orange
+            //                 'rgba(51, 255, 153, 1)', // magnesium light green
+            //                 'rgba(160, 160, 160, 1)', // iron gray
+            //                 'rgba(0, 255, 255, 1)', // fiber light blue
+            //                 'rgba(255, 102, 178, 1)', // sodium pink
+            //                 'rgba(255, 255, 102, 1)' // vitd light yellow
 
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                // scales: {
-                    // yAxes: [{
-                    //     ticks: {
-                    //         beginAtZero: true
-                    //     }
-                    // }]
-                // },
-                title:{
-                    display:true,
-                    text:'Nutrient Totals'
+            //             ],
+            //             borderWidth: 1
+            //         }]
+            //     },
+            //     options: {
+            //         // scales: {
+            //             // yAxes: [{
+            //             //     ticks: {
+            //             //         beginAtZero: true
+            //             //     }
+            //             // }]
+            //         // },
+            //         title:{
+            //             display:true,
+            //             text:'Nutrient Totals'
+            //         },
+            //         legend:{
+            //             display:false,
+            //             position:'right',
+            //         }
+            //     }
+            // });
+
+            // GRAPHS 2 n 3 !!
+            
+            var ctx2 = document.getElementById('graph2').getContext('2d');    
+            var myChart2 = new Chart(ctx2, {
+                type: 'horizontalBar',
+                data: {
+                    labels: ['Carbs', 'Protein', 'Fat', 'Saturated', 'Sugar', 'Fiber'],
+                    datasets: [{
+                        data: [newCarbsTotal, newProteinTotal, newFatTotal, newSaturatedTotal, newSugarTotal, newFiberTotal],
+                        backgroundColor: [
+                            // 'rgba(255, 99, 132, 0.2)', // calories red
+                            'rgba(54, 162, 235, 0.2)', // carbs blue
+                            'rgba(255, 206, 86, 0.2)', // protein yellow
+                            'rgba(75, 192, 192, 0.2)', // fat green
+                            'rgba(153, 102, 255, 0.2)', // saturated purp
+                            'rgba(255, 102, 102, 0.2)', // sugar light red
+                            'rgba(0, 255, 255, 0.2)', // fiber light blue
+                            
+
+
+                        ],
+                        borderColor: [
+                            // 'rgba(255, 99, 132, 1)', // calories red
+                            'rgba(54, 162, 235, 1)', // carbs blue
+                            'rgba(255, 206, 86, 1)', // protein yellow
+                            'rgba(75, 192, 192, 1)', // fat green
+                            'rgba(153, 102, 255, 1)', // saturated purp
+                            'rgba(255, 102, 102, 1)', // sugar light red          
+                            'rgba(0, 255, 255, 1)', // fiber light blue
+                        ],
+                        borderWidth: 1
+                    }]
                 },
-                legend:{
-                    display:false,
-                    position:'right',
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    },
+                    title:{
+                        display:true,
+                        text:'Macronutrients'
+                    },
+                    legend:{
+                        display:false,
+                        position:'right',
+                    }
                 }
-            }
-        });
+            });
 
-        // GRAPHS 2 n 3 !!
-        
-        var ctx2 = document.getElementById('graph2').getContext('2d');    
-        var myChart2 = new Chart(ctx2, {
-            type: 'pie',
-            data: {
-                labels: ['Carbs', 'Protein', 'Fat', 'Saturated', 'Sugar'],
-                datasets: [{
-                    data: [newCarbsTotal, newProteinTotal, newFatTotal, newSaturatedTotal, newSugarTotal],
-                    backgroundColor: [
-                        // 'rgba(255, 99, 132, 0.2)', // calories red
-                        'rgba(54, 162, 235, 0.2)', // carbs blue
-                        'rgba(255, 206, 86, 0.2)', // protein yellow
-                        'rgba(75, 192, 192, 0.2)', // fat green
-                        'rgba(153, 102, 255, 0.2)', // saturated purp
+            var ctx3 = document.getElementById('graph3').getContext('2d');
+            var myChart3 = new Chart(ctx3, {
+                type: 'horizontalBar',
+                data: {
+                    labels: ['Calcium', 'Potassium', 'Magnesium', 'Iron', 'Sodium', 'Vit D'],
+                    datasets: [{
+                        data: [newCalciumTotal/1000, newPotassiumTotal/1000, newMagnesiumTotal/1000, newIronTotal/1000, newSodiumTotal/1000, newVitdTotal*0.025],
+                        backgroundColor: [
+                            'rgba(51, 51, 255, 0.2)', // calcium darker blue
+                            'rgba(255, 153, 51, 0.2)', // potassium orange
+                            'rgba(51, 255, 153, 0.2)', // magnesium light green
+                            'rgba(160, 160, 160, 0.2)', // iron gray
+                            'rgba(255, 102, 178, 0.2)', // sodium pink
+                            'rgba(255, 255, 102, 0.2)' // vitd light yellow
 
-                        'rgba(255, 102, 102, 0.2)', // sugar light red
-                        'rgba(51, 51, 255, 0.2)', // calcium darker blue
-                        'rgba(255, 153, 51, 0.2)', // potassium orange
-                        'rgba(51, 255, 153, 0.2)', // magnesium light green
-                        'rgba(160, 160, 160, 0.2)', // iron gray
-                        'rgba(0, 255, 255, 0.2)', // fiber light blue
-                        'rgba(255, 102, 178, 0.2)', // sodium pink
-                        'rgba(255, 255, 102, 0.2)' // vitd light yellow
+                        ],
+                        borderColor: [
+                            'rgba(51, 51, 255, 1)', // calcium darker blue
+                            'rgba(255, 153, 51, 1)', // potassium orange
+                            'rgba(51, 255, 153, 1)', // magnesium light green
+                            'rgba(160, 160, 160, 1)', // iron gray
+                            'rgba(255, 102, 178, 1)', // sodium pink
+                            'rgba(255, 255, 102, 1)' // vitd light yellow
 
-
-                    ],
-                    borderColor: [
-                        // 'rgba(255, 99, 132, 1)', // calories red
-                        'rgba(54, 162, 235, 1)', // carbs blue
-                        'rgba(255, 206, 86, 1)', // protein yellow
-                        'rgba(75, 192, 192, 1)', // fat green
-                        'rgba(153, 102, 255, 1)', // saturated purp
-
-                        'rgba(255, 102, 102, 1)', // sugar light red
-                        'rgba(51, 51, 255, 1)', // calcium darker blue
-                        'rgba(255, 153, 51, 1)', // potassium orange
-                        'rgba(51, 255, 153, 1)', // magnesium light green
-                        'rgba(160, 160, 160, 1)', // iron gray
-                        'rgba(0, 255, 255, 1)', // fiber light blue
-                        'rgba(255, 102, 178, 1)', // sodium pink
-                        'rgba(255, 255, 102, 1)' // vitd light yellow
-
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                // scales: {
-                //     yAxes: [{
-                //         ticks: {
-                //             beginAtZero: true
-                //         }
-                //     }]
-                // },
-                title:{
-                    display:true,
-                    text:'Macronutrients'
+                        ],
+                        borderWidth: 1
+                    }]
                 },
-                legend:{
-                    display:true,
-                    position:'right',
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    },
+                    title:{
+                        display:true,
+                        text:'Micronutrients'
+                    },
+                    legend:{
+                        display:false,
+                        position:'right',
+                    }
                 }
-            }
-        });
-
-        var ctx3 = document.getElementById('graph3').getContext('2d');
-        var myChart3 = new Chart(ctx3, {
-            type: 'pie',
-            data: {
-                labels: ['Calcium', 'Potassium', 'Magnesium', 'Iron', 'Fiber', 'Sodium', 'Vit D'],
-                datasets: [{
-                    data: [newCalciumTotal/1000, newPotassiumTotal/1000, newMagnesiumTotal/1000, newIronTotal/1000, newFiberTotal, newSodiumTotal/1000, newVitdTotal*0.025],
-                    backgroundColor: [
-                        'rgba(51, 51, 255, 0.2)', // calcium darker blue
-                        'rgba(255, 153, 51, 0.2)', // potassium orange
-                        'rgba(51, 255, 153, 0.2)', // magnesium light green
-                        'rgba(160, 160, 160, 0.2)', // iron gray
-                        'rgba(0, 255, 255, 0.2)', // fiber light blue
-                        'rgba(255, 102, 178, 0.2)', // sodium pink
-                        'rgba(255, 255, 102, 0.2)' // vitd light yellow
-
-
-                    ],
-                    borderColor: [
-                        'rgba(51, 51, 255, 1)', // calcium darker blue
-                        'rgba(255, 153, 51, 1)', // potassium orange
-                        'rgba(51, 255, 153, 1)', // magnesium light green
-                        'rgba(160, 160, 160, 1)', // iron gray
-                        'rgba(0, 255, 255, 1)', // fiber light blue
-                        'rgba(255, 102, 178, 1)', // sodium pink
-                        'rgba(255, 255, 102, 1)' // vitd light yellow
-
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                // scales: {
-                    // yAxes: [{
-                    //     ticks: {
-                    //         beginAtZero: true
-                    //     }
-                    // }]
-                // },
-                title:{
-                    display:true,
-                    text:'Micronutrients'
-                },
-                legend:{
-                    display:true,
-                    position:'right',
-                }
-            }
-        });
+            });
 
         
         })
