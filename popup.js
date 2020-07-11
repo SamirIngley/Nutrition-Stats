@@ -67,7 +67,6 @@ $(function(){
         var vitdValue = parseInt(nutrient.vitdTotal)*0.025
        
 
-<<<<<<< HEAD
         
         console.log('Graph values: ', caloriesValue, carbsValue, proteinValue, fatValue, sugarValue)
 
@@ -138,7 +137,6 @@ $(function(){
                 }
             }
         });
-=======
         // FIRST "TOTAL" GRAPH on page load
         // console.log('Graph values: ', caloriesValue, carbsValue, proteinValue, fatValue, sugarValue)
 
@@ -208,7 +206,6 @@ $(function(){
         //         }
         //     }
         // });
->>>>>>> cf83ced33cf5c6649a078898da948e017ab8ed49
 
         // GRAPHS 2 n 3 !!
 

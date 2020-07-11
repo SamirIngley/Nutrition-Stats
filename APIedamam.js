@@ -137,9 +137,7 @@ $(function(){
                 $('#name').html("We don't have data on this item")
             }
 
-<<<<<<< HEAD
             $('.modal').addClass("open")
-=======
             if (noData.length > 0) {
                 $('#name').html('No data for '+nameQueryStr)
             } else {
@@ -147,8 +145,7 @@ $(function(){
 
             }
 
-            // $('.modal').addClass("open")
->>>>>>> cf83ced33cf5c6649a078898da948e017ab8ed49
+            $('.modal').addClass("open")
 
         })
 

@@ -15,19 +15,20 @@ body {
 }
 
 .navbar {
-    background-color: rgb(13, 146, 255);
+    background-color:rgb(255, 255, 255);
 }
 
 /* title */
 .navbar-brand {
-    font-size: 45px;
+    font-size: 60px;
     position: relative;
-    left: 20px;
+    left: 100px;
+    top: 100px;
     font-family: 'Questrial', sans-serif;
     font-weight: 900;
     /* color: rgb(0, 166, 231); */
-    color: white;
-    /* text-shadow: 1px 1px rgb(202, 202, 202); */
+    color:  black;
+    text-shadow: 2px 1px rgb(206, 255, 91);
 }
 
 /* instructions hover */
@@ -48,8 +49,8 @@ body {
   padding: 10px;
   margin: 10px;
   position: relative;
-  top: -3px;
-  left: -5px;
+  top: 37px;
+  left: 56px;
   letter-spacing: .5px;
 }
 
@@ -70,15 +71,17 @@ body {
 /* search for item */
 #searchButton {
     position: relative;
-    left: 5px;
-    top: -5px;
-    width: 200px;
+    left: 140px;
+    top: 42px;
+    width: 80px;
     height: 30px;
-    font-size: 15px;
-    border-radius: 12px;
-    color: rgb(252, 252, 252);
-    border: none;
-    background-color:orange;
+    font-size: 10px;
+    /* border-radius: 12px; */
+    color: black;
+    border: solid;
+    border-color: grey;
+    border-width: .5px;
+    background-color:rgb(255, 255, 254);
     cursor: pointer;
     letter-spacing: .5px;
 }
@@ -86,41 +89,48 @@ body {
 /* item is searched + slide down*/
 .modal {
     position: relative;
-    top: -19px;
-    width: 500px;
-    left: -4.5px;
+    top: 80px;
+    width: 450px;
+    left: 20px;
     border: solid;
+    border-width: .5px;
     border-color: white;
     /* background-color:  rgba(255, 153, 0, 0.514); */
-    background-color: rgba(255, 136, 57, 0.082);
+    background-color: white;
     color: black;
     height: 0px;
     overflow: hidden;
     transition: 500ms;
-    border-radius: 10px;
+    /* border-radius: 10px; */
 }
 
 .modal.open {
     height: auto;
     border: solid;
-    border-color: white;
+    border-color: gray;
+    border-width: .5px;
+    position: relative;
+    left: 20px;
 }
 
 .modal-header {
-    /* border:solid; */
     padding: 5px;
-    border-color: rgb(255, 145, 2);
+    border:solid;
+    border-width: .5px;
+    border-color: gray;
     height: 25px;
-    font-size: 17px;
-    background-color: orange;
+    color: black;
+    font-size: 9px;
+    position: relative;
+    top: 1px;
 }
 
 #name {
     position: relative;
-    top: 4px;
-    left: 20px;
+    top: 5px;
+    left: 18px;
     font-size: 20px;
-    color: white;
+    color: black;
     font-family: 'Questrial', sans-serif;
     letter-spacing: 1px;
 }
@@ -128,9 +138,9 @@ body {
 #add-button {
     position: relative;
     top: -20px;
-    left: 430px;
+    left: 377px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 16px;
     color: rgb(252, 252, 252);
     border-radius: 12px;
     color: rgb(252, 252, 252);
@@ -151,9 +161,9 @@ body {
     display: flex;
     flex-direction: row;
     position: relative;
-    left: 20px;
+    left: 6px;
     color: black;
-    font-size: 13px;
+    font-size: 11px;
     letter-spacing: 0.5px;
 }
 
@@ -163,7 +173,8 @@ h3 {
 
 p {
     position: relative;
-    top: 13px;
+    top: 8.5px;
+    font-size: 14px;
 }
 
 /* total for basket */
@@ -174,7 +185,7 @@ p {
     border-color: black;
     width: 500px;
     height: 50px;
-    top: -19px;
+    top: 80px;
     left: -3.5px;
 }
 
@@ -198,23 +209,24 @@ p {
 .totalname {
     position: relative;
     top: 5px;
-    left: -4;
+    left: 24px;
     border:solid;
-    height: 25px;
+    height: 35px;
+    width: 450px;
     border-width: 2px;
     border-color: orange;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     /* border-color: rgb(255, 145, 2); */
-    background-color: orange;
+    background-color: white;
 }
 
 #totalname {
-    font-size: 17px;
-    font-weight: bold;
-    color: white;
+    font-size: 19px;
+    /* font-weight: bold; */
+    color: black;
     position: relative;
-    left: 25px;
-    top: -19px;
+    left: 21px;
+    top: -15px;
 }
 
 #item-amount {
@@ -303,16 +315,16 @@ p {
     padding: 20px;
 }
 
-/* slide one */
+/* graph slides */
 
-.container {
-    height: 100vh;
-    width: 100%;
+.graphs {
+    position: relative;
+    top: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    background-color: yellow;
+    background-color: rgb(59, 105, 15);
 }
 
 .open-btn {
@@ -320,8 +332,56 @@ p {
     text-transform: uppercase;
     letter-spacing: 0.5px;
     padding: 1rem 2.5rem;
-    cursor: 
+    cursor: pointer;
 }
 
+.popup {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    /* background-color: black; */
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
 
+.popup-overlay {
+    /* background-color: black; */
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+}
 
+.main-popup {
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    width: 50%;
+    z-index: 1;
+    background-color: red;
+    padding: 30px 20px;
+    line-height: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close-btn {
+    border: solid black;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: .5s ease all;
+}
+
+.close-btn:hover {
+    background-color: whitesmoke;
+}
+
+.popup-content {
+    font-size: 2rem;
+    line-height: 1rem;
+    position: relative;
+}

@@ -12,6 +12,7 @@
         <script src="APIedamam.js"></script>
         <script src="popup.js"></script>
         <script src="Chart.bundle.min.js"></script>
+        <script src="templates/slide.js"></script>
 
     <nav class="navbar">
         <a class="navbar-brand">NutriBasket</a>
@@ -47,7 +48,7 @@
           <div class="modal-header-total">
                 <div class="totalname">
                     <p id="totalname">What is in your basket?</p>
-                    <!-- <p id="item-amount"></p> -->
+                    <p id="item-amount"></p>
                     <div class="baskets">
                         <p id="item-amount"></p>
                         <ol id="basket">
@@ -55,26 +56,23 @@
                     </div>
                 </div>
         
-        <div class="graphone">
-                <p class="graphtitle">Nutrient Totals</p>
-                <!-- <canvas id="graph" width="400" height="400"></canvas> -->
-            <div class="slide">
-                <div class="btn">
-                    <button class="open-btn">Macronutrients</button>
-                    <!-- <button class="open-btn">MICRO</button> -->
-                </div>
-                <div class="popup">
-                    <div class="popup-overlay"></div>
-                    <div main="main-popup">
-                        <div class="popup-content">
-                            <span class="close-btn">&times;</span>
-                            <div class="graphtwo">
-                                <canvas id="graph2" width="400" height="400"></canvas>
-                            </div>
+         <div class="graphs">
+            <p class="graphtitle">Nutrient Totals</p>
+            <div class="btn">
+                <button class="open-btn">Macronutrients</button>
+            </div>
+            <div class="popup">
+                <div class="popup-overlay"></div>
+                <div main="main-popup">
+                    <div class="popup-content">
+                        <span class="close-btn">&times;</span>
+                        <div class="graphtwo">
+                            <canvas id="graph2" width="400" height="400"></canvas>
                         </div>
                     </div>
                 </div>
             </div>
+        
 
             <div class="slide2">
                 <div class="btn2">
@@ -94,13 +92,7 @@
             </div>
         </div>
         
-        
-        <!-- <div class="graphtwo">
-            <canvas id="graph2" width="400" height="400"></canvas>
-        </div>
-        <div class="graphthree">
-            <canvas id="graph3" width="400" height="400"></canvas>
-        </div> -->
+    
           <!-- </div>
           <div class="totalnutris">
             <div class="totalcalories">
