@@ -5,23 +5,18 @@
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <!-- <link rel="stylesheet" href="templates/styles.css"> -->
-      <!-- <link rel="stylesheet" href="css_popupED.css"> -->
+      <link rel="stylesheet" href="css_popupED.css">
 
   </head>
 
   <body>
     <script src="jquery.min.js"></script>
     <script src="APIedamam.js"></script>
-    <script src="popup.js"></script>
+    <script src="popupED.js"></script>
     <script src="Chart.bundle.min.js"></script>
 
     <div id='title'> 
       <h1>NutriBasket</h1>
-    </div>
-
-    <div id='helpuful-tips'>
-      <p>* Right click icon to set limits</p>
-      <p>input: " quantity size item " </p>
     </div>
     
     <div id="searchbox">
@@ -44,6 +39,7 @@
       </style>
 
       <div id="item-name">
+        <p id="error"></p>
         <h3 id="name"></h3>
       </div>
 
@@ -79,12 +75,11 @@
       </div>
 
     
-       
+      
     <button type="submit" id="switch">switch</button>
     
-    <p id="currentG">pie</p>
-    <p id="legendS">true</p>
     
+
     <div id="macro-box">
       <canvas id="graph2" width="400" height="400"></canvas>
     </div>
@@ -96,7 +91,7 @@
 
 
     <div id="your-basket">
-      <h2>Your Basket</h2>
+      <h2>Items</h2>
       <p id="item-amount"></p>
       <ol id="basket"></ol>
     </div>
