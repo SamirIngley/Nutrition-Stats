@@ -69,78 +69,6 @@ $(function(){
         var vitdValue = parseInt(nutrient.vitdTotal)*0.025
 
 
-<<<<<<< HEAD
-        
-        console.log('Graph values: ', caloriesValue, carbsValue, proteinValue, fatValue, sugarValue)
-
-        var ctx = document.getElementById('graph').getContext('2d');
-        var myChart = new Chart(ctx, {
-            type: 'horizontalBar',
-            data: {
-                labels: ['Carbs', 'Protein', 'Fat', 'Saturated', 'Sugar', 'Calcium', 'Potassium', 'Magnesium', 'Iron', 'Fiber', 'Sodium', 'Vit D'],
-                datasets: [{
-                    label: 'Nutrient Totals',
-                    data: [carbsValue, proteinValue, fatValue, saturatedValue, sugarValue, calciumValue, potassiumValue, magnesiumValue, ironValue, fiberValue, sodiumValue, vitdValue],
-                    backgroundColor: [
-                        // 'rgba(255, 99, 132, 0.2)', // calories red
-                        'rgba(54, 162, 235, 0.2)', // carbs blue
-                        'rgba(255, 206, 86, 0.2)', // protein yellow
-                        'rgba(75, 192, 192, 0.2)', // fat green
-                        'rgba(153, 102, 255, 0.2)', // saturated purp
-
-                        'rgba(255, 102, 102, 0.2)', // sugar light red
-                        'rgba(51, 51, 255, 0.2)', // calcium darker blue
-                        'rgba(255, 153, 51, 0.2)', // potassium orange
-                        'rgba(51, 255, 153, 0.2)', // magnesium light green
-                        'rgba(160, 160, 160, 0.2)', // iron gray
-                        'rgba(0, 255, 255, 0.2)', // fiber light blue
-                        'rgba(255, 102, 178, 0.2)', // sodium pink
-                        'rgba(255, 255, 102, 0.2)' // vitd light yellow
-
-
-                    ],
-                    borderColor: [
-                        // 'rgba(255, 99, 132, 1)', // calories red
-                        'rgba(54, 162, 235, 1)', // carbs blue
-                        'rgba(255, 206, 86, 1)', // protein yellow
-                        'rgba(75, 192, 192, 1)', // fat green
-                        'rgba(153, 102, 255, 1)', // saturated purp
-
-                        'rgba(255, 102, 102, 1)', // sugar light red
-                        'rgba(51, 51, 255, 1)', // calcium darker blue
-                        'rgba(255, 153, 51, 1)', // potassium orange
-                        'rgba(51, 255, 153, 1)', // magnesium light green
-                        'rgba(160, 160, 160, 1)', // iron gray
-                        'rgba(0, 255, 255, 1)', // fiber light blue
-                        'rgba(255, 102, 178, 1)', // sodium pink
-                        'rgba(255, 255, 102, 1)' // vitd light yellow
-
-
-
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    // yAxes: [{
-                    //     ticks: {
-                    //         beginAtZero: true
-                    //     }
-                    // }]
-                },
-                title:{
-                    display:true,
-                    // text:'Nutrient Totals' 
-                    
-                },
-                legend:{
-                    display:false,
-                    position:'right',
-                }
-            }
-        });
-=======
         // FIRST "TOTAL" GRAPH on page load
         // console.log('Graph values: ', caloriesValue, carbsValue, proteinValue, fatValue, sugarValue)
 
@@ -210,7 +138,6 @@ $(function(){
         //         }
         //     }
         // });
->>>>>>> cf83ced33cf5c6649a078898da948e017ab8ed49
 
         // GRAPHS 2 n 3 !!
 
@@ -218,7 +145,6 @@ $(function(){
         var pie = 'pie'
         var horizontalB = 'horizontalBar'
         var currentGraphValue = $('#currentG').text()
-        // var currentLegendStatus = $('#legendS').text()
 
         // new current graph gets displayed
         var newCurrent 
@@ -238,7 +164,7 @@ $(function(){
         // when we press the switch button, change the text at that location & the values in the charts
         $('#switch').click(function(){
 
-            console.log('SWITCH: '+newCurrent)
+            console.log('SWITCH: ',currentGraphValue)
 
             chrome.storage.sync.get(['currentG','legendS'], function(nut){
                 // there exists a default value at currentG html
@@ -373,6 +299,9 @@ $(function(){
         }
     })
 
+    // $('#switch').click(function){
+
+    // }
     
 
     // submit button id
