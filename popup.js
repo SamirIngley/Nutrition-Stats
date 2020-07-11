@@ -6,6 +6,107 @@
 
 // either "at load" or upon search or upon adding item
 
+jQuery.fn.extend({
+    updateGraph: function () {
+        var ctx2 = document.getElementById('graph2').getContext('2d');
+        var myChart2 = new Chart(ctx2, {
+            type: nutrient.currentG,
+            data: {
+                labels: ['Carbs', 'Protein', 'Fat', 'Saturated', 'Sugar', 'Fiber'],
+                datasets: [{
+                    data: [carbsValue, proteinValue, fatValue, saturatedValue, sugarValue, fiberValue],
+                    backgroundColor: [
+                        'rgba(54, 162, 235, 0.2)', // carbs blue
+                        'rgba(255, 206, 86, 0.2)', // protein yellow
+                        'rgba(75, 192, 192, 0.2)', // fat green
+                        'rgba(153, 102, 255, 0.2)', // saturated purp
+                        'rgba(255, 99, 132, 0.2)', // sugar red
+                        'rgba(0, 255, 255, 0.2)', // fiber light blue
+
+                    ],
+                    borderColor: [
+                        'rgba(54, 162, 235, 1)', // carbs blue
+                        'rgba(255, 206, 86, 1)', // protein yellow
+                        'rgba(75, 192, 192, 1)', // fat green
+                        'rgba(153, 102, 255, 1)', // saturated purp
+                        'rgba(255, 99, 132, 1)', // sugar red
+                        'rgba(0, 255, 255, 1)' // fiber light blue
+
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
+                title:{
+                    display:true,
+                    text:'Macronutrients'
+                },
+                legend:{
+                    display:nutrient.legendS,
+                    position:'right',
+                }
+            }
+        });
+
+        var ctx3 = document.getElementById('graph3').getContext('2d');
+        var myChart3 = new Chart(ctx3, {
+            type: nutrient.currentG,
+            data: {
+                labels: ['Calcium', 'Potassium', 'Magnesium', 'Iron', 'Sodium', 'Vit D'],
+                datasets: [{
+                    data: [calciumValue, potassiumValue, magnesiumValue, ironValue, sodiumValue, vitdValue],
+                    backgroundColor: [
+                        'rgba(51, 51, 255, 0.2)', // calcium darker blue
+                        'rgba(255, 153, 51, 0.2)', // potassium orange
+                        'rgba(51, 255, 153, 0.2)', // magnesium light green
+                        'rgba(160, 160, 160, 0.2)', // iron gray
+                        'rgba(255, 102, 178, 0.2)', // sodium pink
+                        'rgba(255, 255, 102, 0.2)' // vitd light yellow
+
+
+                    ],
+                    borderColor: [
+                        'rgba(51, 51, 255, 1)', // calcium darker blue
+                        'rgba(255, 153, 51, 1)', // potassium orange
+                        'rgba(51, 255, 153, 1)', // magnesium light green
+                        'rgba(160, 160, 160, 1)', // iron gray
+                        'rgba(255, 102, 178, 1)', // sodium pink
+                        'rgba(255, 255, 102, 1)' // vitd light yellow
+
+
+
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
+                title:{
+                    display:true,
+                    text:'Micronutrients'
+                },
+                legend:{
+                    display:nutrient.legendS,
+                    position:'right',
+                }
+            }
+        });
+    }
+});
+
 
 // Listening for click event on Submit for adding items id: add-button
 $(function(){
@@ -52,7 +153,7 @@ $(function(){
             
         // $('#basket').text(nutrient.basket)
 
-        //graph
+        //graph values
         var caloriesValue = parseInt(nutrient.caloriesTotal)
         var carbsValue = parseInt(nutrient.carbsTotal)
         var proteinValue = parseInt(nutrient.proteinTotal)
@@ -161,28 +262,36 @@ $(function(){
         console.log('CURRENT GRAPH ', newCurrent, currentGraphValue)
 
             
+        if (nutrient.currentG === undefined) {
+            chrome.storage.sync.set({'currentG':horizontalB});
+            chrome.storage.sync.set({'legendS':legendSF});
+        }
+
         // when we press the switch button, change the text at that location & the values in the charts
         $('#switch').click(function(){
 
             console.log('SWITCH: ',currentGraphValue)
 
-            chrome.storage.sync.get(['currentG','legendS'], function(nut){
+            chrome.storage.sync.get(['currentG','legendS'], function(nutrient){
                 // there exists a default value at currentG html
-                console.log("BEFORE SWITCH: ", nut.currentG)
-                if (nut.currentG === pie) {
+                console.log("BEFORE SWITCH: ", nutrient.currentG)
+                if (nutrient.currentG === pie) {
                     chrome.storage.sync.set({'currentG':horizontalB});
                     chrome.storage.sync.set({'legendS':legendSF});
-                    console.log('AFTER SWITCH: ', nut.currentG)
-                    $('#current-graph').html(horizontalB)
+                    console.log('AFTER SWITCH: ', nutrient.currentG)
+                    // $('#current-graph').html('bar')
+                    location.reload()
 
                 } else {
                     chrome.storage.sync.set({'currentG':pie});
                     chrome.storage.sync.set({'legendS':legendST});
-                    console.log('AFTER SWITCH: ', nut.currentG)
-                    $('#current-graph').html(pie)
+                    console.log('AFTER SWITCH: ', nutrient.currentG)
+                    // $('#current-graph').html(pie)
+                    location.reload()
                 }
             });
         });
+
 
 
 
@@ -285,6 +394,7 @@ $(function(){
         });
 
 
+
         // Updating Item Count
         var arrayLength = nutrient.basket.length;
         console.log(parseInt(arrayLength)+' items in basket') 
@@ -297,11 +407,9 @@ $(function(){
                 console.log('BASKET sync ', String(nutrient.basket[index].name))
             }
         }
-    })
+    });
 
-    // $('#switch').click(function){
-
-    // }
+        
     
 
     // submit button id
