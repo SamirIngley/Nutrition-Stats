@@ -10,9 +10,9 @@
 // Listening for click event on Submit for adding items id: add-button
 $(function(){
 
-    // When the user opens the popup, display the current Totals and the limits
-    chrome.storage.sync.get(['caloriesLimit', 'caloriesTotal', 'carbsLimit', 'carbsTotal', 'proteinLimit', 'proteinTotal', 'fatLimit', 'fatTotal', 'sugarLimit', 'sugarTotal', 'saturatedTotal', 'saturatedLimit', 'calciumTotal', 'calciumLimit', 'ironTotal', 'ironLimit', 'fiberTotal', 'fiberLimit', 'potassiumTotal', 'potassiumLimit', 'magnesiumTotal', 'magnesiumLimit','magnesium', 'sodiumTotal', 'sodiumLimit', 'vitdTotal', 'vitdLimit', 'basket'], function(nutrient){
+    chrome.storage.sync.get(['caloriesLimit', 'caloriesTotal', 'carbsLimit', 'carbsTotal', 'proteinLimit', 'proteinTotal', 'fatLimit', 'fatTotal', 'sugarLimit', 'sugarTotal', 'saturatedTotal', 'saturatedLimit', 'calciumTotal', 'calciumLimit', 'ironTotal', 'ironLimit', 'fiberTotal', 'fiberLimit', 'potassiumTotal', 'potassiumLimit', 'magnesiumTotal', 'magnesiumLimit','magnesium', 'sodiumTotal', 'sodiumLimit', 'vitdTotal', 'vitdLimit', 'basket', 'currentG', 'legendS'], function(nutrient){
         
+        // When the user opens the popup, display the current Totals and the limits
         console.log('running totals');
         $('#caloriesTotal').text(nutrient.caloriesTotal)
         $('#caloriesLimit').text(nutrient.caloriesLimit)
@@ -42,6 +42,8 @@ $(function(){
         $('#vitdTotal').text(nutrient.vitdTotal)
         $('#vitdLimit').text(nutrient.vitdLimit)
 
+        $('#currentG').text(nutrient.currentG)
+
         // $('#grams').text('g')
         // $('#mgrams').text('mg')
         // $('#iu').text('iu')
@@ -65,7 +67,7 @@ $(function(){
         var ironValue = parseInt(nutrient.ironTotal)/1000
         var sodiumValue = parseInt(nutrient.sodiumTotal)/1000
         var vitdValue = parseInt(nutrient.vitdTotal)*0.025
-       
+
 
         // FIRST "TOTAL" GRAPH on page load
         // console.log('Graph values: ', caloriesValue, carbsValue, proteinValue, fatValue, sugarValue)
@@ -139,9 +141,56 @@ $(function(){
 
         // GRAPHS 2 n 3 !!
 
+
+        var pie = 'pie'
+        var horizontalB = 'horizontalBar'
+        var currentGraphValue = $('#currentG').text()
+        // var currentLegendStatus = $('#legendS').text()
+
+        // new current graph gets displayed
+        var newCurrent 
+        var legendSF = false
+        var legendST = true
+
+        // set text to current graph
+        // if no text
+        
+        // new current graph equals itself or pie if undefined (like a default value)
+        // get the new current from current graph value on the page
+        newCurrent = currentGraphValue;
+
+        console.log('CURRENT GRAPH ', newCurrent, currentGraphValue)
+
+            
+        // when we press the switch button, change the text at that location & the values in the charts
+        $('#switch').click(function(){
+
+            console.log('SWITCH: '+newCurrent)
+
+            chrome.storage.sync.get(['currentG','legendS'], function(nut){
+                // there exists a default value at currentG html
+                console.log("BEFORE SWITCH: ", nut.currentG)
+                if (nut.currentG === pie) {
+                    chrome.storage.sync.set({'currentG':horizontalB});
+                    chrome.storage.sync.set({'legendS':legendSF});
+                    console.log('AFTER SWITCH: ', nut.currentG)
+                    $('#current-graph').html(horizontalB)
+
+                } else {
+                    chrome.storage.sync.set({'currentG':pie});
+                    chrome.storage.sync.set({'legendS':legendST});
+                    console.log('AFTER SWITCH: ', nut.currentG)
+                    $('#current-graph').html(pie)
+                }
+            });
+        });
+
+
+
+
         var ctx2 = document.getElementById('graph2').getContext('2d');
         var myChart2 = new Chart(ctx2, {
-            type: 'horizontalBar',
+            type: nutrient.currentG,
             data: {
                 labels: ['Carbs', 'Protein', 'Fat', 'Saturated', 'Sugar', 'Fiber'],
                 datasets: [{
@@ -180,7 +229,7 @@ $(function(){
                     text:'Macronutrients'
                 },
                 legend:{
-                    display:false,
+                    display:nutrient.legendS,
                     position:'right',
                 }
             }
@@ -188,7 +237,7 @@ $(function(){
 
         var ctx3 = document.getElementById('graph3').getContext('2d');
         var myChart3 = new Chart(ctx3, {
-            type: 'horizontalBar',
+            type: nutrient.currentG,
             data: {
                 labels: ['Calcium', 'Potassium', 'Magnesium', 'Iron', 'Sodium', 'Vit D'],
                 datasets: [{
@@ -230,7 +279,7 @@ $(function(){
                     text:'Micronutrients'
                 },
                 legend:{
-                    display:false,
+                    display:nutrient.legendS,
                     position:'right',
                 }
             }
@@ -252,7 +301,6 @@ $(function(){
     })
 
     
-
 
     // submit button id
     $('#add-button').click(function(){
@@ -797,13 +845,14 @@ $(function(){
         // Total GRAPH on click
 
 
-        chrome.storage.sync.get(['caloriesTotal', 'carbsTotal', 'proteinTotal', 'fatTotal', 'sugarTotal', 'saturatedTotal', 'calciumTotal', 'ironTotal', 'fiberTotal', 'potassiumTotal', 'magnesiumTotal', 'magnesium', 'sodiumTotal', 'vitdTotal', 'basket'], function(nutrient){
+        chrome.storage.sync.get(['caloriesTotal', 'carbsTotal', 'proteinTotal', 'fatTotal', 'sugarTotal', 'saturatedTotal', 'calciumTotal', 'ironTotal', 'fiberTotal', 'potassiumTotal', 'magnesiumTotal', 'magnesium', 'sodiumTotal', 'vitdTotal', 'basket', 'currentG', 'legendS'], function(nutrient){
 
             // var caloriesValue = parseInt(nutrient.caloriesTotal)
             // var carbsValue = parseInt(nutrient.carbsTotal)
             // var proteinValue = parseInt(nutrient.proteinTotal)
             // var fatValue = parseInt(nutrient.fatTotal)
             // var sugarValue = parseInt(nutrient.sugarTotal)
+        
             
             console.log('2nd Graph values: ', newCaloriesTotal, newCarbsTotal, newProteinTotal, newFatTotal, newSugarTotal )
 
@@ -875,7 +924,7 @@ $(function(){
             
             var ctx2 = document.getElementById('graph2').getContext('2d');    
             var myChart2 = new Chart(ctx2, {
-                type: 'horizontalBar',
+                type: nutrient.currentG,
                 data: {
                     labels: ['Carbs', 'Protein', 'Fat', 'Saturated', 'Sugar', 'Fiber'],
                     datasets: [{
@@ -917,7 +966,7 @@ $(function(){
                         text:'Macronutrients'
                     },
                     legend:{
-                        display:false,
+                        display:nutrient.legendS,
                         position:'right',
                     }
                 }
@@ -925,7 +974,7 @@ $(function(){
 
             var ctx3 = document.getElementById('graph3').getContext('2d');
             var myChart3 = new Chart(ctx3, {
-                type: 'horizontalBar',
+                type: nutrient.currentG,
                 data: {
                     labels: ['Calcium', 'Potassium', 'Magnesium', 'Iron', 'Sodium', 'Vit D'],
                     datasets: [{
@@ -964,7 +1013,7 @@ $(function(){
                         text:'Micronutrients'
                     },
                     legend:{
-                        display:false,
+                        display:nutrient.legendStatus,
                         position:'right',
                     }
                 }
