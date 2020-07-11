@@ -289,13 +289,13 @@ $(function(){
             chrome.storage.sync.set({'currentG':horizontalB});
             chrome.storage.sync.set({'legendS':false});
         }
-
-        // Updating Item Count
-        var arrayLength = nutrient.basket.length;
-        console.log(parseInt(arrayLength)+' items in basket') 
-        $('#item-amount').html(parseInt(arrayLength)+' items in basket')
        
         if (nutrient.basket){
+            // Updating Item Count
+            var arrayLength = nutrient.basket.length;
+            console.log(parseInt(arrayLength)+' items in basket') 
+            $('#item-amount').html(parseInt(arrayLength)+' items in basket')
+
             console.log(nutrient.basket);
             for (var index=0; index<arrayLength; index++){
                 $('#basket').append("<li>" + String(nutrient.basket[index].name) + "</li>")

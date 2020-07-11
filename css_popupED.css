@@ -10,4 +10,20 @@ body {
     align-content: center;
     align-items: center;
 
+    width: 760px;
+
+}
+canvas{
+
+    width:350px !important;
+    height:350px !important;
+  
+  }
+
+#graphs-container {
+    display:flex;
+}
+
+#graphs-container > div {
+    padding: 20px;
 }
