@@ -1,17 +1,25 @@
 
 
-// This UPDATES the TOTALS when we add an item
+// This file UPDATES the TOTALS when we add an item
 // Updates basket
 // and Updates the graphs
 
-// either "at load" or upon search or upon adding item
 
-// Function I call whenever graphs need to be updated :)
+// Function called whenever GRAPHS need to be UPDATED :)
+function resetCanvas() {
+    $('#graph2').remove(); // this is my <canvas> element
+    $('#graph3').remove();
+
+    $('#macro-box').append('<canvas id="graph2" width="400" height="400"></canvas>');
+    $('#micro-box').append('<canvas id="graph3" width="400" height="400"></canvas>');
+}
+
+
 function reDrawGraphs() {
 
     console.log('REDRAWING THE GRAPHS NOW !!!! ')
 
-    chrome.storage.sync.get(['caloriesTotal', 'carbsTotal', 'proteinTotal', 'fatTotal', 'sugarTotal', 'saturatedTotal', 'calciumTotal', 'ironTotal', 'fiberTotal', 'potassiumTotal', 'magnesiumTotal', 'sodiumTotal', 'vitdTotal', 'basket', 'currentG', 'legendS'], function(nutrient){
+    chrome.storage.sync.get(['chart2', 'chart3', 'caloriesTotal', 'carbsTotal', 'proteinTotal', 'fatTotal', 'sugarTotal', 'saturatedTotal', 'calciumTotal', 'ironTotal', 'fiberTotal', 'potassiumTotal', 'magnesiumTotal', 'sodiumTotal', 'vitdTotal', 'basket', 'currentG', 'legendS'], function(nutrient){
 
         // var caloriesValue = parseInt(nutrient.caloriesTotal)
         var carbsValue = parseInt(nutrient.carbsTotal)
@@ -28,7 +36,11 @@ function reDrawGraphs() {
         var sodiumValue = parseInt(nutrient.sodiumTotal)/1000
         var vitdValue = parseInt(nutrient.vitdTotal)*0.025
 
+
+        resetCanvas();
+
         var ctx2 = document.getElementById('graph2').getContext('2d');
+
         var myChart2 = new Chart(ctx2, {
             type: nutrient.currentG,
             data: {
@@ -75,7 +87,15 @@ function reDrawGraphs() {
             }
         });
 
+
+
         var ctx3 = document.getElementById('graph3').getContext('2d');
+
+        if (myChart3 != undefined) {
+            myChart3.destroy;
+            console.log('DESTROYYYYYYYYYED ')
+        }        
+        
         var myChart3 = new Chart(ctx3, {
             type: nutrient.currentG,
             data: {
@@ -89,7 +109,6 @@ function reDrawGraphs() {
                         'rgba(160, 160, 160, 0.2)', // iron gray
                         'rgba(255, 102, 178, 0.2)', // sodium pink
                         'rgba(255, 255, 102, 0.2)' // vitd light yellow
-
 
                     ],
                     borderColor: [
@@ -124,7 +143,8 @@ function reDrawGraphs() {
                 }
             }
         });
-    })
+
+    })  
 }
 
 
