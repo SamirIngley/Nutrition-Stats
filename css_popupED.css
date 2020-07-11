@@ -1,15 +1,29 @@
-
-
 body {
 
-    background-color: black;
-    color: grey;
-    
+    background-color: #000000;
+    color: lightgrey;
 
 
     display: grid;
-    grid-template-columns: 1fr;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
 
-    grid-auto-rows: minmax(50px, auto);
+    width: 760px;
 
+}
+canvas{
+
+    width:350px !important;
+    height:350px !important;
+  
+  }
+
+#graphs-container {
+    display:flex;
+}
+
+#graphs-container > div {
+    padding: 20px;
 }
