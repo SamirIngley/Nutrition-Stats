@@ -128,7 +128,7 @@ function reDrawGraphs() {
 // Listening for click event on Submit for adding items id: add-button
 $(function(){
 
-    chrome.storage.sync.get(['caloriesLimit', 'caloriesTotal', 'carbsLimit', 'carbsTotal', 'proteinLimit', 'proteinTotal', 'fatLimit', 'fatTotal', 'sugarLimit', 'sugarTotal', 'saturatedTotal', 'saturatedLimit', 'calciumTotal', 'calciumLimit', 'ironTotal', 'ironLimit', 'fiberTotal', 'fiberLimit', 'potassiumTotal', 'potassiumLimit', 'magnesiumTotal', 'magnesiumLimit','magnesium', 'sodiumTotal', 'sodiumLimit', 'vitdTotal', 'vitdLimit', 'basket', 'currentG', 'legendS'], function(nutrient){
+    chrome.storage.sync.get(['caloriesLimit', 'caloriesTotal', 'carbsLimit', 'carbsTotal', 'proteinLimit', 'proteinTotal', 'fatLimit', 'fatTotal', 'sugarLimit', 'sugarTotal', 'saturatedTotal', 'saturatedLimit', 'calciumTotal', 'calciumLimit', 'ironTotal', 'ironLimit', 'fiberTotal', 'fiberLimit', 'potassiumTotal', 'potassiumLimit', 'magnesiumTotal', 'magnesiumLimit', 'sodiumTotal', 'sodiumLimit', 'vitdTotal', 'vitdLimit', 'basket', 'currentG', 'legendS'], function(nutrient){
         
         // When the user opens the popup, display the current Totals and the limits
         console.log('running totals');
@@ -976,7 +976,7 @@ $(function(){
         // Total GRAPH on click
 
 
-        chrome.storage.sync.get(['caloriesTotal', 'carbsTotal', 'proteinTotal', 'fatTotal', 'sugarTotal', 'saturatedTotal', 'calciumTotal', 'ironTotal', 'fiberTotal', 'potassiumTotal', 'magnesiumTotal', 'magnesium', 'sodiumTotal', 'vitdTotal', 'basket', 'currentG', 'legendS'], function(nutrient){
+        chrome.storage.sync.get(['caloriesTotal', 'carbsTotal', 'proteinTotal', 'fatTotal', 'sugarTotal', 'saturatedTotal', 'calciumTotal', 'ironTotal', 'fiberTotal', 'potassiumTotal', 'magnesiumTotal', 'sodiumTotal', 'vitdTotal', 'basket', 'currentG', 'legendS'], function(nutrient){
 
             // var caloriesValue = parseInt(nutrient.caloriesTotal)
             // var carbsValue = parseInt(nutrient.carbsTotal)

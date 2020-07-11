@@ -11,9 +11,9 @@ function reDrawGraphs() {
 
     console.log('REDRAWING THE GRAPHS NOW !!!! ')
 
-    chrome.storage.sync.get(['caloriesLimit', 'caloriesTotal', 'carbsLimit', 'carbsTotal', 'proteinLimit', 'proteinTotal', 'fatLimit', 'fatTotal', 'sugarLimit', 'sugarTotal', 'saturatedTotal', 'saturatedLimit', 'calciumTotal', 'calciumLimit', 'ironTotal', 'ironLimit', 'fiberTotal', 'fiberLimit', 'potassiumTotal', 'potassiumLimit', 'magnesiumTotal', 'magnesiumLimit','magnesium', 'sodiumTotal', 'sodiumLimit', 'vitdTotal', 'vitdLimit', 'basket', 'currentG', 'legendS'], function(nutrient){
+    chrome.storage.sync.get(['caloriesTotal', 'carbsTotal', 'proteinTotal', 'fatTotal', 'sugarTotal', 'saturatedTotal', 'calciumTotal', 'ironTotal', 'fiberTotal', 'potassiumTotal', 'magnesiumTotal', 'sodiumTotal', 'vitdTotal', 'basket', 'currentG', 'legendS'], function(nutrient){
 
-        var caloriesValue = parseInt(nutrient.caloriesTotal)
+        // var caloriesValue = parseInt(nutrient.caloriesTotal)
         var carbsValue = parseInt(nutrient.carbsTotal)
         var proteinValue = parseInt(nutrient.proteinTotal)
         var fatValue = parseInt(nutrient.fatTotal)
@@ -133,7 +133,7 @@ function reDrawGraphs() {
 // Listening for click event on Submit for adding items id: add-button
 $(function(){
 
-    chrome.storage.sync.get(['caloriesLimit', 'caloriesTotal', 'carbsLimit', 'carbsTotal', 'proteinLimit', 'proteinTotal', 'fatLimit', 'fatTotal', 'sugarLimit', 'sugarTotal', 'saturatedTotal', 'saturatedLimit', 'calciumTotal', 'calciumLimit', 'ironTotal', 'ironLimit', 'fiberTotal', 'fiberLimit', 'potassiumTotal', 'potassiumLimit', 'magnesiumTotal', 'magnesiumLimit','magnesium', 'sodiumTotal', 'sodiumLimit', 'vitdTotal', 'vitdLimit', 'basket', 'currentG', 'legendS'], function(nutrient){
+    chrome.storage.sync.get(['caloriesLimit', 'caloriesTotal', 'carbsLimit', 'carbsTotal', 'proteinLimit', 'proteinTotal', 'fatLimit', 'fatTotal', 'sugarLimit', 'sugarTotal', 'saturatedTotal', 'saturatedLimit', 'calciumTotal', 'calciumLimit', 'ironTotal', 'ironLimit', 'fiberTotal', 'fiberLimit', 'potassiumTotal', 'potassiumLimit', 'magnesiumTotal', 'magnesiumLimit', 'sodiumTotal', 'sodiumLimit', 'vitdTotal', 'vitdLimit', 'basket', 'currentG', 'legendS'], function(nutrient){
         
         // When the user opens the popup, display the current Totals and the limits
         console.log('running totals');
@@ -870,15 +870,6 @@ $(function(){
             // if input box, clear it using below
             // $('#item-protein-amount').val('');
         })
-
-
-
-
-
-        // $('#grams').HTML('g')
-        // $('#mgrams').HTML('mg')
-        // $('#iu').HTML('iu')
-
 
 
         // Total GRAPHs on click

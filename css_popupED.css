@@ -1,9 +1,8 @@
 body {
 
-    background-color: black;
+    background-color: #000000;
     color: lightgrey;
 
-    width: 100vw;
 
     display: grid;
     justify-content: center;
@@ -12,4 +11,3 @@ body {
     align-items: center;
 
 }
-
