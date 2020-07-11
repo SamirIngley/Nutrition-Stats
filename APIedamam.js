@@ -123,7 +123,7 @@ $(function(){
                 $('#name').html("We don't have data on this item")
             }
 
-            // $('.modal').addClass("open")
+            $('.modal').addClass("open")
 
         })
 

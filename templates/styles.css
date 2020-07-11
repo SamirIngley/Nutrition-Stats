@@ -1,27 +1,33 @@
-@font-face {
-    font-family: EpFont;
-    src: url('https://github.com/Etcetera-Type-Co/Epilogue/blob/master/fonts/static/ttf/Epilogue-Regular.ttf'); /* Safari, Android, iOS */
-    font-style: normal;
-    font-weight: 100;
-  }
+/* font-family: 'Poppins', sans-serif;
+font-family: 'Questrial', sans-serif; */
+/* font-family: 'Catamaran', sans-serif; */
 
-  body {
-      font-family: EpFont;
-  }
 
+body {
+    font-family: 'Poppins', sans-serif;
+}
 .dashboard {
     width: 500px;
-    height: 160px;
-    /* border: solid; */
+    height: 110px;
+    border: solid;
     /* border-width: 1px; */
-    color: rgb(120, 120, 120);
+    color: white;
+}
+
+.navbar {
+    background-color: rgb(13, 146, 255);
 }
 
 /* title */
 .navbar-brand {
-    font-size: 40px;
+    font-size: 45px;
     position: relative;
     left: 20px;
+    font-family: 'Questrial', sans-serif;
+    font-weight: 900;
+    /* color: rgb(0, 166, 231); */
+    color: white;
+    /* text-shadow: 1px 1px rgb(202, 202, 202); */
 }
 
 /* instructions hover */
@@ -29,7 +35,7 @@
     height: 32px;
     width: 32px;
     position: relative;
-    left: 260px;
+    left: 228px;
     top: -2px;
 }
 
@@ -37,85 +43,104 @@
 .cartinput, #searchBox {
   font-size: 10px;
   font-weight: 100;
-  width: 208px;
+  width: 200px;
   color: rgb(26, 2, 2);
   padding: 10px;
   margin: 10px;
   position: relative;
   top: -3px;
   left: -5px;
+  letter-spacing: .5px;
 }
 
 .cartinput:focus, #searchBox:focus {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 400;
     color: rgba(34, 34, 34, 0.858);
     border-style: solid;
     border-width: 3px;
     border-radius: 1%;
-    border-color: rgb(65, 157, 255);
+    border-color: rgb(206, 227, 255);
     padding: 10px;
     margin: 10px;
     outline: none !important;
+    letter-spacing: .5px;
 }
 
 /* search for item */
 #searchButton {
     position: relative;
     left: 5px;
-    top: 2px;
-    width: 210px;
+    top: -5px;
+    width: 200px;
     height: 30px;
     font-size: 15px;
+    border-radius: 12px;
     color: rgb(252, 252, 252);
     border: none;
-    background-color: rgb(99, 99, 99);
+    background-color:orange;
     cursor: pointer;
+    letter-spacing: .5px;
 }
 
 /* item is searched + slide down*/
 .modal {
     position: relative;
-    top: -11px;
-    /* border: solid; */
-    border-color: gray;
-    color: gray;
+    top: -19px;
+    width: 500px;
+    left: -4.5px;
+    border: solid;
+    border-color: white;
+    /* background-color:  rgba(255, 153, 0, 0.514); */
+    background-color: rgba(255, 136, 57, 0.082);
+    color: black;
     height: 0px;
     overflow: hidden;
     transition: 500ms;
+    border-radius: 10px;
 }
 
 .modal.open {
     height: auto;
     border: solid;
-    border-color: gray;
+    border-color: white;
 }
 
 .modal-header {
-    border:solid;
+    /* border:solid; */
     padding: 5px;
+    border-color: rgb(255, 145, 2);
     height: 25px;
     font-size: 17px;
+    background-color: orange;
 }
 
 #name {
     position: relative;
-    top: 1px;
+    top: 4px;
     left: 20px;
+    font-size: 20px;
+    color: white;
+    font-family: 'Questrial', sans-serif;
+    letter-spacing: 1px;
 }
 
 #add-button {
     position: relative;
-    top: -22px;
-    left: 387px;
+    top: -20px;
+    left: 430px;
     cursor: pointer;
-    font-size: 10px;
+    font-size: 18px;
     color: rgb(252, 252, 252);
+    border-radius: 12px;
+    color: rgb(252, 252, 252);
+    border-width: 2px;
     border: none;
-    background-color: rgb(114, 114, 114);
-    padding: 10px;
-    width: 90px;
-    height: 26px;
+    /* background-color: rgba(255, 136, 57, 0.699); */
+    border-color: rgb(255, 145, 2);
+    background-color:  rgb(255, 153, 0);
+    width: 55px;
+    height: 23px;
 }
 
 .modal-body {
@@ -127,6 +152,9 @@
     flex-direction: row;
     position: relative;
     left: 20px;
+    color: black;
+    font-size: 13px;
+    letter-spacing: 0.5px;
 }
 
 h3 {
@@ -142,11 +170,12 @@ p {
 
 .modal-header-total {
     position: relative;
-    top: 22px;
-}
-
-#totalname {
-    font-size: 19px;
+    /* border: solid; */
+    border-color: black;
+    width: 500px;
+    height: 50px;
+    top: -19px;
+    left: -3.5px;
 }
 
 .deletebasket {
@@ -165,11 +194,74 @@ p {
     cursor: pointer;
 }
 
-.graph {
+/* whats in your basket */
+.totalname {
+    position: relative;
+    top: 5px;
+    left: -4;
+    border:solid;
+    height: 25px;
+    border-width: 2px;
+    border-color: orange;
+    border-radius: 10px;
+    /* border-color: rgb(255, 145, 2); */
+    background-color: orange;
+}
+
+#totalname {
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+    position: relative;
+    left: 25px;
+    top: -19px;
+}
+
+#item-amount {
+    position: relative;
+    /* border: solid; */
+    left: 22px;
+    top: -10px;
+    color: black;
+    font-size: 14.5px;
+    letter-spacing: 0.5px;
+}
+
+#basket {
+    font-size: 14px;
+    position: relative;
+    left: 25px;
+    top: -15px;
+    color: black;
+    letter-spacing: 0.5px;
+}
+
+.baskets {
+    background-color: rgba(255, 136, 57, 0.082);
+}
+
+/* graphs */
+.graphone {
     position: relative;
     left: 1px;
-    top: 30px;
+    top: 20px;
+    border: solid;
+    border-color: gray;
+    height: 600px;
 }
+
+#graph {
+    position: relative;
+    top: 20px;
+}
+
+.graphtitle {
+    color: black;
+    position: relative;
+    left: 40px;
+}
+
+/* total for all */
 
 .totalnutris {
     position: relative;
@@ -195,7 +287,7 @@ p {
 
 .totalprotein {
     /* border: solid; */
-    border-color: gray;
+    border-color: rgb(168, 87, 87);
     padding: 20px;
 }
 
@@ -211,15 +303,25 @@ p {
     padding: 20px;
 }
 
-#totalname {
-    font-size: 15px;
-    position: relative;
-    left: 3px;
+/* slide one */
 
+.container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    background-color: yellow;
 }
 
-#limit {
-    font-size: 11px;
-    position: relative;
-    left: 3px;
+.open-btn {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 1rem 2.5rem;
+    cursor: 
 }
+
+
+

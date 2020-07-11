@@ -124,7 +124,8 @@ $(function(){
                 },
                 title:{
                     display:true,
-                    text:'Nutrient Totals'
+                    // text:'Nutrient Totals' 
+                    
                 },
                 legend:{
                     display:false,
