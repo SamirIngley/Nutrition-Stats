@@ -69,13 +69,6 @@ function reDrawGraphs() {
                 }]
             },
             options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                },
                 title:{
                     display:true,
                     text:'Macronutrients'
@@ -126,13 +119,6 @@ function reDrawGraphs() {
                 }]
             },
             options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                },
                 title:{
                     display:true,
                     text:'Micronutrients'
@@ -282,8 +268,7 @@ $(function(){
         //     }
         // });
 
-        // GRAPHS 2 n 3 !!
-
+        // GRAPHS !!
 
         var pie = 'pie'
         var horizontalB = 'horizontalBar'
@@ -319,7 +304,7 @@ $(function(){
         }
 
 
-        // DRAW GRAPHHS UPON DOC LOAD
+        // DRAW GRAPHHS UPON DOCUMENT LOAD
         reDrawGraphs();
 
 
@@ -361,7 +346,7 @@ $(function(){
         
     
 
-    // submit button id
+    // ADD TO BASKET button
     $('#add-button').click(function(){
         console.log('add item clicked');
         // Get the current total from chrome storage
