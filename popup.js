@@ -6,8 +6,25 @@
 
 // either "at load" or upon search or upon adding item
 
-jQuery.fn.extend({
-    updateGraph: function () {
+function reDrawGraphs() {
+
+    chrome.storage.sync.get(['caloriesLimit', 'caloriesTotal', 'carbsLimit', 'carbsTotal', 'proteinLimit', 'proteinTotal', 'fatLimit', 'fatTotal', 'sugarLimit', 'sugarTotal', 'saturatedTotal', 'saturatedLimit', 'calciumTotal', 'calciumLimit', 'ironTotal', 'ironLimit', 'fiberTotal', 'fiberLimit', 'potassiumTotal', 'potassiumLimit', 'magnesiumTotal', 'magnesiumLimit','magnesium', 'sodiumTotal', 'sodiumLimit', 'vitdTotal', 'vitdLimit', 'basket', 'currentG', 'legendS'], function(nutrient){
+
+        var caloriesValue = parseInt(nutrient.caloriesTotal)
+        var carbsValue = parseInt(nutrient.carbsTotal)
+        var proteinValue = parseInt(nutrient.proteinTotal)
+        var fatValue = parseInt(nutrient.fatTotal)
+        var sugarValue = parseInt(nutrient.sugarTotal)
+        var fiberValue = parseInt(nutrient.fiberTotal)
+        var saturatedValue = parseInt(nutrient.saturatedTotal)
+
+        var calciumValue = parseInt(nutrient.calciumTotal)/1000
+        var potassiumValue = parseInt(nutrient.potassiumTotal)/1000
+        var magnesiumValue = parseInt(nutrient.magnesiumTotal)/1000
+        var ironValue = parseInt(nutrient.ironTotal)/1000
+        var sodiumValue = parseInt(nutrient.sodiumTotal)/1000
+        var vitdValue = parseInt(nutrient.vitdTotal)*0.025
+
         var ctx2 = document.getElementById('graph2').getContext('2d');
         var myChart2 = new Chart(ctx2, {
             type: nutrient.currentG,
@@ -104,8 +121,8 @@ jQuery.fn.extend({
                 }
             }
         });
-    }
-});
+    })
+}
 
 
 // Listening for click event on Submit for adding items id: add-button
@@ -153,7 +170,7 @@ $(function(){
             
         // $('#basket').text(nutrient.basket)
 
-        //graph values
+        // graph values
         var caloriesValue = parseInt(nutrient.caloriesTotal)
         var carbsValue = parseInt(nutrient.carbsTotal)
         var proteinValue = parseInt(nutrient.proteinTotal)
@@ -280,14 +297,18 @@ $(function(){
                     chrome.storage.sync.set({'legendS':legendSF});
                     console.log('AFTER SWITCH: ', nutrient.currentG)
                     // $('#current-graph').html('bar')
-                    location.reload()
+                    // location.reload()
+                    reDrawGraphs();
+
+
 
                 } else {
                     chrome.storage.sync.set({'currentG':pie});
                     chrome.storage.sync.set({'legendS':legendST});
                     console.log('AFTER SWITCH: ', nutrient.currentG)
                     // $('#current-graph').html(pie)
-                    location.reload()
+                    // location.reload()
+                    reDrawGraphs();
                 }
             });
         });
