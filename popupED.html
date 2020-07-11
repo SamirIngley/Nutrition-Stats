@@ -32,11 +32,6 @@
     <p id="loading"></p>
 
     <div id="output">
-      <style>
-        div {
-          display: inline-block
-        }
-      </style>
 
       <div id="item-name">
         <p id="error"></p>
@@ -46,111 +41,112 @@
 
       <div id="indiv-nutrients">
 
-        <div id="cal-div"><p>Calories: </p><p id="calories"></p></div>
+        <div id="cal-div"><p></p><p id="calories"></p></div>
         
-        <div id="carbs-div"><p>Carbs: </p><p id="carbs"></p><p id="grams"></p></div>
+        <div id="carbs-div"><p></p><p id="carbs"></p><p id="grams"></p></div>
         
-        <div id="pro-div"><p>Protein: </p><p id="protein"></p><p id="grams"></p></div>
+        <div id="pro-div"><p></p><p id="protein"></p><p id="grams"></p></div>
 
-        <div id="fat-div"><p>Fat: </p><p id="fat"></p><p id="grams"></p></div>
+        <div id="fat-div"><p></p><p id="fat"></p><p id="grams"></p></div>
 
-        <div id="sat-div"><p>Saturated: </p><p id="saturated"></p><p id="grams"></p></div>
+        <div id="sat-div"><p></p><p id="saturated"></p><p id="grams"></p></div>
 
-        <div id="sug-div"><p>Sugar: </p><p id="sugar"></p><p id="grams"></p></div>
+        <div id="sug-div"><p></p><p id="sugar"></p><p id="grams"></p></div>
 
-        <div id="cal-div"><p>Calcium: </p><p id="calcium"></p><p id="mgrams"></p></div>
+        <div id="cal-div"><p></p><p id="calcium"></p><p id="mgrams"></p></div>
 
-        <div id="ir-div"><p>Iron: </p><p id="iron"></p><p id="mgrams"></p></div>
+        <div id="ir-div"><p></p><p id="iron"></p><p id="mgrams"></p></div>
 
-        <div id="fi-div"><p>Fiber: </p><p id="fiber"></p><p id="mgrams"></p></div>
+        <div id="fi-div"><p></p><p id="fiber"></p><p id="mgrams"></p></div>
 
-        <div id="po-div"><p>Potassium: </p><p id="potassium"></p><p id="mgrams"></p></div>
+        <div id="po-div"><p></p><p id="potassium"></p><p id="mgrams"></p></div>
 
-        <div id="ma-div"><p>Magnesium: </p><p id="magnesium"></p><p id="mgrams"></p></div>
+        <div id="ma-div"><p></p><p id="magnesium"></p><p id="mgrams"></p></div>
         
-        <div id="so-div"><p>Sodium: </p><p id="sodium"></p><p id="mgrams"></p></div>
+        <div id="so-div"><p></p><p id="sodium"></p><p id="mgrams"></p></div>
 
-        <div id="vd-div"><p>Vitamin D: </p><p id="vitd"></p><p id="iu"></p></div>
+        <div id="vd-div"><p></p><p id="vitd"></p><p id="iu"></p></div>
 
       </div>
 
     
       
-    <button type="submit" id="switch">switch</button>
+      <button type="submit" id="switch">switch</button>
     
     
-    <div id="graphs-container">
-      <div id="macro-box">
-        <canvas id="graph2" width="100" height="100"></canvas>
+      <div id="graphs-container">
+        <div id="macro-box">
+          <canvas id="graph2" width="100" height="100"></canvas>
+        </div>
+
+
+        <div id="micro-box">
+          <canvas id="graph3" width="100" height="100"></canvas>
+        </div>
       </div>
 
-
-      <div id="micro-box">
-        <canvas id="graph3" width="100" height="100"></canvas>
+      <div id="your-basket">
+        <h2>Items</h2>
+        <p id="item-amount"></p>
+        <ol id="basket"></ol>
       </div>
-    </div>
-
-    <div id="your-basket">
-      <h2>Items</h2>
-      <p id="item-amount"></p>
-      <ol id="basket"></ol>
-    </div>
     
 
-    <input type="submit" id="delete-basket" value="Delete Basket">
+      <input type="submit" id="delete-basket" value="Delete Basket">
 
 
-    <div id="total-list">
+      <div id="total-list">
 
-      <h2>Totals</h2>
+        <h2>Totals</h2>
 
-      <div id="macro-totals">
+        <div id="macro-totals">
 
-        <h3>Calories: </h3> <p id="caloriesTotal">0</p>
-        <p>Limit: </p><p id="caloriesLimit"></p>
+          <h3>Calories: </h3> <p id="caloriesTotal">0</p>
+          <p>Limit: </p><p id="caloriesLimit"></p>
 
-        <h3>Carbs: </h3> <p id="carbsTotal">0</p>
-        <p>Limit: </p><p id="carbsLimit"></p>
+          <h3>Carbs: </h3> <p id="carbsTotal">0</p>
+          <p>Limit: </p><p id="carbsLimit"></p>
 
-        <h3>Protein: </h3> <p id="proteinTotal">0</p>
-        <p>Limit: </p><p id="proteinLimit"></p>
+          <h3>Protein: </h3> <p id="proteinTotal">0</p>
+          <p>Limit: </p><p id="proteinLimit"></p>
 
-        <h3>Fat: </h3> <p id="fatTotal">0</p>
-        <p>Limit: </p><p id="fatLimit"></p>
+          <h3>Fat: </h3> <p id="fatTotal">0</p>
+          <p>Limit: </p><p id="fatLimit"></p>
 
-        <h3>Saturated Fat: </h3> <p id="saturatedTotal">0</p>
-        <p>Limit: </p><p id="saturatedLimit"></p>
+          <h3>Saturated Fat: </h3> <p id="saturatedTotal">0</p>
+          <p>Limit: </p><p id="saturatedLimit"></p>
 
-        <h3>Sugar: </h3> <p id="sugarTotal">0</p>
-        <p>Limit: </p><p id="sugarLimit"></p>
+          <h3>Sugar: </h3> <p id="sugarTotal">0</p>
+          <p>Limit: </p><p id="sugarLimit"></p>
 
-        <h3>Fiber: </h3> <p id="fiberTotal">0</p>
-        <p>Limit: </p><p id="fiberLimit"></p>
+          <h3>Fiber: </h3> <p id="fiberTotal">0</p>
+          <p>Limit: </p><p id="fiberLimit"></p>
 
+        </div>
+        
+        <div id="micro-totals">
+
+          <h3>Calcium: </h3> <p id="calciumTotal">0</p>
+          <p>Limit: </p><p id="calciumLimit"></p>
+
+          <h3>Potassium: </h3> <p id="potassiumTotal">0</p>
+          <p>Limit: </p><p id="potassiumLimit"></p>
+
+          <h3>Iron: </h3> <p id="ironTotal">0</p>
+          <p>Limit: </p><p id="ironLimit"></p>
+
+          <h3>Magnesium: </h3> <p id="magnesiumTotal">0</p>
+          <p>Limit: </p><p id="magnesiumLimit"></p>
+
+          <h3>Sodium:</h3> <p id="sodiumTotal">0</p>
+          <p>Limit: </p><p id="sodiumLimit"></p>
+
+          <h3>Vit D:</h3> <p id="vitdTotal">0</p>
+          <p>Limit: </p><p id="vitdLimit"></p>
+
+        </div>
       </div>
-      
-      <div id="micro-totals">
 
-        <h3>Calcium: </h3> <p id="calciumTotal">0</p>
-        <p>Limit: </p><p id="calciumLimit"></p>
-
-        <h3>Potassium: </h3> <p id="potassiumTotal">0</p>
-        <p>Limit: </p><p id="potassiumLimit"></p>
-
-        <h3>Iron: </h3> <p id="ironTotal">0</p>
-        <p>Limit: </p><p id="ironLimit"></p>
-
-        <h3>Magnesium: </h3> <p id="magnesiumTotal">0</p>
-        <p>Limit: </p><p id="magnesiumLimit"></p>
-
-        <h3>Sodium:</h3> <p id="sodiumTotal">0</p>
-        <p>Limit: </p><p id="sodiumLimit"></p>
-
-        <h3>Vit D:</h3> <p id="vitdTotal">0</p>
-        <p>Limit: </p><p id="vitdLimit"></p>
-
-      </div>
-      
     </div>
     
 
