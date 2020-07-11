@@ -40,64 +40,122 @@
 
 
       <div id="indiv-nutrients">
+        <div id="macro-indiv">
 
-        <div id="cal-div"><p></p><p id="calories"></p></div>
-        
-        <div id="carbs-div"><p></p><p id="carbs"></p><p id="grams"></p></div>
-        
-        <div id="pro-div"><p></p><p id="protein"></p><p id="grams"></p></div>
+          <div id="cal-div">
+            <p id="calories-label"></p>
+            <p id="calories"></p>
+          </div>
+          
+          <div id="carbs-div">
+            <p id="carbs-label"></p>
+            <p id="carbs"></p>
+            <p id="grams"></p>
+          </div>
+          
+          <div id="pro-div">
+            <p id="protein-label"></p>
+            <p id="protein"></p>
+            <p id="grams"></p>
+          </div>
 
-        <div id="fat-div"><p></p><p id="fat"></p><p id="grams"></p></div>
+          <div id="fat-div">
+            <p id="fat-label"></p>
+            <p id="fat"></p>
+            <p id="grams"></p>
+          </div>
 
-        <div id="sat-div"><p></p><p id="saturated"></p><p id="grams"></p></div>
+          <div id="sat-div">
+            <p id="saturated-label"></p>
+            <p id="saturated"></p>
+            <p id="grams"></p>
+          </div>
 
-        <div id="sug-div"><p></p><p id="sugar"></p><p id="grams"></p></div>
+          <div id="sug-div">
+            <p id="sugar-label"></p>
+            <p id="sugar"></p>
+            <p id="grams"></p>
+          </div>
 
-        <div id="cal-div"><p></p><p id="calcium"></p><p id="mgrams"></p></div>
+        </div>
 
-        <div id="ir-div"><p></p><p id="iron"></p><p id="mgrams"></p></div>
+        <div id="micro-indiv">
 
-        <div id="fi-div"><p></p><p id="fiber"></p><p id="mgrams"></p></div>
+          <div id="calc-div">
+            <p id="calcium-label"></p>
+            <p id="calcium"></p>
+            <p id="mgrams"></p>
+          </div>
 
-        <div id="po-div"><p></p><p id="potassium"></p><p id="mgrams"></p></div>
+          <div id="ir-div">
+            <p id="iron-label"></p>
+            <p id="iron"></p>
+            <p id="mgrams"></p>
+          </div>
 
-        <div id="ma-div"><p></p><p id="magnesium"></p><p id="mgrams"></p></div>
-        
-        <div id="so-div"><p></p><p id="sodium"></p><p id="mgrams"></p></div>
+          <div id="fi-div">
+            <p id="fiber-label"></p>
+            <p id="fiber"></p>
+            <p id="mgrams"></p>
+          </div>
 
-        <div id="vd-div"><p></p><p id="vitd"></p><p id="iu"></p></div>
+          <div id="po-div">
+            <p id="potassium-label"></p>
+            <p id="potassium"></p>
+            <p id="mgrams"></p>
+          </div>
 
+          <div id="ma-div">
+            <p id="magnesium-label"></p>
+            <p id="magnesium"></p>
+            <p id="mgrams"></p>
+          </div>
+          
+          <div id="so-div">
+            <p id="sodium-label"></p>
+            <p id="sodium"></p>
+            <p id="mgrams"></p>
+          </div>
+
+          <div id="vd-div">
+            <p id="vitd-label"></p>
+            <p id="vitd"></p>
+            <p id="iu"></p>
+          </div>
+
+        </div>
       </div>
 
     
-      
-      <button type="submit" id="switch">switch</button>
-    
+      <div id="switch-div">
+        <button type="submit" id="switch"></button>
+      </div>
+
     
       <div id="graphs-container">
+
         <div id="macro-box">
-          <canvas id="graph2" width="100" height="100"></canvas>
+          <canvas id="graph2" width="400" height="400"></canvas>
         </div>
 
 
         <div id="micro-box">
-          <canvas id="graph3" width="100" height="100"></canvas>
+          <canvas id="graph3" width="400" height="400"></canvas>
         </div>
       </div>
 
       <div id="your-basket">
         <h2>Items</h2>
         <p id="item-amount"></p>
-        <ol id="basket"></ol>
+        <p id="basket"></p>
       </div>
     
+      <div id="delete-div">
+        <input type="submit" id="delete-basket" value="Delete Basket">
+      </div>
 
-      <input type="submit" id="delete-basket" value="Delete Basket">
-
-
+      <h2 id="totals-label">Totals</h2>
       <div id="total-list">
-
-        <h2>Totals</h2>
 
         <div id="macro-totals">
 

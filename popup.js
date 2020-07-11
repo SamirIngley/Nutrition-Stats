@@ -274,10 +274,6 @@ $(function(){
         var horizontalB = 'horizontalBar'
         var currentGraphValue = $('#currentG').text()
 
-        // new current graph gets displayed
-        var legendSF = false
-        var legendST = true
-
         // set text to current graph
         // if no text
         
@@ -288,6 +284,7 @@ $(function(){
         if (nutrient.currentG === undefined) {
             chrome.storage.sync.set({'currentG':horizontalB});
             chrome.storage.sync.set({'legendS':false});
+            $('#switch').html('-')
         }
        
         if (nutrient.basket){
@@ -324,6 +321,7 @@ $(function(){
                     // $('#current-graph').html('bar')
                     // location.reload()
                     reDrawGraphs();
+                    $('#switch').html('-')
 
 
 
@@ -334,6 +332,8 @@ $(function(){
                     // $('#current-graph').html(pie)
                     // location.reload()
                     reDrawGraphs();
+                    $('#switch').html('o')
+
                 }
             });
         });
@@ -371,8 +371,8 @@ $(function(){
 
 
         // ADDING A NEW ITEM -> GET PUSHED TO BASKET ARRAY 
+        
         // Updating Basket to display items
-
         // chrome.storage.sync.set({key: value}, function() {
         //     console.log('Value is set to ' + value);
         //   });
@@ -405,7 +405,7 @@ $(function(){
                     basket.push({name: name})
                     console.log(basket)
                     chrome.storage.sync.set({basket:basket}, function() {
-                        $('#basket').append("<li>" + name + "</li>")
+                        $('#basket').append("<p>" + name + "</p>")
                         console.log('Synced to BASKET: ',basket)
                     })
                     // UPDATE BASKET item-amount

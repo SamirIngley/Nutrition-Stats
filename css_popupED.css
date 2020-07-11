@@ -38,6 +38,16 @@ canvas{
 
 }
 
+#micro-indiv {
+    display:flex;
+    padding: 10px;
+}
+
+#macro-indiv {
+    display:flex;
+    padding: 10px;
+}
+
 #item-name {
     display: flex;
     justify-content: center;
@@ -46,10 +56,41 @@ canvas{
     align-items: center;
 }
 
-#switch {
+#switch-div {
     display: flex;
-    justify-content: right;
-    justify-items: right;
-    align-content: right;
-    align-items: right;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
+
+#your-basket {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+}
+
+#delete-div {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+}
+
+#totals-label {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+}
+
+#total-list {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+}
+
