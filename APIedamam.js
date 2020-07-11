@@ -26,7 +26,7 @@ $(function(){
         $('#loading').html(loadingMiddle)
 
 
-        urlquery = "https://api.edamam.com/api/nutrition-data?app_id=adec199b&app_key=20ffecd0c1e546e27733a30af29950f5&ingr="+queryStr
+        urlquery = "https://api.edamam.com/api/nutrition-data?app_id=a79d12c6&app_key=d52dd6e4e97c052fa687301f3547ff42&ingr="+queryStr
 
         console.log('start api');
 
