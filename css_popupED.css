@@ -11,6 +11,8 @@ body {
     align-items: center;
 
     width: 740px;
+    /* width: 400px; */
+    /* height: 2000px; */
     margin: 20px;
 
 }
@@ -21,7 +23,21 @@ canvas{
   
   }
 
+#searchStuff {
+    display: flex;
+    justify-content: space-around;
+}
+
+#searchBox {
+    background-color: darkgrey;
+}
+
+#search-add-buttons {
+    display: flex;
+}
+
 #graphs-container {
+    /* display:grid; */
     display:flex;
 }
 
@@ -31,6 +47,7 @@ canvas{
 
 #indiv-nutrients {
     display: flex;
+    height: 120px;
     justify-content: center;
     justify-items: center;
     align-content: center;
@@ -38,15 +55,33 @@ canvas{
 
 }
 
-#micro-indiv {
-    display:flex;
-    padding: 10px;
+
+#indiv-nutrients > div {
+    display:grid;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding: 17px;
 }
 
-#macro-indiv {
-    display:flex;
-    padding: 10px;
+#indiv-nutrients > div > div > p:nth-child(1) {
+    margin-top: 5px;
+    margin-bottom: 0px;
 }
+
+#indiv-nutrients > div > div > p:nth-child(2) {
+    margin-top: 1px;
+    margin-bottom: 0px;
+}
+
+
+
+#switch {
+    background-color: darkgrey;
+}
+
+
 
 #item-name {
     display: flex;
@@ -88,9 +123,35 @@ canvas{
 
 #total-list {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     justify-items: center;
     align-content: center;
     align-items: center;
+}
+
+
+#macro-totals {
+    display:grid;
+    padding: 20px;
+}
+
+#macro-totals2 {
+    display:grid;
+    padding: 20px;
+}
+
+#micro-totals {
+    display:grid;
+    padding: 20px;
+}
+
+#micro-totals2 {
+    display:grid;
+    padding: 20px;
+}
+
+#micro-totals3 {
+    display:grid;
+    padding: 20px;
 }
 

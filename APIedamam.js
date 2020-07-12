@@ -40,6 +40,7 @@ $(function(){
                 $('#calories').html(data.calories.toFixed(0))
                 $('#calories-label').html('Calories: ')
             } else {
+                $('#calories-label').html('Calories: ')
                 $('#calories').html('0')
                 noData.push('calories') 
             }
@@ -51,6 +52,7 @@ $(function(){
                     $('#carbs').html(data.totalNutrients.CHOCDF.quantity.toFixed(0))
                     $('#carbs-label').html('Carbs: ')
                 } else {
+                    $('#carbs-label').html('Carbs: ')
                     $('#carbs').html('0')
                     noData.push('carbs') 
                 }
@@ -60,6 +62,7 @@ $(function(){
                     $('#protein').html(data.totalNutrients.PROCNT.quantity.toFixed(0))
                     $('#protein-label').html('Protein: ')
                 } else {
+                    $('#protein-label').html('Protein: ')
                     $('#protein').html('0')
                     noData.push('protein') 
                 }
@@ -77,6 +80,7 @@ $(function(){
                     $('#saturated').html(data.totalNutrients.FASAT.quantity.toFixed(0))
                     $('#saturated-label').html('Saturated: ')
                 } else {
+                    $('#saturated-label').html('Saturated: ')
                     $('#saturated').html('0')
                     noData.push('saturated fat') 
                 }
@@ -86,6 +90,7 @@ $(function(){
                     $('#sugar').html(data.totalNutrients.SUGAR.quantity.toFixed(0))
                     $('#sugar-label').html('Sugar: ')
                 } else {
+                    $('#sugar-label').html('Sugar: ')
                     $('#sugar').html('0')
                     noData.push('sugar') 
                 }
@@ -94,6 +99,7 @@ $(function(){
                     $('#calcium').html(data.totalNutrients.CA.quantity.toFixed(0))
                     $('#calcium-label').html('Calcium: ')
                 } else {
+                    $('#calcium-label').html('Calcium: ')
                     $('#calcium').html('0')
                     noData.push('calcium') 
                 }
@@ -102,6 +108,7 @@ $(function(){
                     $('#iron').html(data.totalNutrients.FE.quantity.toFixed(0))
                     $('#iron-label').html('Iron: ')
                 } else {
+                    $('#iron-label').html('Iron: ')
                     $('#iron').html('0')
                     noData.push('iron') 
                 }
@@ -110,6 +117,7 @@ $(function(){
                     $('#fiber').html(data.totalNutrients.FIBTG.quantity.toFixed(0))
                     $('#fiber-label').html('Fiber: ')
                 } else {
+                    $('#fiber-label').html('Fiber: ')
                     $('#fiber').html('0')
                     noData.push('fiber') 
                 }
@@ -118,6 +126,7 @@ $(function(){
                     $('#potassium').html(data.totalNutrients.K.quantity.toFixed(0))
                     $('#potassium-label').html('Potassium: ')
                 } else {
+                    $('#potassium-label').html('Potassium: ')
                     $('#potassium').html('0')
                     noData.push('potassium') 
                 }
@@ -126,6 +135,7 @@ $(function(){
                     $('#magnesium').html(data.totalNutrients.MG.quantity.toFixed(0))
                     $('#magnesium-label').html('Magnesium: ')
                 } else {
+                    $('#magnesium-label').html('Magnesium: ')
                     $('#magnesium').html('0')
                     noData.push('magnesium') 
                 }
@@ -134,6 +144,7 @@ $(function(){
                     $('#sodium').html(data.totalNutrients.NA.quantity.toFixed(0))
                     $('#sodium-label').html('Sodium: ')
                 } else {
+                    $('#sodium-label').html('Sodium: ')
                     $('#sodium').html('0')
                     noData.push('sodium') 
                 }
@@ -143,6 +154,7 @@ $(function(){
                     $('#vitd').html(data.totalNutrients.VITD.quantity.toFixed(0))
                     $('#vitd-label').html('Vit D: ')
                 } else {
+                    $('#vitd-label').html('Vit D: ')
                     $('#vitd').html('0')
                     noData.push('vitd') 
                 }
@@ -151,7 +163,7 @@ $(function(){
             }
 
             if (noData.length > 0) {
-                $('#name').html('No data for '+nameQueryStr)
+                $('#name').html('Complete data unavailable for '+nameQueryStr)
             } else {
                 $('#name').html(nameQueryStr)
 

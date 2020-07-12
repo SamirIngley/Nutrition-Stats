@@ -286,7 +286,8 @@ $(function(){
             chrome.storage.sync.set({'legendS':false});
             $('#switch').html('-')
         }
-       
+
+       // UPDATING BASKET ON LOAD 
         if (nutrient.basket){
             // Updating Item Count
             var arrayLength = nutrient.basket.length;
@@ -295,7 +296,7 @@ $(function(){
 
             console.log(nutrient.basket);
             for (var index=0; index<arrayLength; index++){
-                $('#basket').append("<li>" + String(nutrient.basket[index].name) + "</li>")
+                $('#basket').append("<p>" + String(nutrient.basket[index].name) + "</p>")
                 console.log('BASKET sync ', String(nutrient.basket[index].name))
             }
         }
