@@ -6,7 +6,9 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="templates/styles.css">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Questrial&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@800&family=Raleway:wght@900&display=swap" rel="stylesheet">    </head>
+        <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@800&family=Raleway:wght@900&display=swap" rel="stylesheet">   
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     </head>
     <body>
         <script src="jquery.min.js"></script>
         <script src="APIedamam.js"></script>
@@ -16,6 +18,12 @@
 
     <nav class="navbar">
         <a class="navbar-brand">NutriBasket</a>
+
+        <div class="deletebasket">
+            <button type="submit" id="delete-basket" value="Delete Basket"><i class="fa fa-trash"></i></button>
+            <!-- <input type="submit" id="delete-basket" value="Delete Basket"> -->
+        </div>
+
         <img id= "questions" src="https://img.icons8.com/ios-filled/50/000000/help.png"> 
         <!-- <p>* Right click icon to set limits</p>
         <p>" quantity size item " </p> -->
@@ -43,115 +51,122 @@
                 </div>
             </div>
         </div>
-  
-      <div class="total">
-          <div class="modal-header-total">
-                <div class="totalname">
-                    <p id="totalname">What is in your basket?</p>
+
+        <div class="modal-header-total">
+            <div class="totalname">
+                <p id="totalname">What is in your basket?</p>
+                <div class="baskets">
                     <p id="item-amount"></p>
-                    <div class="baskets">
-                        <p id="item-amount"></p>
-                        <ol id="basket">
-                        </ol>
-                    </div>
+                    <ol id="basket">
+                    </ol>
                 </div>
+                <!-- <div class="deletebasket">
+                    <input type="submit" id="delete-basket" value="Delete Basket">
+                </div> -->
+            </div>
 
             <div class="graphs">
-            <p class="graphtitle">Nutrient Totals</p>
-            <div class="btn">
-                <button class="open-btn">Macronutrients</button>
-            </div>
-            <div class="popup">
-                <div class="popup-overlay"></div>
-                <div main="main-popup">
-                    <div class="popup-content">
-                        <span class="close-btn">&times;</span>
-                        <div class="graphtwo">
-                            <canvas id="graph2" width="400" height="400"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
+                <p id="graphtitle">Nutrient Totals</p>
 
-            <div class="slide2">
-                <div class="btn2">
-                    <button class="open-btn">Micronutrients</button>
+                <button type="submit" id="switch">switch</button>
+
+                <div id="macro-box">
+                    <canvas id="graph2" width="400" height="400"></canvas>
                 </div>
-                <div class="popup2">
-                    <div class="popup2-overlay"></div>
-                    <div main="main-popup2">
-                        <div class="popup2-content">
-                            <span class="close-btn2">&times;</span>
-                            <div class="graphthree">
-                                <canvas id="graph3" width="400" height="400"></canvas>
-                            </div>
-                        </div>
+        
+                <div id="micro-box">
+                    <canvas id="graph3" width="400" height="400"></canvas>
+                </div>
+
+                <!-- popup -->
+                <!-- <div class="btn">
+                    <button class="open-btn" onclick="toggle()">Macronutrients</button>
+                </div>
+
+                <div class="btn2">
+                    <button class="open-btn2" onclick="toggle()">Micronutrients</button>
+                </div>
+
+                <div id="popup">
+                    <div class="graphtwo">
+                        <canvas id="graph2" width="400" height="400"></canvas>
+                        <button class="open-btn" onclick="toggle()">Close</button>
                     </div>
                 </div>
+
+                <script type="text/javascript">
+                    function toggle(){
+                        var blur = document.getElementById('blur');
+                        blur.classList.toggle('active')
+                        var popup = document.getElementById('popup');
+                        popup.classList.toggle('active')
+                    }
+                </script>
+               
+                <div class="graphthree">
+                    <canvas id="graph3" width="400" height="400"></canvas>
+                </div> -->
             </div>
-        </div>
-        
-    
-          <!-- </div>
-          <div class="totalnutris">
-            <div class="totalcalories">
-                <p id="totalname">Total Calories:</p> <p id="caloriesTotal">0</p>
+
+        <!-- <div class="totalnutris1">
+            <div class="totalone">
+                <p id="totalnames">Total Calories:</p> <p id="caloriesTotal">0</p>
                 <p id="limit">Limit: </p><p id="caloriesLimit"></p>
             </div>
-            <div class="totalcarbs">
-                <p id="totalname">Total Carbs:</p> <p id="carbsTotal">0</p>
+            <div class="totalone">
+                <p id="totalnames">Total Carbs:</p> <p id="carbsTotal">0</p>
                 <p id="limit">Limit: </p><p id="carbsLimit"></p>
             </div>
-            <div class="totalprotein">
-                <p id="totalname">Total Protein:"</p> <p id="proteinTotal">0</p>
+            <div class="totalone">
+                <p id="totalnames">Total Protein:"</p> <p id="proteinTotal">0</p>
                 <p id="limit">Limit: </p><p id="proteinLimit"></p>
             </div>
-            <div class="totalfat">
-                <p id="totalname">Total Fat:</p> <p id="fatTotal">0</p>
+            <div class="totalone">
+                <p id="totalnames">Total Fat:</p> <p id="fatTotal">0</p>
                 <p id="limit">Limit: </p><p id="fatLimit"></p>
             </div>
-            <div class="totalsugar">
-                <p id="totalname">Total Sugar:</p> <p id="sugarTotal">0</p>
+        </div>
+        <div class="nutriclass2">
+            <div class="totalone">
+                <p id="totalnames">Total Sugar:</p> <p id="sugarTotal">0</p>
                 <p id="limit">Limit: </p><p id="sugarLimit"></p>
             </div>
-
-            <div class="totalcalcium">
-                <p id="totalname">Total Calcium: </p> <p id="calciumTotal">0</p>
+            <div class="totalone">
+                <p id="totalnames">Total Calcium: </p> <p id="calciumTotal">0</p>
                 <p>Limit: </p><p id="calciumLimit"></p>
             </div>
-            <div class="totalpotassium">
-                <p id="totalname">Total Potassium: </p> <p id="potassiumTotal">0</p>
+            <div class="totalone">
+                <p id="totalnames">Total Potassium: </p> <p id="potassiumTotal">0</p>
                 <p>Limit: </p><p id="potassiumLimit"></p>
             </div>
-            <div class="totalsaturatedfat">
-                <p id="totalname">Total Saturated Fat: </p> <p id="saturatedTotal">0</p>
+            <div class="totalone">
+                <p id="totalnames">Total Saturated Fat: </p> <p id="saturatedTotal">0</p>
                 <p>Limit: </p><p id="saturatedLimit"></p>
             </div>
-            <div class="totaliron">
-                <p id="totalname">Total Iron: </p> <p id="ironTotal">0</p>
+        </div>
+        <div class="totalnutris3">
+            <div class="totalone">
+                <p id="totalnames">Total Iron: </p> <p id="ironTotal">0</p>
                 <p>Limit: </p><p id="ironLimit"></p>
             </div>
-            <div class="totalfiber">
-                <p id="totalname">Total Fiber: </p> <p id="fiberTotal">0</p>
+            <div class="totalone">
+                <p id="totalnames">Total Fiber: </p> <p id="fiberTotal">0</p>
                 <p>Limit: </p><p id="fiberLimit"></p>
             </div>
-            <div class="totalmagnesium">
-                <p id="totalname">Total Magnesium: </p> <p id="magnesiumTotal">0</p>
+            <div class="totalone">
+                <p id="totalnames">Total Magnesium: </p> <p id="magnesiumTotal">0</p>
                 <p>Limit: </p><p id="magnesiumLimit"></p>
-            <div class="totalsodium">
-                <p id="totalname">Total Sodium:</p>> <p id="sodiumTotal">0</p>
+            <div class="totalone">
+                <p id="totalnames">Total Sodium:</p>> <p id="sodiumTotal">0</p>
                 <p>Limit: </p><p id="sodiumLimit"></p>
             </div>
-            <div id="totalvitd">
-                <p id="totalname">Total Vit D:</h3> <p id="vitdTotal">0</p>
+        </div> -->
+
+
+            <!-- <div id="totalone">
+                <p id="totalnames">Total Vit D:</h3> <p id="vitdTotal">0</p>
                 <p>Limit: </p><p id="vitdLimit"></p>
-            </div>
-            <div class="deletebasket">
-              <input type="submit" id="delete-basket" value="Delete Basket">
-            </div>
-          </div>
+            </div> -->
       </div>
-      </div> -->
     </body>
 </html>

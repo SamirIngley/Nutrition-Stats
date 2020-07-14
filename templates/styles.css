@@ -28,7 +28,8 @@ body {
     font-weight: 900;
     /* color: rgb(0, 166, 231); */
     color:  black;
-    text-shadow: 2px 1px rgb(206, 255, 91);
+    color:  rgb(4, 133, 253);
+    /* text-shadow: 2px 1px rgb(206, 255, 91); */
 }
 
 /* instructions hover */
@@ -36,8 +37,8 @@ body {
     height: 32px;
     width: 32px;
     position: relative;
-    left: 228px;
-    top: -2px;
+    left: 130px;
+    top: -6px;
 }
 
 /* enter item */
@@ -61,7 +62,8 @@ body {
     border-style: solid;
     border-width: 3px;
     border-radius: 1%;
-    border-color: rgb(206, 227, 255);
+    /* border-color: rgb(206, 227, 255); */
+    border-color:  rgba(9, 219, 9, 0.37);
     padding: 10px;
     margin: 10px;
     outline: none !important;
@@ -86,6 +88,17 @@ body {
     letter-spacing: .5px;
 }
 
+#searchButton:focus {
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 1%;
+    border-color:  rgba(9, 219, 9, 0.37);
+    padding: 0;
+    margin: 0;
+    outline: none !important;
+    letter-spacing: .5px;
+}
+
 /* item is searched + slide down*/
 .modal {
     position: relative;
@@ -96,7 +109,7 @@ body {
     border-width: .5px;
     border-color: white;
     /* background-color:  rgba(255, 153, 0, 0.514); */
-    background-color: white;
+    background-color: rgb(247, 255, 219);
     color: black;
     height: 0px;
     overflow: hidden;
@@ -107,7 +120,10 @@ body {
 .modal.open {
     height: auto;
     border: solid;
-    border-color: gray;
+    /* border-color: gray; */
+    border-color: rgb(192, 192, 192);
+    /* background-color: rgb(211, 238, 215); */
+    background-color: white;
     border-width: .5px;
     position: relative;
     left: 20px;
@@ -117,12 +133,13 @@ body {
     padding: 5px;
     border:solid;
     border-width: .5px;
-    border-color: gray;
+    /* border-color:  rgb(9, 219, 9); */
+    border-color: white;
     height: 25px;
     color: black;
     font-size: 9px;
     position: relative;
-    top: 1px;
+    top: -1px;
 }
 
 #name {
@@ -137,7 +154,7 @@ body {
 
 #add-button {
     position: relative;
-    top: -20px;
+    top: -16px;
     left: 377px;
     cursor: pointer;
     font-size: 16px;
@@ -147,10 +164,23 @@ body {
     border-width: 2px;
     border: none;
     /* background-color: rgba(255, 136, 57, 0.699); */
-    border-color: rgb(255, 145, 2);
-    background-color:  rgb(255, 153, 0);
+    border-color:  rgb(8, 122, 4);
+    background-color: rgb(8, 122, 4);
+    /* border-color: rgb(255, 145, 2); */
+    /* background-color:  rgb(255, 153, 0); */
     width: 55px;
     height: 23px;
+}
+
+#add-button:focus {
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 12px;
+    border-color:  white;
+    padding: 0;
+    margin: 0;
+    outline: none !important;
+    letter-spacing: .5px;
 }
 
 .modal-body {
@@ -178,7 +208,6 @@ p {
 }
 
 /* total for basket */
-
 .modal-header-total {
     position: relative;
     /* border: solid; */
@@ -190,19 +219,34 @@ p {
 }
 
 .deletebasket {
-    position: relative;
-    left: 360px;
-    top: -15px;
+    position: absolute;
+    left: 390px;
+    top: 20px;
 }
 
 #delete-basket {
-    width: 110px;
+    width: 55px;
     height: 30px;
+    cursor: pointer;
     font-size: 12px;
     color: rgb(252, 252, 252);
+    border-radius: 12px;
+    color: rgb(252, 252, 252);
+    border-width: 2px;
     border: none;
-    background-color: rgb(99, 99, 99);
-    cursor: pointer;
+    border-color: black;
+    background-color: black;
+}
+
+#delete-basket:focus {
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 1%;
+    border-color:  white;
+    padding: 0;
+    margin: 0;
+    outline: none !important;
+    letter-spacing: .5px;
 }
 
 /* whats in your basket */
@@ -211,10 +255,10 @@ p {
     top: 5px;
     left: 24px;
     border:solid;
-    height: 35px;
+    height: 300px;
     width: 450px;
-    border-width: 2px;
-    border-color: orange;
+    border-width: .5px;
+    border-color: rgb(192, 192, 192);
     /* border-radius: 10px; */
     /* border-color: rgb(255, 145, 2); */
     background-color: white;
@@ -226,7 +270,8 @@ p {
     color: black;
     position: relative;
     left: 21px;
-    top: -15px;
+    top: -6px;
+    font-weight: 800;
 }
 
 #item-amount {
@@ -235,153 +280,240 @@ p {
     left: 22px;
     top: -10px;
     color: black;
+    font-weight: 500;
     font-size: 14.5px;
     letter-spacing: 0.5px;
 }
 
 #basket {
-    font-size: 14px;
+    font-size: 12px;
     position: relative;
     left: 25px;
     top: -15px;
     color: black;
+    font-weight: 900;
     letter-spacing: 0.5px;
 }
 
 .baskets {
-    background-color: rgba(255, 136, 57, 0.082);
-}
-
-/* graphs */
-.graphone {
-    position: relative;
-    left: 1px;
-    top: 20px;
-    border: solid;
-    border-color: gray;
-    height: 600px;
-}
-
-#graph {
-    position: relative;
-    top: 20px;
-}
-
-.graphtitle {
-    color: black;
-    position: relative;
-    left: 40px;
+    background-color: rgba(255, 255, 255, 0.082);
 }
 
 /* total for all */
-
-.totalnutris {
-    position: relative;
-    top: 50px;
-    left: 20px;
+.totalnutris1 {
+    position: absolute;
+    top: 420px;
+    left: 23px;
     display: flex;
     flex-direction: row;
-    width: 500px;
-    height: 200px;
+    border: solid;
+    border-color: rgb(172, 171, 171);
+    color: black;
+    border-width: .5px;
+    width: 452px;
+    height: 400px;
+    line-height: 80%;
 }
 
-.totalcalories {
-    /* border: solid; */
-    border-color: gray;
-    padding: 20px;
+.totalnutris2 {
+    position: absolute;
+    top: 400px;
+    left: 23px;
+    display: flex;
+    flex-direction: row;
+    color: black;
+    border-width: .5px;
+    width: 452px;
+    height: 400px;
+    line-height: 80%;
 }
 
-.totalcarbs {
-    /* border: solid; */
-    border-color: gray;
-    padding: 20px;
+.totalnutris3 {
+    position: absolute;
+    top: 400px;
+    left: 23px;
+    display: flex;
+    flex-direction: row;
+    color: black;
+    border-width: .5px;
+    width: 452px;
+    height: 400px;
+    line-height: 80%;
 }
 
-.totalprotein {
-    /* border: solid; */
-    border-color: rgb(168, 87, 87);
-    padding: 20px;
-}
-
-.totalfat {
-    /* border: solid; */
-    border-color: gray;
-    padding: 20px;
-}
-
-.totalsugar {
-    /* border: solid; */
-    border-color: gray;
-    padding: 20px;
-}
-
-/* graph slides */
-
+/* graph popup */
 .graphs {
-    position: relative;
-    top: 200px;
+    position: absolute;
+    top: 312px;
+    left: 23px;
+    width: 451px;
+    height: 950px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    background-color: rgb(59, 105, 15);
+    border: solid;
+    border-width: .5px;
+    border-color: rgb(139, 139, 139);
+}
+
+#graphtitle {
+    color: black;
+    font-size: 19px;
+    /* font-weight: bold; */
+    color: black;
+    position: relative;
+    left: 21px;
+    top: -33px;
+    font-weight: 800;
+}
+
+ #macro-box {
+    position: relative;
+    top: -50px;
+    left: 23px;
+    width: 400px;
+    height: 400px;
+    /* border: solid; */
+    padding: 0;
+    margin: 0;
+    border-color: black;
+
+}
+
+#micro-box {
+    position: relative;
+    top: -4px;
+    left: 22px;
+    width: 400px;
+    height: 400px;
+    /* border:solid; */
+    padding: 0;
+    margin: 0;
+    border-color: black;
+}
+
+#graph2 {
+    font-size: 19px;
+    color: black;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+#switch {
+    position: relative;
+    top: -76px;
+    left: 345px;
+    cursor: pointer;
+    font-size: 13px;
+    color: rgb(252, 252, 252);
+    border-radius: 12px;
+    color: rgb(252, 252, 252);
+    border-width: 2px;
+    border: none;
+    /* background-color: rgba(255, 136, 57, 0.699); */
+    border-color:  rgb(8, 122, 4);
+    background-color: rgb(8, 122, 4);
+    /* border-color: rgb(255, 145, 2); */
+    /* background-color:  rgb(255, 153, 0); */
+    width: 82px;
+    height: 30px;
+}
+
+#switch:focus {
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 12px;
+    border-color:  white;
+    padding: 0;
+    margin: 0;
+    outline: none !important;
+    letter-spacing: .5px;
+}
+
+/* 
+.graphs#blur.active {
+    filter: blur(20px);
+    pointer-events: none;
+    user-select: none;
+}
+
+#popup
+{
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    padding: 50px;
+    box-shadow: 0 5px 30px rgba(0,0,0,.30);
+    background-color: #fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+#popup.active {
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
 }
 
 .open-btn {
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    padding: 1rem 2.5rem;
+    position: absolute;
+    left: 65px;
+    top: 40px;
+    width: 110px;
+    height: 30px;
     cursor: pointer;
+    font-size: 12px;
+    color: rgb(252, 252, 252);
+    border-radius: 12px;
+    color: rgb(252, 252, 252);
+    border-width: 2px;
+    border: none;
+    border-color: rgb(8, 122, 4);
+    background-color: rgb(8, 122, 4);
 }
 
-.popup {
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    /* background-color: black; */
-    display: flex;
-    justify-content: center;
-    align-content: center;
+.open-btn:focus {
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 1%;
+    border-color:  white;
+    padding: 0;
+    margin: 0;
+    outline: none !important;
+    letter-spacing: .5px;
 }
 
-.popup-overlay {
-    /* background-color: black; */
-    height: 100vh;
-    width: 100%;
+.open-btn2 {
     position: absolute;
-}
-
-.main-popup {
-    position: absolute;
-    right: 0;
-    height: 100vh;
-    width: 50%;
-    z-index: 1;
-    background-color: red;
-    padding: 30px 20px;
-    line-height: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.close-btn {
-    border: solid black;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font-size: 2rem;
+    left: 270px;
+    top: 40px;
+    width: 110px;
+    height: 30px;
     cursor: pointer;
-    transition: .5s ease all;
+    font-size: 12px;
+    color: rgb(252, 252, 252);
+    border-radius: 12px;
+    color: rgb(252, 252, 252);
+    border-width: 2px;
+    border: none;
+    border-color: rgb(8, 122, 4);
+    background-color: rgb(8, 122, 4);
 }
 
-.close-btn:hover {
-    background-color: whitesmoke;
-}
+.open-btn2:focus {
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 1%;
+    border-color:  white;
+    padding: 0;
+    margin: 0;
+    outline: none !important;
+    letter-spacing: .5px;
+} */
 
-.popup-content {
-    font-size: 2rem;
-    line-height: 1rem;
-    position: relative;
-}
