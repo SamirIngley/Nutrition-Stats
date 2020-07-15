@@ -1,28 +1,42 @@
-
 <html>
+    <head>  
+        <title>NutriBasket-Options</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="templates/styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Questrial&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@800&family=Raleway:wght@900&display=swap" rel="stylesheet">   
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <script src="jquery.min.js"></script>
+        <script src="APIspoon.js"></script>
+        <script src="options.js"></script>
+        <div class="options">
+            <h1>Set your limits:</h1>
+            <!-- <p>" You can't score without a goal "</p> -->
+            <h2>Calories: <input type="text" id="caloriesLimit"></h2>
+            <h2>Carbs: <input type="text" id="carbsLimit"></h2>
+            <h2>Protein: <input type="text" id="proteinLimit"></h2>
+            <h2>Fat: <input type="text" id="fatLimit"></h2>
+            <h2>Sugar: <input type="text" id="sugarLimit"></h2>
+            <h2>Calcium: <input type="text" id="calciumLimit"></h2>
+            
 
-<head>
-    <script src="jquery.min.js"></script>
-    <script src="APIspoon.js"></script>
-    <script src="options.js"></script>
 
-    <title>Nutrition Basket Options</title>
-
-
-</head>
-
-<body>
-    <h1>Options</h1>
-    <p>" You can't score without a goal "</p>
-    <h2>Calories Limit: <input type="text" id="caloriesLimit"></h2>
-    <h2>Carbs Limit: <input type="text" id="carbsLimit"></h2>
-    <h2>Protein Limit: <input type="text" id="proteinLimit"></h2>
-    <h2>Fat Limit: <input type="text" id="fatLimit"></h2>
-    <h2>Sugar Limit: <input type="text" id="sugarLimit"></h2>
-
-    <input type="submit" id="save-limits" value="Save Limits">
-    <input type="submit" id="reset-limits" value="Reset Limits">
-    
-</body>
-
+            <h2> Potassium: <input type="text" id="potassiumLimit"></h2>
+            <h2> Saturated: <input type="text" id="saturatedLimit"></h2>
+            <h2> Iron: <input type="text" id="ironLimit"></h2>
+            <h2> Fiber: <input type="text" id="fiberLimit"></h2>
+            <h2> Magnesium: <input type="text" id="magnesiumLimit"></h2>
+            <h2> Sodium: <input type="text" id="sodiumLimit"></h2>
+            <div class="savelimits">
+                <input type="submit" id="save-limits" value="Save Limits">
+            </div>
+            <div class="resetlimits">
+                <input type="submit" id="reset-limits" value="Reset Limits">
+            </div>
+        </div>  
+    </body>
 </html>

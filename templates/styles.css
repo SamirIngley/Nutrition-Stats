@@ -5,7 +5,10 @@ font-family: 'Questrial', sans-serif; */
 
 body {
     font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    /* background-color: rgb(174, 174, 255); */
 }
+
 .dashboard {
     width: 500px;
     height: 110px;
@@ -44,7 +47,6 @@ body {
 /* enter item */
 .cartinput, #searchBox {
   font-size: 10px;
-  font-weight: 100;
   width: 200px;
   color: rgb(26, 2, 2);
   padding: 10px;
@@ -148,13 +150,14 @@ body {
     left: 18px;
     font-size: 20px;
     color: black;
-    font-family: 'Questrial', sans-serif;
-    letter-spacing: 1px;
+    /* font-family: 'Questrial', sans-serif; */
+    letter-spacing: .5px;
+    font-weight: 500;
 }
 
 #add-button {
-    position: relative;
-    top: -16px;
+    position: absolute;
+    top: 14px;
     left: 377px;
     cursor: pointer;
     font-size: 16px;
@@ -164,8 +167,8 @@ body {
     border-width: 2px;
     border: none;
     /* background-color: rgba(255, 136, 57, 0.699); */
-    border-color:  rgb(8, 122, 4);
-    background-color: rgb(8, 122, 4);
+    border-color:  rgb(8, 146, 4);
+    background-color:  rgb(8, 146, 4);
     /* border-color: rgb(255, 145, 2); */
     /* background-color:  rgb(255, 153, 0); */
     width: 55px;
@@ -191,14 +194,15 @@ body {
     display: flex;
     flex-direction: row;
     position: relative;
-    left: 6px;
+    left: 18px;
     color: black;
     font-size: 11px;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.2px;
 }
 
 h3 {
     padding: 10px;
+    font-weight: 500;
 }
 
 p {
@@ -262,6 +266,7 @@ p {
     /* border-radius: 10px; */
     /* border-color: rgb(255, 145, 2); */
     background-color: white;
+   
 }
 
 #totalname {
@@ -270,17 +275,17 @@ p {
     color: black;
     position: relative;
     left: 21px;
-    top: -6px;
-    font-weight: 800;
+    top: 4px;
+    font-weight: 500;
 }
 
 #item-amount {
     position: relative;
     /* border: solid; */
     left: 22px;
-    top: -10px;
+    top: 10px;
     color: black;
-    font-weight: 500;
+    font-weight: 300;
     font-size: 14.5px;
     letter-spacing: 0.5px;
 }
@@ -291,7 +296,7 @@ p {
     left: 25px;
     top: -15px;
     color: black;
-    font-weight: 900;
+    font-weight: 300;
     letter-spacing: 0.5px;
 }
 
@@ -363,14 +368,14 @@ p {
     /* font-weight: bold; */
     color: black;
     position: relative;
-    left: 21px;
-    top: -33px;
-    font-weight: 800;
+    left: 25px;
+    top: -25px;
+    font-weight: 500;
 }
 
  #macro-box {
     position: relative;
-    top: -50px;
+    top: -30px;
     left: 23px;
     width: 400px;
     height: 400px;
@@ -383,7 +388,7 @@ p {
 
 #micro-box {
     position: relative;
-    top: -4px;
+    top: 40px;
     left: 22px;
     width: 400px;
     height: 400px;
@@ -393,12 +398,12 @@ p {
     border-color: black;
 }
 
-#graph2 {
+/* #graph2 {
     font-size: 19px;
     color: black;
     font-weight: 800;
     font-family: 'Poppins', sans-serif;
-}
+} */
 
 
 #switch {
@@ -413,8 +418,8 @@ p {
     border-width: 2px;
     border: none;
     /* background-color: rgba(255, 136, 57, 0.699); */
-    border-color:  rgb(8, 122, 4);
-    background-color: rgb(8, 122, 4);
+    border-color:  rgb(8, 146, 4);
+    background-color: rgb(8, 146, 4);
     /* border-color: rgb(255, 145, 2); */
     /* background-color:  rgb(255, 153, 0); */
     width: 82px;
@@ -430,6 +435,145 @@ p {
     margin: 0;
     outline: none !important;
     letter-spacing: .5px;
+}
+
+
+.options {
+    /* border: solid; */
+    border-width: .5px;
+    border-color: black;
+    width: 400px;
+    height: 700px;
+}
+
+h1{
+    position: relative;
+    left: 20px;
+    top: 20px;
+    font-size: 35px;
+    color: rgb(4, 133, 253);
+    font-weight: 400;
+}
+
+h2 {
+    position: relative;
+    left: 20px;
+    top: 20px;
+    font-weight: 200;
+    font-size: 16px;
+}
+
+.savelimits{
+    position: relative;
+    left: 20px;
+    top: 50px;
+}
+
+
+.savelimits:focus {
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 12px;
+    /* border-color:  white; */
+    padding: 0;
+    margin: 0;
+    outline: none !important;
+    letter-spacing: .5px;
+    font-size: 12px;
+}
+
+
+.resetlimits{
+    position: relative;
+    left: 170px;
+    top: 30px;
+}
+
+
+.resetlimits:focus {
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 12px;
+    /* border-color:  white; */
+    padding: 0;
+    margin: 0;
+    outline: none !important;
+    letter-spacing: .5px;
+    font-size: 12px;
+    width: 60px;
+    height: 23px;
+}
+
+#carbsLimit {
+    position: relative;
+    left: 70px;
+    width: 40px;
+}
+
+#proteinLimit {
+    position: relative;
+    left: 63px;
+    width: 40px;
+}
+
+#fatLimit {
+    position: relative;
+    left: 94px;
+    width: 40px;
+}
+
+#sugarLimit {
+    position: relative;
+    left: 71px;
+    width: 40px;
+}
+
+#caloriesLimit {
+    position: relative;
+    left: 54px;
+    width: 40px;
+}
+
+#calciumLimit {
+    position: relative;
+    left: 51px;
+    width: 40px;
+}
+
+#potassiumLimit {
+    position: relative;
+    left: 35px;
+    width: 40px;
+}
+
+#saturatedLimit {
+    position: relative;
+    left: 38px;
+    width: 40px;
+}
+
+#ironLimit {
+    position: relative;
+    left: 87px;
+    width: 40px;
+}
+
+#fiberLimit {
+    position: relative;
+    left: 78px;
+    width: 40px;
+}
+
+#magnesiumlimit {
+    position: relative;
+    left: 22px;
+    width: 40px;
+}
+
+#sodiumLimit {
+    position: relative;
+    left: 55px;
+    width: 40px;
 }
 
 /* 
