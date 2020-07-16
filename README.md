@@ -21,14 +21,10 @@ Edamam API
 
 *****************************
 
-![Image1]
-(NutriStats1.png)
+![Image1](NutriStats1.png)
 
-![Image2]
-(NutriStats2.png)
+![Image2](NutriStats2.png)
 
-![Image3]
-(NutriStats3.png)
+![Image3](NutriStats3.png)
 
-![Image4]
-(NutriStats4.png)
+![Image4](NutriStats4.png)
