@@ -12,7 +12,6 @@ body {
 
     width: 740px;
     /* width: 400px; */
-    /* height: 2000px; */
     margin: 20px;
 
 }
@@ -22,6 +21,10 @@ canvas{
     height:320px !important;
   
   }
+
+#name {
+    margin-bottom: 2px !important;
+}
 
 #searchStuff {
     display: flex;
@@ -47,7 +50,7 @@ canvas{
 
 #indiv-nutrients {
     display: flex;
-    height: 120px;
+    height: 100px;
     justify-content: center;
     justify-items: center;
     align-content: center;
@@ -58,11 +61,15 @@ canvas{
 
 #indiv-nutrients > div {
     display:grid;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
     margin-left: 8px;
     margin-right: 8px;
-    padding: 17px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 17px;
+    padding-right: 17px;
+    
 }
 
 #indiv-nutrients > div > div > p:nth-child(1) {
@@ -89,7 +96,9 @@ canvas{
     justify-items: center;
     align-content: center;
     align-items: center;
+    height: 50px;
 }
+
 
 #switch-div {
     display: flex;
@@ -155,3 +164,10 @@ canvas{
     padding: 20px;
 }
 
+#macro-box {
+    padding-top: 8px !important;
+}
+
+#micro-box {
+    padding-top: 8px !important;
+}

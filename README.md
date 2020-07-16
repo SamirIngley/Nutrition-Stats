@@ -10,6 +10,8 @@ Edamam API
 ***************************
 
 ## Install:
+(Note: this will be in the chrome extensions store very very soon!!)
+
 1. Download or clone this repo
 2. In the chrome browser, go to "chrome://extensions"
 3. In the top right corner the button to turn on Developer Mode 
@@ -18,3 +20,15 @@ Edamam API
 6. Now, click on the extension icon for NutriBasket, enter your items and voila!
 
 *****************************
+
+![Image1]
+(NutriStats1.png)
+
+![Image2]
+(NutriStats2.png)
+
+![Image3]
+(NutriStats3.png)
+
+![Image4]
+(NutriStats4.png)
