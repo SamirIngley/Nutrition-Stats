@@ -39,15 +39,15 @@ function closeModal(modal) {
 
 
 // slide down and display item data
-function fetchData() {
-    fetch("https://api.spoonacular.com/recipes/guessNutrition?apiKey=f97e16fe3d4f48b1bd29e46d6b0154b7&title="+queryStr)
-        .then(response => {
-           return response.json();
-        }).then((json) => {
-            console.log(json)
-            document.querySelector(".modal-body").classList.add("open")
-            document.querySelector("#protein").innerHTML = "hello world"
-        });
-}
+// function fetchData() {
+//     fetch("https://api.spoonacular.com/recipes/guessNutrition?apiKey=f97e16fe3d4f48b1bd29e46d6b0154b7&title="+queryStr)
+//         .then(response => {
+//            return response.json();
+//         }).then((json) => {
+//             console.log(json)
+//             document.querySelector(".modal-body").classList.add("open")
+//             document.querySelector("#protein").innerHTML = "hello world"
+//         });
+// }
 
-fetchData();
+// fetchData();
