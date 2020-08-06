@@ -10,16 +10,11 @@
     },
 
     "browser_action": {
-        "default_icon": "icon16.png",
+        "default_icon": "nu_icon.png",
         "default_popup": "popupED.html"
     },
     
     "content_security_policy":"script-src 'self' https://api.edemam.com; object-src 'self'",
-
-    "background": {
-        "scripts": ["eventPage.js"],
-        "persistent": false
-    },
 
     "permissions": [
         "storage",
@@ -32,8 +27,7 @@
             "js": [
                 "templates/script.js",
                 "content.js"
-            ],
-            "css": ["templates/styles.css"]
+            ]
         }
     ],
 
