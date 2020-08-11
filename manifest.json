@@ -18,8 +18,9 @@
 
     "permissions": [
         "storage",
-        "notifications"
+        "activeTab"
     ],
+
 
     "content_scripts": [
         {

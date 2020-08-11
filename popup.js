@@ -284,7 +284,7 @@ $(function(){
         if (nutrient.currentG === undefined) {
             chrome.storage.sync.set({'currentG':horizontalB});
             chrome.storage.sync.set({'legendS':false});
-            $('#switch').html('-')
+            $('#switch').html('o')
         }
 
        // UPDATING BASKET ON LOAD 
@@ -322,7 +322,7 @@ $(function(){
                     // $('#current-graph').html('bar')
                     // location.reload()
                     reDrawGraphs();
-                    $('#switch').html('-')
+                    $('#switch').html('o')
 
 
 
@@ -333,7 +333,7 @@ $(function(){
                     // $('#current-graph').html(pie)
                     // location.reload()
                     reDrawGraphs();
-                    $('#switch').html('o')
+                    $('#switch').html('-')
 
                 }
             });
