@@ -149,6 +149,26 @@ $(function(){
                     noData.push('sodium') 
                 }
 
+                if (data.totalNutrients.VITB12){
+                    console.log("VITD DATA: "+data.totalNutrients.VITB12.quantity)
+                    $('#vitb12').html(data.totalNutrients.VITB12.quantity.toFixed(0))
+                    $('#vitb12-label').html('Vit B12: ')
+                } else {
+                    $('#vitb12-label').html('Vit B12: ')
+                    $('#vitb12').html('0')
+                    noData.push('vitb12') 
+                }
+
+                if (data.totalNutrients.VITC){
+                    console.log("VITC DATA: "+data.totalNutrients.VITC.quantity)
+                    $('#vitc').html(data.totalNutrients.VITC.quantity.toFixed(0))
+                    $('#vitc-label').html('Vit C: ')
+                } else {
+                    $('#vitc-label').html('Vit C: ')
+                    $('#vitc').html('0')
+                    noData.push('vitc') 
+                }
+
                 if (data.totalNutrients.VITD){
                     console.log("VITD DATA: "+data.totalNutrients.VITD.quantity)
                     $('#vitd').html(data.totalNutrients.VITD.quantity.toFixed(0))
