@@ -1,5 +1,5 @@
 # NutriBasket
-A chrome extension to keep track of the user's shopping cart's accumulative nutritional value while shopping for groceries/meals. 
+A chrome extension that keeps track of a shopping cart's cumulative nutritional value.
 
 NutriBasket provides the user with total counts for 12 different micro and macronutrients while allowing them to set a limit for each one. After setting a personal limit or 'goal' for each nutrient NutriBasket will alert the user so that they can either delete items and change or add new ones. 
 
@@ -10,7 +10,7 @@ Edamam API
 ***************************
 
 ## Install:
-(Note: this will be in the chrome extensions store very very soon!!)
+(Note: Not yet in chrome extensions store)
 
 1. Download or clone this repo
 2. In the chrome browser, go to "chrome://extensions"
