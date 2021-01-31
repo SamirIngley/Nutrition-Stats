@@ -1,5 +1,6 @@
-# NutriBasket
-A chrome extension that keeps track of a shopping cart's cumulative nutritional value.
+# Nutri Stats
+## A chrome extension that keeps track of a shopping cart's cumulative nutritional value.
+## Get it here: https://chrome.google.com/webstore/detail/nutrition-stats/nnofceccpoccinfobbillknicoodbnbc?hl=en-US
 
 NutriBasket provides the user with total counts for 12 different micro and macronutrients while allowing them to set a limit for each one. After setting a personal limit or 'goal' for each nutrient NutriBasket will alert the user so that they can either delete items and change or add new ones. 
 
